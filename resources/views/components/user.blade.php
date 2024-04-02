@@ -64,7 +64,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="javascript:void(0);">
+                      <a class="dropdown-item" href="#" id="logout-link">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
@@ -75,3 +75,31 @@
               </ul>
             </div>
           </nav>
+
+{{-- LOGOUT --}}
+<script>
+  $(document).ready(function() {
+      $("#logout-link").click(function(e) {
+          e.preventDefault();
+
+          var form = $('<form>', {
+              'action': '{{ route('logout') }}',
+              'method': 'post',
+              'style': 'display: none;'
+          });
+
+          form.append($('<input>', {
+              'type': 'hidden',
+              'name': '_token',
+              'value': '{{ csrf_token() }}'
+          }));
+
+          form.append($('<button>', {
+              'type': 'submit',
+              'class': 'logout-button'
+          }).text('LOGOUT'));
+
+          form.appendTo('body').submit();
+      });
+  });
+</script>
