@@ -1,0 +1,284 @@
+/* Common styles for all screen sizes */
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.background-container {
+    background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.8) 100%), url('/img/makati.jpeg'),url('/img/vermosa.jpeg'),url('/img/nuvali.jpeg'),url('/img/vertis-north.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 120%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    opacity: 200%;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+    font-size: 50px;
+    margin-top: 300px;
+    text-align: left;
+    margin-left: 200px;
+}
+
+header {
+    width: 100%;
+    position: fixed; 
+    top: 0; 
+    z-index: 1000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    transition: background-color 0.3s ease;
+}
+header.scrolled-up {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.head-nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 80%; 
+}
+
+.head-nav a.o-logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.head-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+}
+
+.head-nav ul li {
+    margin-right: 20px;
+}
+
+.head-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    padding: 10px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+}
+
+.head-nav ul li a:hover {
+    color: #c8ab42;
+}
+
+.subcontents {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease;
+    z-index: 1001;
+    text-align: center;
+}
+
+.subcontents p {
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.header-right a:hover {
+    color: #ffffff;
+}
+
+.header-right img {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px; 
+}
+
+.contact-button {
+    position: relative;
+    display: inline-block; 
+    border: 2px solid #fff; 
+    padding: 10px 20px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-style: normal; 
+    font-weight: 700; 
+    font-size: 14px; 
+    line-height: 160%; 
+    letter-spacing: .16em;
+    overflow: hidden;
+}
+
+.contact-button::before {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background-color: #c8ab42; 
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.contact-button:hover::before {
+    left: 0;
+}
+
+.aboutourestates {
+    text-align: left; 
+    margin-top: 20px; 
+    margin-left: 200px;
+}
+
+.about-button {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: .16em;
+    border: 2px solid #fff;
+    transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+    background-color: #c8ab42;
+    color: #fff;
+}
+
+.nav-column {
+    width: 100%;
+    position: absolute; 
+    bottom: 70px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-column ul {
+    list-style: none;
+    display: flex; 
+    margin: 0;
+    padding: 0;
+}
+
+.nav-column ul li {
+    margin-right: 20px;
+}
+
+.nav-column ul li a {
+    text-decoration: none;
+    color: #c7c7c7;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    padding: 10px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nav-column ul li a:hover {
+    color: #fff;
+}
+
+.white-bg {
+    position: relative;
+    z-index: 1; 
+    background: linear-gradient(rgba(255, 255, 255, 0) 0%, #fff 80%);
+    height: 120%; 
+}
+
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+        margin-top: 150px;
+        margin-left: 20px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .head-nav {
+        width: 100%;
+    }
+
+    .head-nav a.o-logo img {
+        margin-right: 5px;
+    }
+
+    .head-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .head-nav ul.show {
+        display: flex;
+    }
+
+    .head-nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .head-nav ul li a {
+        padding: 15px;
+    }
+
+    .subcontents,
+    .contact-button,
+    .aboutourestates,
+    .nav-column {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-column ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .white-bg {
+        height: 150%;
+    }
+}

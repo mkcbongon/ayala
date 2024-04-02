@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Ayala Land Premier - Ayalaland.com.ph</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Ayala Land Premier - Ayalaland.com.ph" />
+        <meta property="og:url" content="https://www.ayalaland.com.ph/residences/ayala-land-premier/" />
+        <meta property="og:site_name" content="Ayalaland.com.ph" />
+        <meta property="article:modified_time" content="2021-02-04T18:16:14+08:00" />
+        <meta property="og:image" content="https://www.ayalaland.com.ph/app/uploads/2020/01/AyalaLandPremierCerilo_optimized.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="700" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="msapplication-TileImage" content="https://www.ayalaland.com.ph/app/uploads/2020/02/cropped-android-chrome-512x512-02-270x270.png" />
+
+        <script async="" src="{{ asset('ayala/clarity.js.download') }}"></script>
+        <script type="text/javascript" async="" src="{{ asset('ayala/js') }}"></script>
+        <script type="text/javascript" async="" src="{{ asset('ayala/analytics.js.download') }}"></script>
+        <script type="text/javascript" async="" src="{{ asset('ayala/ba4j364h1z') }}"></script>
+        <script type="text/javascript" async="" src="{{ asset('ayala/destination') }}"></script>
+        <script type="text/javascript" async="" src="{{ asset('ayala/js(1)') }}"></script>
+        <script type="text/javascript" async="" src="{{ asset('ayala/analytics.js.download') }}"></script>
+        <script type="text/javascript" async="" src="{{ asset('ayala/js(2)') }}"></script>
+        <script async="" src="{{ asset('ayala/js(3)') }}"></script>
+
+        <link rel="dns-prefetch" href="https://s.w.org/" />
+        <link rel="stylesheet" id="main-css-css" href="{{ asset('ayala/main.css') }}" type="text/css" media="all" />
+        <link rel="icon" href="https://www.ayalaland.com.ph/app/uploads/2020/02/cropped-android-chrome-512x512-02-32x32.png" sizes="32x32" />
+        <link rel="icon" href="https://www.ayalaland.com.ph/app/uploads/2020/02/cropped-android-chrome-512x512-02-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="https://www.ayalaland.com.ph/app/uploads/2020/02/cropped-android-chrome-512x512-02-180x180.png" />
+
+        <style type="text/css" id="wp-custom-css">
+            a.location-map:hover {
+                color: #c8ab42 !important;
+                background: transparent;
+            }
+            a.location-map {
+                display: inline-block !important;
+                background: #c8ab42;
+                padding: 10px 20px;
+                color: #fff !important;
+                transition: 0.5s all;
+                border: 1px solid #c8ab42;
+            }
+            body.single.single-post .c-article article a {
+                text-decoration: underline;
+                font-weight: bold;
+            }
+            div#js-form-inquiry .c-form__heading p {
+                text-align: center;
+            }
+        </style>
+        
+        <style type="text/css">
+            .vue-slider-dot {
+                position: absolute;
+                -webkit-transition: all 0s;
+                transition: all 0s;
+                z-index: 5;
+            }
+            .vue-slider-dot:focus {
+                outline: none;
+            }
+            .vue-slider-dot-tooltip {
+                position: absolute;
+                visibility: hidden;
+            }
+            .vue-slider-dot-hover:hover .vue-slider-dot-tooltip,
+            .vue-slider-dot-tooltip-show {
+                visibility: visible;
+            }
+            .vue-slider-dot-tooltip-top {
+                top: -10px;
+                left: 50%;
+                -webkit-transform: translate(-50%, -100%);
+                transform: translate(-50%, -100%);
+            }
+            .vue-slider-dot-tooltip-bottom {
+                bottom: -10px;
+                left: 50%;
+                -webkit-transform: translate(-50%, 100%);
+                transform: translate(-50%, 100%);
+            }
+            .vue-slider-dot-tooltip-left {
+                left: -10px;
+                top: 50%;
+                -webkit-transform: translate(-100%, -50%);
+                transform: translate(-100%, -50%);
+            }
+            .vue-slider-dot-tooltip-right {
+                right: -10px;
+                top: 50%;
+                -webkit-transform: translate(100%, -50%);
+                transform: translate(100%, -50%);
+            }
+        </style>
+
+        <style type="text/css">
+            .vue-slider-marks {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+            .vue-slider-mark {
+                position: absolute;
+                z-index: 1;
+            }
+            .vue-slider-ltr .vue-slider-mark,
+            .vue-slider-rtl .vue-slider-mark {
+                width: 0;
+                height: 100%;
+                top: 50%;
+            }
+            .vue-slider-ltr .vue-slider-mark-step,
+            .vue-slider-rtl .vue-slider-mark-step {
+                top: 0;
+            }
+            .vue-slider-ltr .vue-slider-mark-label,
+            .vue-slider-rtl .vue-slider-mark-label {
+                top: 100%;
+                margin-top: 10px;
+            }
+            .vue-slider-ltr .vue-slider-mark {
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            .vue-slider-ltr .vue-slider-mark-step {
+                left: 0;
+            }
+            .vue-slider-ltr .vue-slider-mark-label {
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+            .vue-slider-rtl .vue-slider-mark {
+                -webkit-transform: translate(50%, -50%);
+                transform: translate(50%, -50%);
+            }
+            .vue-slider-rtl .vue-slider-mark-step {
+                right: 0;
+            }
+            .vue-slider-rtl .vue-slider-mark-label {
+                right: 50%;
+                -webkit-transform: translateX(50%);
+                transform: translateX(50%);
+            }
+            .vue-slider-btt .vue-slider-mark,
+            .vue-slider-ttb .vue-slider-mark {
+                width: 100%;
+                height: 0;
+                left: 50%;
+            }
+            .vue-slider-btt .vue-slider-mark-step,
+            .vue-slider-ttb .vue-slider-mark-step {
+                left: 0;
+            }
+            .vue-slider-btt .vue-slider-mark-label,
+            .vue-slider-ttb .vue-slider-mark-label {
+                left: 100%;
+                margin-left: 10px;
+            }
+            .vue-slider-btt .vue-slider-mark {
+                -webkit-transform: translate(-50%, 50%);
+                transform: translate(-50%, 50%);
+            }
+            .vue-slider-btt .vue-slider-mark-step {
+                top: 0;
+            }
+            .vue-slider-btt .vue-slider-mark-label {
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+            .vue-slider-ttb .vue-slider-mark {
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            .vue-slider-ttb .vue-slider-mark-step {
+                bottom: 0;
+            }
+            .vue-slider-ttb .vue-slider-mark-label {
+                bottom: 50%;
+                -webkit-transform: translateY(50%);
+                transform: translateY(50%);
+            }
+            .vue-slider-mark-label,
+            .vue-slider-mark-step {
+                position: absolute;
+            }
+        </style>
+
+        <style type="text/css">
+            .vue-slider {
+                position: relative;
+                -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                display: block;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+            .vue-slider-rail {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                -webkit-transition-property: width, height, left, right, top,
+                    bottom;
+                transition-property: width, height, left, right, top, bottom;
+            }
+            .vue-slider-process {
+                position: absolute;
+                z-index: 1;
+            }
+        </style>
+
+        <script
+            type="text/javascript"
+            async=""
+            src="{{ asset('ayala/f.txt') }}"
+        ></script>
+    </head>
+
+
+    <body class="residences-template-default single single-residences postid-6835">
+        <div class="site">
+            @include('components/header')
+            @include('components/mheader')
+
+            
+            <div id="content" class="site-content is-activeHeader">
+                <section class="">
+                    <div class="c-hero-banner c-hero-banner--full c-hero-banner--glimpse o-banner--fade [ u-mb-mb-40 ]"
+                        style="background-image: url(&#39;https://www.ayalaland.com.ph/app/uploads/2020/01/Santierra-Inner-Road-e1582178512590.jpg&#39;);">
+                        <div class="o-container--full [ u-mb-m-a ]">
+                            <div class="c-hero-banner__content">
+                                <h1>Ayala Land Premier</h1>
+                                <p>
+                                    Creating new lifestyles in distinguished
+                                    locations that are expertly crafted and
+                                    designed to nurture current residents and
+                                    future generations. These are homes you
+                                    truly deserve.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-container--full">
+                    <div class="c-featured c-featured--overlay">
+                        <div class="c-featured__heading [ u-df-tb u-df-tb-jc-sb u-df-tb-ai-c ]">
+                            <h2>Featured Ayala Land Premier Residences</h2>
+                        </div>
+                        <div class="c-quicklinks">
+                            <a href="https://www.ayalalandpremier.com/condominiums/makati-ac/park-terraces/"
+                                target="_blank" data-target="https://www.ayalalandpremier.com/condominiums/makati-ac/park-terraces/"
+                                class="c-card c-card--small [ u-mb-mb-40 u-dt-mb-0 ]">
+                                <div class="c-card__content">
+                                    <h3>Santierra Inner Road</h3>
+                                    <button class="o-button--icon">
+                                        VIEW RESIDENCES
+                                    </button>
+                                </div>
+                                <figure>
+                                    <img src="{{ asset('ayala/PARKTERRACESCLUBHOUSE_optimized.jpg') }}" alt=""/>
+                                </figure>
+                            </a>
+                            <a href="https://www.ayalalandpremier.com/condominiums/bgc-taguig-ac/arbor-lanes/"
+                                target="_blank" data-target="https://www.ayalalandpremier.com/condominiums/bgc-taguig-ac/arbor-lanes/"
+                                class="c-card c-card--small [ u-mb-mb-40 u-dt-mb-0 ]">
+                                <div class="c-card__content">
+                                    <h3>Arbor Lanes</h3>
+                                    <button class="o-button--icon">
+                                        VIEW RESIDENCES
+                                    </button>
+                                </div>
+                                <figure>
+                                    <img src="{{ asset('ayala/DuskExterior-Arbor-Lanes-Hires_optimized-e1582677335991.jpg') }}" alt=""/>
+                                </figure>
+                            </a>
+                            <a href="https://www.ayalalandpremier.com/house-lot/cavite-lh/the-courtyards/"
+                                target="_blank" data-target="https://www.ayalalandpremier.com/house-lot/cavite-lh/the-courtyards/"
+                                class="c-card c-card--small [ u-mb-mb-40 u-dt-mb-0 ]">
+                                <div class="c-card__content">
+                                    <h3>The Courtyards</h3>
+                                    <button class="o-button--icon">
+                                        VIEW RESIDENCES
+                                    </button>
+                                </div>
+                                <figure>
+                                    <img src="{{ asset('ayala/0823UPDATEDClubhousePoolandHallway-HighResNew_optimized-e1582677352179.jpg') }}" alt=""/>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>Ayala Land Premier</span>
+                            <h1>What is Ayala Land Premier?</h1>
+                            <p>
+                                Over the years, Ayala Land has transformed the
+                                landscape of luxury addresses in the
+                                Philippines. Ayala Land Premier is a testament
+                                to Ayala Land’s heritage in creating first-class
+                                residential developments that evoke the true
+                                essence of high-quality living. From high-rise
+                                condominiums to leisure communities and
+                                exclusive estates, Ayala Land Premier projects
+                                guarantee prestige, prime locations, and the
+                                aspirational lifestyle.
+                            </p>
+                            <p>
+                                At Ayala Land Premier, we create new lifestyles
+                                in coveted locations, expertly developed to
+                                nurture current residents and enhance the lives
+                                of future generations. Live a life inspired by
+                                new horizons and luxury living at any of these
+                                Ayala Land Premier condominiums and estates.<br /><br /><img
+                                    loading="lazy"
+                                    src="{{ asset('ayala/ALP.jpg') }}"
+                                    alt=""
+                                    width="1000"
+                                    height="600"
+                                    class="alignnone size-full wp-image-6842"
+                                    srcset="
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/ALP.jpg         1000w,
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/ALP-300x180.jpg  300w,
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/ALP-768x461.jpg  768w
+                                    "
+                                    sizes="(max-width: 1000px) 100vw, 1000px"
+                                />
+                            </p>
+                            <style>
+                                p {
+                                    text-align: justify;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </section>
+                
+                
+
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>Bonifacio Global City</span>
+                            <h1>Bonifacio Global City (BGC) -Taguig</h1>
+                            <p>
+                                Ayala Land’s first triumph in Taguig was turning
+                                the old Fort Bonifacio Base into a shining
+                                example of urban living, now known as Bonifacio
+                                Global City – one of Metro Manila’s key
+                                commercial and business districts. But while
+                                Bonifacio Global City’s booming business center
+                                may dominate its skyline, it’s more than just a
+                                place for work. Considered as the
+                                fastest-emerging lifestyle hub in the metro, BGC
+                                features clean architecture, high-end shopping
+                                options, and a vibrant luxurious vigor. Our goal
+                                is to replicate BGC’s success at another
+                                development in Taguig City: Arca South. Arca
+                                South is set to be the newest enclave where
+                                sustainable and environmentally conscious
+                                development complements the wonders or metro
+                                living. With impressive highlights and
+                                surprises, make Taguig City the backyard of your
+                                dreams today with a luxury condominium at Ayala
+                                Land Premier in BGC and Arca South.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+                            <h2>Gardencourt Residences</h2>
+                            <p>
+                                A five-tower Ayala Land Premier condo
+                                development in Arca South where one can bask in
+                                the serenity of lush greenery, sprawling parks,
+                                and verdant open spaces. After a long day at
+                                work, you can relax in the gardens and live a
+                                lifestyle entwined with nature while having the
+                                conveniences of city living just outside your
+                                front door. As Ayala Land revolutionizes urban
+                                living with units that provide refreshing
+                                ventilation and even distribution of natural
+                                light, you’ll wake up to bright mornings and
+                                live out a condo experience like no other.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+                            <h2>West Gallery Place</h2>
+                            <p>
+                                The latest Ayala Land Premier project to grace
+                                High Street South’s esteemed selection of
+                                high-end residential towers. As the pioneer of
+                                sustainable development in the country, this
+                                Ayala Land Premier condo is filled with both the
+                                necessities of modern living and the comforts of
+                                nature. An address of classic sensibility and
+                                refinement, you’ll live out the epitome of
+                                contemporary urban living with its curated
+                                timeless spaces and proximity to a complete
+                                spectrum of refined lifestyle experiences.
+                                Reveal new dimensions of stylish, sustainable
+                                city living at West Gallery Place.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--left [ u-df-tb u-df-tb-jc-sb ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/DuskExterior-Arbor-Lanes-Hires_optimized-e1582677335991.jpg') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>Arbor Lanes</h2>
+                                    <p>
+                                        An idyllic retreat right in the heart of
+                                        an emerging city. With gardens, pools,
+                                        and shared open spaces growing alongside
+                                        spacious units and retail stores, Arbor
+                                        Lanes is where everyday pursuits are
+                                        inspired by leisure settings bathed in
+                                        life and natural energy. Its progressive
+                                        vision of urban development surrounded
+                                        by lush landscaping gives you a preview
+                                        of what true, sustainable urban
+                                        development is meant to be.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>Makati </span>
+                            <h1>Makati</h1>
+                            <p>
+                                Makati City is where Ayala Land first began our
+                                mission to transform the meaning of urban
+                                living. Over the decades, our condominiums and
+                                luxury residential developments have taken the
+                                lifestyles of Makati residents to new heights.
+                                Privacy, comfort, and elegance – these are the
+                                key points that went into the creation of Ayala
+                                Land Premier projects in Makati. Best described
+                                as a dream home in the sky, every Ayala Land
+                                Premier in Makati condo exudes stylish modernity
+                                and warmth that welcomes you after a long day.
+                                Experience elevated living by owning your piece
+                                of the marvelous Makati skyline.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+                            <h2>Park Central Towers</h2>
+                            <p>
+                                A prime residential enclave at Roxas Triangle
+                                where luxury and convenience converge at the
+                                heart of Makati. With its elegant high glass
+                                ratio facade encompassing 68 storeys, the
+                                high-end two-tower residence is set to unveil
+                                the radiance of vast skyline views and exemplify
+                                contemporary living. At the podium level, you’ll
+                                have a wealthy selection of retail, dining, and
+                                service establishments for a variety of delights
+                                and modern conveniences. Be part of the graceful
+                                unfolding of a coveted Makati address.<br /><br /><img
+                                    loading="lazy"
+                                    src="{{ asset('ayala/Park-Central-Towers.jpg') }}"
+                                    alt=""
+                                    width="606"
+                                    height="400"
+                                    class="alignnone size-full wp-image-6975"
+                                    srcset="
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/Park-Central-Towers.jpg         606w,
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/Park-Central-Towers-300x198.jpg 300w
+                                    "
+                                    sizes="(max-width: 606px) 100vw, 606px"
+                                /><br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+                            <h2>Garden Towers</h2>
+                            <p>
+                                Relish in the sublime experience of living
+                                naturally at the heart of Ayala Center.
+                                Beginning with seamless connectivity to Palm
+                                Promenade, Glorietta’s landscaped open spaces,
+                                Garden Towers welcomes you into a stunning green
+                                lobby and embraces you with lush greenery and
+                                exclusive sky gardens on select floors. You’ll
+                                bask in the seamless convergence of city and
+                                nature in the place you call home. With its
+                                underground and aboveground connection to Ayala
+                                Center, everything a busy lifestyle requires is
+                                within reach.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--right [ u-df-tb u-df-tb-jc-sb u-df-tb-fd-rr ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/two-roxas-triangle-makati.jpg') }}"
+                                        alt="Luxurious Condo Unit for Sale in Makati"
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>Two Roxas Triangle</h2>
+                                    <p>
+                                        The second tower of the Roxas Triangle
+                                        Towers. Built on an exclusive site with
+                                        elegant architecture and first-rate
+                                        amenities, this development is a
+                                        manifestation of Ayala Land’s lifetime
+                                        commitment to high-quality service and
+                                        maintenance. The first tower, One Roxas
+                                        Triangle, currently remains to be the
+                                        city’s preferred luxury address. Both
+                                        towers exemplify the Ayala Land Premier
+                                        brand of prestige, choice location, and
+                                        high-quality living.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>QUEZON CITY AND PASIG</span>
+                            <h1>QUEZON CITY AND PASIG</h1>
+                            <p>
+                                With pervasive city landscapes all around, urban
+                                living can be a drab and greenery has become a
+                                luxury for the dwellers of the metro. Developed
+                                by Ayala Land and Eton Properties, Parklinks
+                                brings the best of luxurious cosmopolitan living
+                                to Quezon City and Pasig. Envisioned to be Metro
+                                Manila’s greenest urban development, Parklinks
+                                embraces three central themes: Life, Light, and
+                                Space. As Ayala Land’s most ambitious project in
+                                Metro Manila to date, Parklinks will feature
+                                Ayala Land Premier condos set to redefine
+                                quality, sustainable living for your family in
+                                an environment that lets you enjoy the best of
+                                the metro.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--left [ u-df-tb u-df-tb-jc-sb ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/Parklinks-North-Tower.001.jpeg') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <p>
+                                        &nbsp;<br />
+                                        &nbsp;
+                                    </p>
+                                    <h2>Parklinks North Tower</h2>
+                                    <p>
+                                        The first luxury residential tower by
+                                        Ayala Land Premier in a vast verdant
+                                        estate. Rising to the sky at 55 floors
+                                        high, it will offer panoramic east and
+                                        west skyline views to its residents.
+                                        This development is notable not only for
+                                        its intuitive planning and superior
+                                        craftsmanship, but also for its minimal
+                                        impact on the environment and the
+                                        opportunities it presents for healthy,
+                                        sustainable living. With its direct
+                                        retail connection to Parklinks Mall and
+                                        the River Esplanade, you’ll enjoy a
+                                        dynamic life of utmost ease and comfort.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>CAVITE</span>
+                            <h1>CAVITE</h1>
+                            <p>
+                                Anyone longing for the sweet escape of suburban
+                                living may find the possibility a distant dream.
+                                But the reality is a lot closer than you think
+                                if you let yourself indulge in the luxurious
+                                relaxation of living in Cavite. You not only get
+                                the fresh breezes and cooler climes you crave,
+                                you also get to enjoy exclusive clubs and
+                                prestigious Ayala Land Premier estates in the
+                                area. With these developments, Ayala Land gives
+                                families the opportunity to live in dynamic,
+                                thriving communities with ample green spaces and
+                                accessibility to city comforts.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+                            <h2>The Courtyards Vermosa</h2>
+                            <p>
+                                Ayala Land Premier welcomes you to The
+                                Courtyards, a rare haven where vivid skies and a
+                                timeless air breathe life to a community nestled
+                                in a private sanctuary. The Courtyards
+                                celebrates the tranquility of suburban living
+                                and the convenience of urban life, where you can
+                                enjoy the confluence of work, leisure, and
+                                nature in an exclusive suburban address. Vermosa
+                                is also the first Ayala Land development of its
+                                kind to highlight active lifestyles that
+                                complement stylish living amenities. Vermosa is
+                                home to a sports complex, an Olympic-sized pool,
+                                bike trails, and other features that reflect
+                                Ayala Land’s commitment to providing holistic<br />
+                                lifestyles for families and aspiring
+                                individuals.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div class="c-article__image c-article__image--right [ u-df-tb u-df-tb-jc-sb u-df-tb-fd-rr ]">
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/Ayala-Westgrove-Heights-Banner-image.jpg') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>Ayala Westgrove Heights</h2>
+                                    <p>
+                                        At the heart of the flourishing
+                                        Calabarzon region, Ayala Westgrove
+                                        Heights is the premier estate for those
+                                        who want to be sheltered from the flurry
+                                        of city living while still being a short
+                                        drive away from life’s daily
+                                        necessities. Living here strikes a chord
+                                        in everyone as it’s easy to fall in love
+                                        with its scenic landscaped roads, green
+                                        spaces, and peaceful serenity. Careful
+                                        planning from Ayala Land has gone into
+                                        sculpting this residence so that living
+                                        in Ayala Westgrove Heights will bring
+                                        you and your family’s dreams to light.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>LAGUNA</span>
+                            <h1>LAGUNA</h1>
+                            <p>
+                                The south of the metro has always been loved for
+                                its laidback environment and sweet escape from
+                                the urban jungle. Beyond weekend getaways, many
+                                families have taken up residence in one of the
+                                Ayala Land Premier projects in Nuvali. As part
+                                of Ayala Land’s commitment to building
+                                developments where people and nature thrive,
+                                Nuvali unlocks the potential for communities in
+                                Laguna with a three-fold vision: harmony,
+                                diversity, and sustainability. With Nuvali’s
+                                beautiful landscapes, exciting shopping center,
+                                and residential communities with lush, verdant
+                                spaces – it’s the perfect location for
+                                recreation and leisure for the entire family.
+                                Enjoy a heightened sense of privacy and unity
+                                with nature while being an arm’s reach away from
+                                life’s conveniences at these Ayala Land Premier
+                                developments in Nuvali.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+                            <h2>Andacillo</h2>
+                            <p>
+                                The first residential address in Nuvali Heights.
+                                Set amidst the rolling hillside, this exclusive
+                                community is embraced by undulating landscapes
+                                and magnificent outdoor views. In keeping with
+                                Ayala Land’s mission to enhance land and enrich
+                                the lives of Filipinos, Andacillo will serve as
+                                the perfect backdrop for cultivating deeper
+                                relationships with family and friends.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--left [ u-df-tb u-df-tb-jc-sb ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/AyalaLandPremierCerilo_optimized.jpg') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>Cerilo</h2>
+                                    <p>
+                                        Where green spaces are interwoven with
+                                        homes so you live a luxurious lifestyle
+                                        in harmony with nature. With
+                                        sustainability at the core of this
+                                        development, about 80% of the lots in
+                                        Cerilo are right next to verdant areas,
+                                        creating shared green corridors in
+                                        between homes for the community to
+                                        delight in. You can relish in the great
+                                        outdoors and enjoy the urban
+                                        conveniences offered by the soon-to-rise
+                                        two-hectare retail space adjacent to
+                                        Cerilo.<br />
+                                        &nbsp;<br />
+                                        &nbsp;
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <h1></h1>
+                            <h2>Ayala Greenfield Estates</h2>
+                            <p>
+                                A mere 20-minute drive away from Alabang, Ayala
+                                Greenfield Estates is a sprawling neighborhood
+                                that provides residents with a luxurious haven
+                                where they can seek refuge after a long day. Set
+                                amidst the grandness of nature, the estate is
+                                home to endemic and migratory birds, with flora
+                                that provides a stunning backdrop to precious
+                                family moments. The estate also offers cool
+                                mountain breezes and marvelous panoramic views
+                                of Mount Makiling, Tagaytay Ridge, Laguna de
+                                Bay, and the Metro Manila cityscape to comfort
+                                the body, mind, and soul. This subdivision
+                                promises to keep your quality life at a premium,
+                                made possible through upscale amenities and the
+                                way it works around nature rather than
+                                suppressing it.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>PAMPANGA</span>
+                            <h1>PAMPANGA</h1>
+                            <p>
+                                In the past few years, Pampanga has been the new
+                                metropolitan hotspot to look out for. Alongside
+                                the augmentation of the Clark airport, the
+                                development of Alviera has poised Pampanga as a
+                                fast-growing economic hub alternate to Metro
+                                Manila. Alviera, a 1,800-hectare estate by Ayala
+                                Land and Leonio Land, features a diverse mix of
+                                commercial districts, industrial parks, leisure
+                                facilities, and Ayala Land Premier projects. It
+                                will become Pampanga’s anchor of economic
+                                development and coveted residential address
+                                where families can strike the perfect balance
+                                between urban and nature.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--right [ u-df-tb u-df-tb-jc-sb u-df-tb-fd-rr ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/Park-Estate-Alviera.jpg') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>Park Estates Alviera</h2>
+                                    <p>
+                                        Ayala Land Premier’s first exclusive
+                                        residential project in Alviera. Set to
+                                        be the luxury real estate developer’s
+                                        most intimate neighborhood yet, the
+                                        estate paints the picture of a complete
+                                        community: residences to complement
+                                        various lifestyles, vibrant commercial
+                                        centers, multiple areas for recreation,
+                                        leisure, and fitness, and renowned
+                                        institutions. An estate forged by ALI’s
+                                        commitment to enriching the lives of
+                                        Filipino families, the Alviera Country
+                                        Club will offer the perfect venue for
+                                        family bonding moments amidst the
+                                        estate’s sprawling landscapes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>BATAAN</span>
+                            <h1>BATAAN</h1>
+                            <p>
+                                Anvaya Cove is the first venture of Ayala Land
+                                Premier in leisure development. Deliberate and
+                                careful planning has gone into this premier
+                                residential resort project that brings together
+                                the scenic wonders of the Bataan’s mountainous
+                                terrain and the majesty of the nearby Subic Bay.
+                                It combines the charm of a mountain retreat and
+                                the thrill of a seaside resort to be the
+                                ultimate family haven. You can choose your own
+                                refuge in its unique “mountains meet the sea”
+                                topography, where you can create unforgettable
+                                memories amidst the wonders of a stunning
+                                landscape.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--left [ u-df-tb u-df-tb-jc-sb ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/anvaya-cove.jpg') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>Anvaya Cove Residences</h2>
+                                    <p>
+                                        Spanning over 320 hectares, each
+                                        resident community in Anvaya Cove’s
+                                        neighborhoods presents a distinctive
+                                        living experience for every family where
+                                        you can revel in the beauty of nature.
+                                        Whether you want the luxurious
+                                        convenience of an Ayala Land Premier
+                                        condominium or the vast spaces of a
+                                        multi-dwelling unit, there are various
+                                        residences to suit your lifestyle needs.
+                                        Each home seamlessly blends into nature,
+                                        offering you the escape you need from
+                                        the world’s whirlwind. Come home to
+                                        Anvaya Cove Residences, come home to the
+                                        beauty and serenity of nature.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>CEBU</span>
+                            <h1>CEBU</h1>
+                            <p>
+                                As one of the country’s fastest-growing
+                                provinces with respect to business and tourism,
+                                Cebu has all the amenities and comforts of the
+                                modern world. Ayala Land saw the multitude of
+                                possibilities in Cebu City, opening up prime
+                                residential, commercial, and business spaces to
+                                offer the finest of cosmopolitan living within a
+                                vibrant locale. Today, Cebu City flourishes with
+                                the existence of two unique Ayala Land
+                                districts: Cebu Business Park and Cebu I.T.
+                                Park. Ayala Land Premier in Cebu has also
+                                ventured into the Queen City of the South to
+                                contribute to its growing potential, setting up
+                                a fine selection of luxury developments for
+                                aspiring individuals and growing families
+                                alike.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+                            <h2>1016 Residences</h2>
+                            <p>
+                                A high-end Ayala Land Premier condominium that
+                                promises to deliver a distinctive and exclusive
+                                living experience. Only a short walk away from
+                                Ayala Center Cebu, the city’s premier retail and
+                                entertainment hub, this residential address has
+                                direct access to an endless array of options for
+                                business, leisure, shopping, and recreation. You
+                                can also take advantage of the scenic views of
+                                the mountains and the sea right from the
+                                comforts of your home.<br /><br /><img
+                                    loading="lazy"
+                                    src="{{ asset('ayala/1016-Amenity-Deck-1024x576.jpg') }}"
+                                    alt=""
+                                    width="1024"
+                                    height="576"
+                                    class="alignnone size-large wp-image-6972"
+                                    srcset="
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/1016-Amenity-Deck-1024x576.jpg  1024w,
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/1016-Amenity-Deck-300x169.jpg    300w,
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/1016-Amenity-Deck-768x432.jpg    768w,
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/1016-Amenity-Deck-1536x864.jpg  1536w,
+                                        https://www.ayalaland.com.ph/app/uploads/2020/10/1016-Amenity-Deck-2048x1152.jpg 2048w
+                                    "
+                                    sizes="(max-width: 1024px) 100vw, 1024px"
+                                /><br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+                            <h2>Amara</h2>
+                            <p>
+                                A luxurious seaside residential community with a
+                                century-old lighthouse on one of its lush,
+                                rolling hills. You and your family will enjoy a
+                                rustic, seaside ambiance with all the Ayala Land
+                                Premier features and sustainable amenities to
+                                ensure comfortable luxury living.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--right [ u-df-tb u-df-tb-jc-sb u-df-tb-fd-rr ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/Alcoves-ALP.jpg') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>The Alcoves</h2>
+                                    <p>
+                                        Carrying the Ayala Land Premier brand,
+                                        this condo embodies the luxury of an
+                                        ideal live, work, play lifestyle. With
+                                        generously spaced units, a wide array of
+                                        recreational amenities, and close
+                                        proximity to high-end malls, the
+                                        two-tower residential address is a
+                                        gathering of life’s finest details.
+                                        You’ll live life with a manifold of
+                                        choices in a highly pedestrian mixed-use
+                                        hub.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>DAVAO</span>
+                            <h1>DAVAO</h1>
+                            <p>
+                                With more companies eyeing presence in different
+                                cities around the country, Davao City has
+                                experienced a tremendous peak in growth. Ayala
+                                Land has led the charge in transforming new
+                                landscapes in Davao, harnessing its potential to
+                                become a southern powerhouse. Azuela Cove is a
+                                master-planned community by Ayala Land Premier
+                                Davao featuring a complete mix of enhanced
+                                lifestyle options set against the serene
+                                backdrop of the Davao gulf. With commercial
+                                lots, offices, and residential towers, residents
+                                enjoy resort-inspired luxury living and fresh
+                                new sights in a seaside address.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--left [ u-df-tb u-df-tb-jc-sb ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/20151531_AZUELA_COVE_DAY.png') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>The Residences Azuela Cove</h2>
+                                    <p>
+                                        Ayala Land Premier’s flagship
+                                        condominium project in Davao. This
+                                        two-tower development is situated right
+                                        by the glittering sea, providing
+                                        residents with awe- inspiring views
+                                        year-round in a coveted waterside
+                                        address. With its lush landscaping, warm
+                                        modern architecture, and proximity to
+                                        life’s essentials, you’ll enjoy a
+                                        luxurious and relaxing lifestyle with
+                                        your family and members of the
+                                        community.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>BACOLOD</span>
+                            <h1>BACOLOD</h1>
+                            <p>
+                                The idyllic island of Negros Occidental is
+                                filled with beautiful vast plantations, heritage
+                                homes, and warm smiles from locals. Ayala Land
+                                continues to reinforce its growing presence in
+                                the Visayas region with residential
+                                neighborhoods and mixed-use developments with
+                                sprawling landscaped areas and outdoor
+                                convergence points where families and
+                                communities can bond. Reward yourself with the
+                                luxury of premier living at the newest
+                                residential estate by Ayala Land Premier in
+                                Bacolod. Set to be the most esteemed residential
+                                address in Negros, Ayala Land Premier offers
+                                nothing but first-class amenities, facilities,
+                                and the lush lifestyle you deserve in a safe and
+                                secured community.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--right [ u-df-tb u-df-tb-jc-sb u-df-tb-fd-rr ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/The-Enclaves-street-view-of-a-typical-courtyard.jpg') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>The Enclaves</h2>
+                                    <p>
+                                        Centrally located in Talisay City, just
+                                        a short drive away from Bacolod to the
+                                        south and the historic Silay to its
+                                        north, The Enclaves at North Point gives
+                                        you access to many of Negros’ premier
+                                        lifestyle destinations. Within the
+                                        private Ayala Land Premier project,
+                                        you’ll find the perfect escape from the
+                                        city and strike the ultimate balance
+                                        between work and play. You and your
+                                        family will live a life as sweet and
+                                        luxurious as the famous sugarcane of the
+                                        province.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>CAGAYAN DE ORO</span>
+                            <h1>CAGAYAN DE ORO</h1>
+                            <p>
+                                Both action-packed and serene, Cagayan de Oro is
+                                the ideal place to live a calm and tranquil life
+                                amidst a rising metropolitan city. Apart from
+                                the crisp country air and the beautiful terrain
+                                of the province, you get to enjoy the
+                                convenience of cosmopolitan living. Set to
+                                promote inclusive growth in Cagayan de Oro,
+                                Ayala Land ushers in new urban development
+                                amidst natural landscapes and inviting coastal
+                                views. With Ayala Land’s presence and track
+                                record in building sustainable mixed-use
+                                estates, the city is met with new business
+                                opportunities and exciting lifestyle options
+                                that create shared value for more Filipinos.<br />
+                                &nbsp;<br />
+                                &nbsp;
+                            </p>
+
+                            <div
+                                class="c-article__image c-article__image--left [ u-df-tb u-df-tb-jc-sb ]"
+                            >
+                                <figure>
+                                    <img
+                                        src="{{ asset('ayala/allegria-hills-alp-pool.jpg') }}"
+                                        alt=""
+                                    />
+                                </figure>
+                                <div class="c-article__image-content">
+                                    <h2>Alegria Hills</h2>
+                                    <p>
+                                        Perched on a highland plateau, Algeria
+                                        Hills is the first residential offering
+                                        of Ayala Land Premier in Mindanao. The
+                                        exclusive neighborhood is an oasis with
+                                        masterfully designed houses,
+                                        unparalleled scenery, and close
+                                        proximity to desirable destinations. Its
+                                        location on a vast hillside provides you
+                                        with 360-degree views of the Macajalar
+                                        Bay and the glistening cityscape of
+                                        Cagayan de Oro City. It’s the epitome of
+                                        sustainable, luxurious home living while
+                                        thriving in the beauty of
+                                        nature.&nbsp;<br />
+                                        &nbsp;
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+
+                <section
+                    class="c-slidersgallery--socmed"
+                    id="instagram-up-to-date"
+                >
+                    <div class="c-slidersgallery--socmed__heading">
+                        <h2 class="o-heading-eyebrow--top">Connect with Us</h2>
+                    </div>
+                    <div
+                        class="js-slider_nav--socmed c-slidersgallery--socmed-nav"
+                    >
+                        <div class="c-slidersgallery--socmed-nav__item"></div>
+                        <div class="c-slidersgallery--socmed-nav__item"></div>
+                    </div>
+                    <div
+                        class="js-slider c-slidersgallery--socmed-slides"
+                    ></div>
+                </section>
+            </div>
+
+            @include('components/footer')
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>Ayala Land Premier Makati</span>
+                            <h1>AYALA LAND PREMIER</h1>
+                            <p>
+                                Ayala Land Premier developments in Makati define
+                                luxury, comfort, and state-of-the-art
+                                residential design. Luxury condominiums in
+                                Makati by Ayala Land boast the best locations
+                                and views, with superlative amenities that serve
+                                its exclusive residential communities.
+                            </p>
+                            <p>
+                                Luxury condos in Makati by Ayala Land truly
+                                offer high-quality living of unparalleled
+                                standards in the city. You’ll get all the space
+                                you need, with panoramic views of the Makati
+                                skyline and exclusive, first-class services.
+                                Choose Ayala Land Premier and come home to an
+                                address of distinction, with a beautiful Makati
+                                condo that achieves the height of refinement and
+                                remarkable living.
+                            </p>
+                            <style>
+                                p {
+                                    text-align: justify;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </section>
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--la">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/Park-Central-Towers.jpg') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Park Central Towers</h2>
+                            <p>
+                                Park Central Towers presents Makati with a
+                                distinctive address that marries supremely
+                                convenient location with beauty and refinement.
+                                At the crossing of Makati Avenue and Paseo de
+                                Roxas, this unique residence elevates iconic
+                                design with luxurious interiors. Park Towers’
+                                elegant high glass facades bring in natural
+                                light and vast skyline views of the city in a
+                                condo in Makati. Anchored by curated dining,
+                                retail, and service choices at the podium, you
+                                can live with matchless ease. Experience the
+                                finest things in life at Park Central Towers by
+                                Ayala Land Premier.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--ra">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/PARKTERRACESCLUBHOUSE_optimized.jpg') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Park Terraces</h2>
+                            <p>
+                                A tower of fine living overlooking two parks,
+                                Ayala Land's Park Terraces in Makati can become
+                                your personal hub for a whole new world of
+                                enjoyment. Adjacent to Glorietta, enjoy moments
+                                of leisure and entertainment just by stepping
+                                out your front door. A condominium in Makati
+                                with strategic pedestrian connections to major
+                                points of the CBD, you become part of a more
+                                sustainable, pedestrian-friendly community. Park
+                                Terraces in Makati helps you center your career
+                                aspirations and feed your passions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--la">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/two-roxas-triangle-makati.jpg') }}"
+                                alt="Luxurious Condo Unit for Sale in Makati"
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Two Roxas Triangle</h2>
+                            <p>
+                                Two Roxas Triangle in Makati lies in wait as the
+                                next iconic residential destination. Become part
+                                of a legendary community coming home to
+                                exclusive units of 302-550sqm that include upper
+                                floor Sky units and multi-level Penthouse units.
+                                Exclusive amenities include a squash court, a
+                                salon, a beautiful pool, and helipad access.
+                                Make your home at Two Roxas Triangle, a
+                                condominium for sale in Makati, an extraordinary
+                                address that gifts you with the best of
+                                distinctive living.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--ra">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/Garden-Towers.jpg') }}"
+                                alt="Garden Towers"
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Garden Towers</h2>
+                            <p>
+                                Garden Towers in Makati is Ayala Land’s twin
+                                tower residence, where nature and city life
+                                fluidly converge into invigorating lifestyles.
+                                If you have long been in search for a condo for
+                                sale in Makati, wherein nature welcomes you home
+                                and enlivens your experience with exclusive sky
+                                gardens, green walls, and lush garden amenities
+                                – then here is your haven. Seamlessly linked
+                                with Glorietta's Palm Promenade, everything you
+                                need is conveniently at hand. Live a lifestyle
+                                that's in sync with life's natural rhythms and
+                                the city's vibrant pulse at Garden Towers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>Alveo Land Makati</span>
+                            <h1>Alveo Land Makati</h1>
+                            <p>
+                                Alveo Makati projects carry the signature spirit
+                                of innovation with fresh living solutions and
+                                lifestyle concepts. In building and shaping new
+                                possibilities, Alveo condos in Makati push the
+                                boundary in creating diverse neighborhoods. See
+                                how an Alveo condo in Makati redefines balanced
+                                and effortless city living.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--la">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/Parkfor-Suites.jpg') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Parkford Suites Legazpi</h2>
+                            <p>
+                                Parkford Suites offers prime parkside living in
+                                Makati. A stone's throw away from Legazpi Active
+                                Park and Washington Sycip Park, you enjoy
+                                dynamic year-round park and skyline views. Enjoy
+                                the comforts of a friendly, upscale neighborhood
+                                surrounded by green, refreshing spaces. Live in
+                                Parkford Suites Legaspi, a condominium in Makati
+                                City, where natural and city spaces link leisure
+                                and work, home and community, health and
+                                well-being.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--ra">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/160817-Callisto-Tower-1-Studio-Unit-Perspective-Full-1599727249295-scaled.jpg') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Callisto</h2>
+                            <p>
+                                At Callisto, your life buzzes in an environment
+                                filled with unrivalled energy. With your home
+                                located right in front of Circuit Lane, you and
+                                your family live a get-up-and-go lifestyle that
+                                complements modern pursuits. Each condo unit in
+                                Makati also offers spatial efficiency and
+                                flexibility that encourage carefree and
+                                individual expression. Make every day a new
+                                adventure at Circuit Makati, a dynamic living
+                                and working destination in Makati’s ultimate
+                                lifestyle playground.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--la">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/Stiles.jpg') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>The Stiles Enterprise Plaza</h2>
+                            <p>
+                                The Stiles Enterprise Plaza is an emerging
+                                business address in Circuit Makati. Designed to
+                                blaze a new trail in contemporary office
+                                environments, this professional hub's corporate
+                                spaces are linked to a highly energized
+                                district. As a condominium in Makati with a wide
+                                range of work and leisure offers, The Stiles
+                                Enterprise Plaza provides the complete
+                                contemporary office experience to inspire
+                                employees and enable them to live a balanced
+                                work-play lifestyle.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--ra">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/Mergent-Residences.png') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Mergent Residences</h2>
+                            <p>
+                                Mergeant Residence is Alveo Land's first
+                                residential development in Poblacion, Makati.
+                                The tower brings many opportunities at your door
+                                and introduces you to an intimate neighborhood
+                                where every day is both new and familiar. With
+                                al fresco cafes, lively resto-galleries,
+                                in-house artisanal workshops, and exciting
+                                experiences right outside the tower, Mergeant
+                                Residences is the Makati condo’s choice address
+                                for the creative, the go-getter, and the
+                                entrepreneurial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--la">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/Kroma_optimized.jpg') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Kroma Tower</h2>
+                            <p>
+                                At Kroma Tower by Alveo Land, you have Makati
+                                City at the palm of your hand. Located along the
+                                energetic Dela Rosa Street, it’s only a few
+                                minutes away from the city's top business and
+                                lifestyle destinations. Experience workday
+                                convenience and enjoy seamless connectivity to
+                                malls and restaurants for family bonding moments
+                                within a highly walkable neighborhood.<br />Kroma
+                                Tower’s strategic location makes it a desirable
+                                Makati residential address for a condominium in
+                                the metro. Choose a Kroma Tower studio unit for
+                                sale and live in a city that excites and ignites
+                                your thirst for life.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--ra">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/solstice-alveo.jpg') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Solstice</h2>
+                            <p>
+                                Only a beat away from Circuit Makati's
+                                invigorating urban landscape, Solstice Tower
+                                offers the excitement of living in Makati's
+                                ultimate lifestyle playground. Solstice offers
+                                unique amenities designed to complement the many
+                                accessible entertainment venues just outside the
+                                tower. As you leave work and come home to
+                                Solstice, rediscover youth and explore your
+                                potential amidst Circuit Makati's evolving
+                                landscape – the condominium in Makati for the
+                                active go-getter.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--la">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/Columns-Legazpi.jpg') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>The Columns Legazpi Village</h2>
+                            <p>
+                                The Columns in Legazpi Village offers another
+                                opportunity to pursue a distinct urban lifestyle
+                                in the middle of Makati's cosmopolitan jungle.
+                                With recreational club amenities and an inviting
+                                mix of dining options, you and your family live
+                                in a Makati condo that stands a few steps from
+                                everything that matters. The Columns enables you
+                                to choose the best schools for your children and
+                                to live a more pedestrian-friendly lifestyle
+                                that’s within walking distance to your work and
+                                places you love.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="o-sketch--house-left">
+                    <div class="o-container--full laxWrap" id="">
+                        <div class="c-article o-heading-eyebrow">
+                            <span>Avida</span>
+                            <h1>Avida</h1>
+                            <p>
+                                Avida Land provides Filipinos and their families
+                                with thoughtfully designed homes in locations
+                                where comfort meets convenience. Avida in Makati
+                                is no exception. An Avida condo in Makati
+                                creates a unique vibe that captures the
+                                aspirations and interests of individuals and
+                                growing families alike. Consider looking at
+                                Avida condos in Makati for sale and discover the
+                                distinct, enriching Avida lifestyle today.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--ra">
+                        <figure>
+                            <img
+                                src="{{ asset('ayala/avida-southpoint-makati.jpg') }}"
+                                alt=""
+                            />
+                        </figure>
+                        <div
+                            class="  "
+                            style="
+                                transition: transform 15s
+                                    cubic-bezier(0, 1, 0.5, 1);
+                            "
+                        >
+                            <h2>Avida Towers Makati Southpoint</h2>
+                            <p>
+                                Avida Towers Makati Southpoint is the new haven
+                                for young couples, on-the-go millennials, and
+                                starting families. Located along Don Chino Roces
+                                Avenue, you're close to the city center with
+                                everything you need right outside your home.
+                                Keep yourself inspired with facilities for you
+                                to relax and hang out with loved ones.
+                                Complement your active lifestyle with jogging
+                                paths, a wellness area, and pools all for your
+                                taking. Never miss out on the action and enjoy
+                                the convenience of living minutes away from
+                                offices, schools, shopping centers, and other
+                                urban amenities. Looking for a condo for sale in
+                                Makati that fits your and your family’s needs
+                                has never been this convenient. Experience all
+                                these and more at Avida Towers Makati
+                                Southpoint.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--la">
+                        <figure>
+                            <img src="{{ asset('ayala/oneantonio.jpg') }}" alt=""/>
+                        </figure>
+                        <div class="  " style="transition: transform 15s cubic-bezier(0, 1, 0.5, 1);">
+                            <h2>One Antonio</h2>
+                            <p>
+                                Tucked into the quiet side of San Antonio
+                                Village, One Antonio Residences by Avida lets
+                                you enjoy a peaceful and charming side of the
+                                city. Despite its proximity to Ayala Avenue, One
+                                Antonio’s condo location in Makati evokes a
+                                village-like feel, perfect for those who value
+                                privacy and a retreat from the hustle and bustle
+                                of the city. <br /><br />A Central Atrium opens
+                                corridors to fresh air, rejuvenating views, and
+                                a sense of community. You always feel like you
+                                belong with the city, with nature, and with the
+                                community. Check out One Antonio units for sale
+                                and discover the refreshing ambience of a
+                                condo-village development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o-container--full" id="">
+                    <div class="c-image-text--ra">
+                        <figure>
+                            <img src="{{ asset('ayala/AvidaTowersAsten.jpg') }}" alt="" />
+                        </figure>
+                        <div class="  " style="transition: transform 15s cubic-bezier(0, 1, 0.5, 1);">
+                            <h2>Avida Towers Asten</h2>
+                            <p>
+                                Suited to the ever-changing lifestyles of hip
+                                and young achievers, Avida Towers Asten is a
+                                place of convergence for everything metro living
+                                has to offer. Here, everyday activities resonate
+                                with a distinct life, color, and inspiration.
+                                Choose to live in a Makati City condominium that
+                                comes with benefits that fit your lifestyle.
+                                After a long day's work, hit some refreshing
+                                laps at the pool or relax by the pool lounge. On
+                                weekends, work out at the gym or play at the
+                                game room with friends and family. Set your
+                                roots in Avida Towers Asten and create a life
+                                that captures business, entertainment, and
+                                culture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
