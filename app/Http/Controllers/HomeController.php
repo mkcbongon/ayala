@@ -9,6 +9,7 @@ use App\Models\HomeModel;
 use App\Models\PropertiesModel;
 use App\Models\PropamModel;
 use App\Models\NearbyModel;
+use App\Models\GalleryModel;
 use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
@@ -176,8 +177,9 @@ class HomeController extends Controller
 
         $near = NearbyModel::all();
         $propam = PropamModel::all();
+        $gallery = GalleryModel::all();
 
-        return view('user/property', ['data' => $data, 'near' => $near, 'propam' => $propam]);
+        return view('user/property', ['data' => $data, 'near' => $near, 'propam' => $propam, 'gallery' => $gallery]);
     }
 
 

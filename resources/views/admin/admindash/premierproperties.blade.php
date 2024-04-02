@@ -96,7 +96,7 @@
                               {{-- property --}}
                               <div class="row">
                                 <div class="col mb-3">
-                                  <label for="property" class="form-label">Property</label>
+                                  <label for="name" class="form-label">Property</label>
                                   <input type="text" id="property" class="form-control" name="name" placeholder="Property Name" />
                                 </div>
                               </div>
@@ -117,11 +117,27 @@
                                 </div>
                               </div>
                               {{-- !! --}}
+
+                              {{-- type --}}
+                              <input type="hidden" id="typeInput" name="type"/>
+                              <div class="row">
+                                <div class="col mb-3">
+                                  <button id="typeButton" type="button" class="btn btn-outline-danger dropdown-toggle"
+                                          data-bs-toggle="dropdown" aria-expanded="false">
+                                      Type
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectType('Residential', 'typeButton')">Residential</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectType('Commercial', 'typeButton')">Commercial</a></li>
+                                </ul>
+                                </div>
+                              </div>
+                              {{-- !! --}}
                             
                               {{-- location --}}
                               <div class="row">
                                 <div class="col mb-3">
-                                  <label for="nameBasic" class="form-label">Location</label>
+                                  <label for="location" class="form-label">Location</label>
                                   <input type="text" id="location" class="form-control" name="location" placeholder="Location" />
                                 </div>
                               </div>
@@ -221,6 +237,7 @@
                         <tr>
                           <th>Property</th>
                           <th>Category</th>
+                          <th>Type</th>
                           <th>Location</th>
                           <th>Price</th>
                           <th>Size</th>
@@ -233,13 +250,14 @@
                         <tr> 
                           <td>{{ substr($prop->name, 0, 15) }}{{ strlen($prop->name) > 15 ? '...' : '' }}</td>
                           <td><span class="badge bg-label-danger me-1">{{ $prop->category }}</span></td>
+                          <td><span class="badge bg-label-danger me-1">{{ $prop->type }}</span></td>
                           <td><i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
                             class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                          </svg>{{ substr($prop->location, 0, 15) }}{{ strlen($prop->location) > 15 ? '...' : '' }}</i></td>
+                          </svg>{{ substr($prop->location, 0, 11) }}{{ strlen($prop->location) > 11 ? '...' : '' }}</i></td>
                           <td>₱{{ number_format($prop->price, 2) }}</td>
                           <td>{{ substr($prop->size, 0, 15) }}{{ strlen($prop->size) > 15 ? '...' : '' }}</td>
-                          <td>{{ substr($prop->description, 0, 25) }}{{ strlen($prop->description) > 25 ? '...' : '' }}</td>
+                          <td>{{ substr($prop->description, 0, 20) }}{{ strlen($prop->description) > 20 ? '...' : '' }}</td>
                           <td>
                             <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#edit{{ $prop->id }}">Edit</button>
                             
@@ -266,7 +284,7 @@
                                     {{-- property --}}
                                     <div class="row">
                                       <div class="col mb-3">
-                                        <label for="property" class="form-label">Property</label>
+                                        <label for="name" class="form-label">Property</label>
                                         <input type="text" id="property" class="form-control" name="name" value="{{ $prop->name }}" />
                                       </div>
                                     </div>
@@ -287,11 +305,27 @@
                                       </div>
                                     </div>
                                     {{-- !! --}}
+
+                                    {{-- type --}}
+                                    <input type="hidden" id="typeInput" name="type" value="{{ $prop->type }}"/>
+                                    <div class="row">
+                                      <div class="col mb-3">
+                                        <button id="typeButton" type="button" class="btn btn-outline-danger dropdown-toggle"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                          {{ $prop->type }}
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectType('Residential')">Residential</a></li>
+                                          <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectType('Commercial')">Commercial</a></li>
+                                      </ul>
+                                      </div>
+                                    </div>
+                                    {{-- !! --}}
                                   
                                     {{-- location --}}
                                     <div class="row">
                                       <div class="col mb-3">
-                                        <label for="nameBasic" class="form-label">Location</label>
+                                        <label for="location" class="form-label">Location</label>
                                         <input type="text" id="location" class="form-control" name="location" value="{{ $prop->location }}" />
                                       </div>
                                     </div>
@@ -426,7 +460,17 @@
       
           document.getElementById('categoryInput').value = category;
       }
-  </script>
+    </script>
+
+
+    {{-- type name getter --}}
+    <script>
+      function selectType(type) {
+        document.getElementById('typeButton').textContent = type;
+        document.getElementById('typeButton').setAttribute('name', type);
+        document.getElementById('typeInput').value = type;
+      }
+    </script>
   
   
 

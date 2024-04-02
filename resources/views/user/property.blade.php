@@ -39,69 +39,7 @@
         <script type="text/javascript" async="" src="{{ asset('ayala/analytics.js.download') }}"></script>
         <script type="text/javascript" async="" src="{{ asset('ayala/ba4j364h1z') }}"></script>
         <script type="text/javascript" async="" src="{{ asset('ayala/js(2)') }}"></script>
-        <script type="application/ld+json" class="yoast-schema-graph">
-            {
-                "@context": "https://schema.org",
-                "@graph": [{
-                    "@type": "WebSite",
-                    "@id": "https://www.ayalaland.com.ph/#website",
-                    "url": "https://www.ayalaland.com.ph/",
-                    "name": "Ayalaland.com.ph",
-                    "description": "",
-                    "potentialAction": [{
-                        "@type": "SearchAction",
-                        "target": {
-                            "@type": "EntryPoint",
-                            "urlTemplate": "https://www.ayalaland.com.ph/?s={search_term_string}"
-                        },
-                        "query-input": "required name=search_term_string"
-                    }],
-                    "inLanguage": "en-US"
-                }, {
-                    "@type": "WebPage",
-                    "@id": "https://www.ayalaland.com.ph/careers/#webpage",
-                    "url": "https://www.ayalaland.com.ph/careers/",
-                    "name": "Ayala Land, Inc. | Careers",
-                    "isPartOf": {
-                        "@id": "https://www.ayalaland.com.ph/#website"
-                    },
-                    "datePublished": "2020-03-18T02:08:58+08:00",
-                    "dateModified": "2022-08-18T13:53:50+08:00",
-                    "description": "Find your next career opportunity with Ayala Land! Visit our Careers page to look at current openings, upload your resume, or send inquiries to our HR Team.",
-                    "breadcrumb": {
-                        "@id": "https://www.ayalaland.com.ph/careers/#breadcrumb"
-                    },
-                    "inLanguage": "en-US",
-                    "potentialAction": [{
-                        "@type": "ReadAction",
-                        "target": ["https://www.ayalaland.com.ph/careers/"]
-                    }]
-                }, {
-                    "@type": "BreadcrumbList",
-                    "@id": "https://www.ayalaland.com.ph/careers/#breadcrumb",
-                    "itemListElement": [{
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://www.ayalaland.com.ph/"
-                    }, {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Careers"
-                    }]
-                }]
-            }
-        </script>
         <script async="" src="{{ asset('ayala/js(3)') }}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'UA-38367326-1');
-        </script>
         <script type="text/javascript" async="" src="{{ asset('ayala/f.txt') }}"></script>
 
 
@@ -334,7 +272,6 @@
                 background: #ff7272;
             }
         </style>
-
         <style>
             .carousel {
                 position: relative;
@@ -410,12 +347,19 @@
                 <section>
                     <div id="carousel" class="carousel">
                         {{-- if no image set ayala/default.png --}}
+                        @foreach ($gallery->groupBy('img_property') as $imgProperty => $images)
+                        @if ($imgProperty == $data->name)
                         <div class="carousel-slides">
+                            @foreach ($images as $image)
                             {{-- gallery table --}}
                             <div class="carousel-slide" style="background-image: url({{asset('ayala/office-workers-employee-career-e1584927297195.jpg')}});"></div>
                             <div class="carousel-slide" style="background-image: url({{asset('ayala/DSC2549-e1581518825446.jpg')}});"></div>
                             <div class="carousel-slide" style="background-image: url({{asset('ayala/DSC2759.jpg')}});"></div>
+                            @endforeach
                         </div>
+                        @endif
+                        @endforeach
+
                         <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
                         <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
                     </div>

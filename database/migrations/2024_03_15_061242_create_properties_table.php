@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('category');
+            $table->string('type');
             $table->string('location');
             $table->double('price');
             $table->string('size');

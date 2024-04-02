@@ -8,12 +8,14 @@ use App\Models\PropamModel;
 use App\Models\NearbyModel;
 use App\Models\GalleryModel;
 use App\Models\AmenitiesModel;
+use App\Models\UserAuth;
 use App\Models\Model;
 
 class AdminController extends Controller
 {
     public function dashboard() {
         return view('admin/admindash/dashboard');
+
     }
 
     
@@ -32,6 +34,7 @@ class AdminController extends Controller
         $nearby->property = $request->input('name') ?? '';
         $gallery->img_property = $request->input('name') ?? '';
         $prop->category = $request->input('category') ?? '';
+        $prop->type = $request->input('type') ?? '';
         $prop->location = $request->input('location') ?? '';
         $prop->price = $request->input('price') ?? 0.0;
         $sizeArray = $request->input('size') ?? [];
@@ -39,6 +42,7 @@ class AdminController extends Controller
         $prop->description = $request->input('description') ?? '';
         $prop->video = $request->input('video') ?? '';
 
+        // dd($prop->type);
         $prop->save();
         $amenities->save();
         $nearby->save();
@@ -56,7 +60,9 @@ class AdminController extends Controller
         $amenities->property = $request->input('name') ?? '';
         $nearby->property = $request->input('name') ?? '';
         $gallery->img_property = $request->input('name') ?? '';
+
         $prop->category = $request->input('category');
+        $prop->type = $request->input('type');
         $prop->location = $request->input('location') ?? '';
         $prop->price = $request->input('price') ?? 0.0;
         $sizeArray = $request->input('size') ?? [];
@@ -172,15 +178,20 @@ class AdminController extends Controller
     }
 
     public function add_img(Request $request) {
+        $property = $request->input('property');
+        
+        GalleryModel::where('img_property', $property)
+                    ->whereNull('url')
+                    ->delete();
+    
         $gallery = new GalleryModel();
-
-        $gallery->img_property = $request->input('property');
+        $gallery->img_property = $property;
         $gallery->url = $this->uploadAndSave($request->file('url'), 'ayala', $gallery->url);
-
         $gallery->save();
-
+    
         return redirect()->back()->with('success', 'Data created successfully');
     }
+    
     public function display($id, Request $request) {
         $gallery = GalleryModel::find($id);
         $gallery->img_property = $request->input('name');

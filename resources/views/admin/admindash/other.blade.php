@@ -103,7 +103,7 @@
                               </svg>edit</button>
                             </div>
                         
-                            {{-- add --}}
+                            {{-- add nearby --}}
                             <form action="{{ route('addnearby')}}" method="POST"> @csrf
                               <div class="modal fade" id="add{{ $prop->id }}" tabindex="-1" aria-hidden="true">
                                 <div class="modal-dialog modal-sm" role="document">
@@ -156,7 +156,7 @@
                             </form>
                             {{-- add --}}
 
-                            {{-- edit --}}
+                            {{-- edit nearby --}}
                             @foreach ($near as $enear)
                               <form action="{{ route('editnearby', ['id' => $enear->id])}}" method="POST">
                                 <input type="hidden" name="nearby_id" value="{{ $enear->id }}">
@@ -364,7 +364,7 @@
                               <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                             </svg>edit</button>
                             
-                            {{-- add --}}
+                            {{-- add img --}}
                             @foreach ($gallery as $img)
                               @if ($img->img_property == $prop->name)
                                 <form action="{{ route('add_img')}}" method="POST" enctype="multipart/form-data"> @csrf @method('PUT')
@@ -396,7 +396,7 @@
                                 </form>
                               @endif
                             @endforeach
-                            {{-- add --}}
+                            {{-- add img --}}
 
                             {{-- edit img --}}
                             @foreach ($gallery->groupBy('img_property') as $imgProperty => $images)
@@ -411,6 +411,7 @@
                                         </div>
                                         <div class="modal-body">
                                           <div class="row">
+                                            {{-- images in the property --}}
                                             @foreach ($images as $image)
                                                 <div class="col-md-4 text-center">
                                                     <img src="{{ $image->url }}" alt="Image" class="img-fluid custom-img">
@@ -426,7 +427,7 @@
                                                     </div>
                                                 </div>
                                             @endforeach
-
+                                            {{--  --}}
                                           </div>
                                         </div>
                                         <div class="modal-footer">
@@ -474,7 +475,7 @@
     </div>
     <!-- / Layout wrapper -->
 
-
+{{-- img edit --}}
     <script>
       document.addEventListener('DOMContentLoaded', function () {
           const radios = document.querySelectorAll('.display-img-radio');
