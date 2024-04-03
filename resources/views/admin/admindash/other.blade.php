@@ -120,8 +120,8 @@
                                     <div class="modal-body">
                                       <div class="row">
                                         <div class="col mb-3">
-                                          <label for="nameSmall" class="form-label">Establishment</label>
-                                          <input type="text" id="nameSmall" class="form-control" name="establishment" placeholder="Enter Building Name" />
+                                          <label for="addnameSmall" class="form-label">Establishment</label>
+                                          <input type="text" id="addnameSmall" class="form-control" name="establishment" placeholder="Enter Building Name" />
                                         </div>
                                       </div>
 
@@ -158,7 +158,8 @@
 
                             {{-- edit nearby --}}
                             @foreach ($near as $enear)
-                              <form action="{{ route('editnearby', ['id' => $enear->id])}}" method="POST">
+                            {{-- {{ route('editnearby', ['id' => 'default'])}} --}}
+                              <form action="" method="POST" id="editForm{{ $enear->id }}"> @csrf @method('PUT')
                                 <input type="hidden" name="nearby_id" value="{{ $enear->id }}">
                                 <div class="modal fade" id="edit{{ $prop->id }}" tabindex="-1" aria-hidden="true">
                                   <div class="modal-dialog modal-sm" role="document">
@@ -176,32 +177,16 @@
                                           <div class="col mb-3">
                                               <label for="nameSmall" class="form-label">Establishment</label>
                                               <div class="col mb-3">
-                                                  <input type="text" id="nameSmall" class="form-control" name="establishment" />
-                                                  <input type="hidden" id="establishment_id" name="establishment_id" />
+                                                
+                                                  <input type="text" id="nameSmall{{ $enear->id }}" class="form-control" name="establishment" 
+                                                  placeholder="Select an Item" value="{{ $enear->name }}"/>
+                                                  <input type="hidden" id="establishment_id{{ $enear->id }}" name="establishment_id" value="{{ $enear->id }}"/>
+                                                  {{-- <input type="text" id="nameSmall{{ $enear->id }}" class="form-control" name="establishment" placeholder="Select an Item"/>
+                                                  <input type="hidden" id="establishment_id{{ $enear->id }}" name="establishment_id" value="{{ $enear->id }}"/> --}}
                                               </div>
                                           </div>
                                         </div>
-
-                                        <div class="row g-2">
-                                          <div class="btn-group"> 
-                                            <button type="button" class="btn btn-outline-secondary dropdown-toggle typeButton"
-                                              data-bs-toggle="dropdown" aria-expanded="false">
-                                              Type
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                              <li><a class="dropdown-item" href="javascript:void(0);">Commercial Areas</a></li>
-                                              <li><a class="dropdown-item" href="javascript:void(0);">Hotels / Resorts</a></li>
-                                              <li><a class="dropdown-item" href="javascript:void(0);">Government Offices</a></li>
-                                              <li><a class="dropdown-item" href="javascript:void(0);">Malls/Shopping Centers</a></li>
-                                              <li><a class="dropdown-item" href="javascript:void(0);">Transportation Hubs</a></li>
-                                              <li><a class="dropdown-item" href="javascript:void(0);">Schools</a></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      @php
-                                          $types = $near->where('property', $prop->name)->pluck('type')->unique();
-                                      @endphp
+                                      @php $types = $near->where('property', $prop->name)->pluck('type')->unique(); @endphp
                                       @if ($types->isNotEmpty())
                                           <div class="accordion mt-3" id="accordion{{ $prop->id }}">
                                               @foreach ($types as $type)
@@ -233,8 +218,7 @@
 
                                       <div class="modal-footer">
                                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                                          Close
-                                        </button>
+                                          Close </button>
                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                       </div>
                                     </div>
@@ -518,28 +502,33 @@
       });
     </script>
 
-
-{{-- NOT OKAY --}}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
       const establishmentElements = document.querySelectorAll('.establishment');
 
       establishmentElements.forEach(function (element) {
           element.addEventListener('click', function () {
-              // Get the establishment ID from the data-id attribute
               const establishmentId = this.getAttribute('data-id');
-
-              // Get the establishment name
               const establishmentName = this.textContent;
 
-              // Update the visible input field with the establishment name
-              document.getElementById('nameSmall').value = establishmentName;
+              // Find the nearest parent form to ensure we are updating the correct input fields
+              let parentForm = this.closest('form');
 
-              // Update the hidden input field with the establishment ID
-              document.getElementById('establishment_id').value = establishmentId;
+              if (parentForm) {
+                  // Use querySelector within the found parent form to update the correct fields
+                  parentForm.querySelector("[id^='nameSmall']").value = establishmentName;
+                  parentForm.querySelector("[id^='nameSmall']").id = establishmentName;
+                  // Update the establishment_id input field within the same form
+                  parentForm.querySelector("[id^='establishment_id']").value = establishmentId;
+                  parentForm.querySelector("[id^='establishment_id']").id = establishmentId;
+                  const formId = parentForm.id;
+                    const route = "{{ route('editnearby', ['id' => 'default']) }}";
+                    parentForm.action = route.replace('default','' + establishmentId);
+              }
           });
       });
   });
+
 </script>
 
 

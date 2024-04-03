@@ -41,7 +41,8 @@ Route::delete('/deleteproperty/{id}', [AdminController::class, 'deleteproperty']
 Route::get('/other', [AdminController::class, 'other'])->name('other')->middleware('admin');
 Route::post('/editother/{id}', [AdminController::class, 'editother'])->name('editother');
 Route::post('/addnearby', [AdminController::class, 'addnearby'])->name('addnearby');
-Route::post('/editnearby/{id}', [AdminController::class, 'editnearby'])->name('editnearby');
+Route::put('/editnearby/{id}', [AdminController::class, 'editnearby'])->name('editnearby');
+// Route::put('/editnearby', [AdminController::class, 'editnearby'])->name('editnearby.no_id');
 
 Route::put('/editamenity/{id}', [AdminController::class, 'editamenity'])->name('editamenity');
 Route::put('/editvideo/{id}', [AdminController::class, 'editvideo'])->name('editvideo');

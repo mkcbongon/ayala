@@ -130,6 +130,7 @@ class AdminController extends Controller
         return view('admin/admindash/other', ['prop' => $prop, 'near' => $near, 'amenities' => $amenities, 'amenity' => $amenity, 'gallery' => $gallery]);
     }
       
+    // NEARBY
     public function addnearby(Request $request) {
         // nearby table
         $nearby = new NearbyModel();
@@ -144,18 +145,25 @@ class AdminController extends Controller
         
         return redirect()->back()->with('success', 'Data created successfully');
     }
-    public function editnearby($id, Request $request) {
-        $nearbyId = $request->input('nearby_id');
-    
-        $nearby = NearbyModel::find($nearbyId);
-    
-        $nearby->establishment = $request->input('establishment');
-    
-        $nearby->save();
+    public function editnearby($id = null, Request $request) {
+        if ($id == null) {
+            return redirect()->back();
+        }
+        else {
+            $nearbyId = $request->input($id);
         
-        return redirect()->back()->with('success', 'Data updated successfully');
+            $nearby = NearbyModel::find($nearbyId);
+        
+            $nearby->establishment = $request->input('establishment');
+        
+            $nearby->save();
+
+            return redirect()->back()->with('success', 'Data updated successfully');
+        }
+        
     }
-    
+
+    // AMENITIES
     public function editamenity($id, Request $request) {
         $amenity = PropamModel::find($id);
         $amn = PropamModel::where('property', $amenity->property)->get();
