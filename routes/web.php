@@ -50,6 +50,7 @@ Route::put('/editvideo/{id}', [AdminController::class, 'editvideo'])->name('edit
 Route::put('/add_img', [AdminController::class, 'add_img'])->name('add_img');
 Route::put('/edit_img/{id}', [AdminController::class, 'edit_img'])->name('edit_img');
 Route::put('/display/{id}', [AdminController::class, 'display'])->name('display');
+Route::delete('/deleteimg/{id}', [AdminController::class, 'deleteimg'])->name('deleteimg');
 
 
 // HOME

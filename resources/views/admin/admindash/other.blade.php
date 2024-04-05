@@ -121,7 +121,7 @@
                                       <div class="row">
                                         <div class="col mb-3">
                                           <label for="addnameSmall" class="form-label">Establishment</label>
-                                          <input type="text" id="addnameSmall" class="form-control" name="establishment" placeholder="Enter Building Name" />
+                                          <input type="text" id="addnameSmall" class="form-control" name="addestablishment" placeholder="Enter Building Name" />
                                         </div>
                                       </div>
 
@@ -179,10 +179,8 @@
                                               <div class="col mb-3">
                                                 
                                                   <input type="text" id="nameSmall{{ $enear->id }}" class="form-control" name="establishment" 
-                                                  placeholder="Select an Item" value="{{ $enear->name }}"/>
+                                                  placeholder="Select an Item"/>
                                                   <input type="hidden" id="establishment_id{{ $enear->id }}" name="establishment_id" value="{{ $enear->id }}"/>
-                                                  {{-- <input type="text" id="nameSmall{{ $enear->id }}" class="form-control" name="establishment" placeholder="Select an Item"/>
-                                                  <input type="hidden" id="establishment_id{{ $enear->id }}" name="establishment_id" value="{{ $enear->id }}"/> --}}
                                               </div>
                                           </div>
                                         </div>
@@ -363,7 +361,7 @@
                                         <div class="modal-body">
                                           <div class="row">
                                             <div class="input-group">
-                                              <input type="file" class="form-control" id="inputGroupFile02" name="url"/>
+                                              <input type="file" class="form-control" id="inputGroupFile02" name="addurl"/>
                                             </div>
                                           </div>
                                         </div>
@@ -385,7 +383,7 @@
                             {{-- edit img --}}
                             @foreach ($gallery->groupBy('img_property') as $imgProperty => $images)
                               @if ($imgProperty == $prop->name)
-                                <form id="displayImageForm{{ $prop->id }}" action="" method="POST">  @csrf  @method('PUT')
+                                <form id="displayImageForm{{ $prop->id }}" action="{{ route('display', ['id' => $prop->id])}}" method="POST">  @csrf  @method('PUT')
                                   <div class="modal fade" id="edit_img{{ $prop->id }}" tabindex="-1" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                       <div class="modal-content">
@@ -404,7 +402,7 @@
                                                             <input type="hidden" name="name" value="{{ $prop->name }}">
                                                             <input type="hidden" name="url" value="{{ $image->url }}">
                                                             <input class="form-check-input display-img-radio" type="radio" name="display_img" 
-                                                                id="display_img{{ $image->id }}" value="{{ $image->id }}" data-prop-id="{{ $prop->id }}"
+                                                                id="display_img{{ $image->id }}" value="{{ $image->url }}" data-prop-id="{{ $prop->id }}"
                                                                 @if($image->url == $prop->display_img) checked @endif />
                                                             <label class="form-check-label" for="display_img{{ $image->id }}">Display</label>
                                                         </div>
@@ -459,20 +457,28 @@
     </div>
     <!-- / Layout wrapper -->
 
-{{-- img edit --}}
+
+
+
+
+    {{-- img edit --}}
     <script>
       document.addEventListener('DOMContentLoaded', function () {
           const radios = document.querySelectorAll('.display-img-radio');
-          radios.forEach(radio => {
+      
+          radios.forEach(function(radio) {
               radio.addEventListener('change', function() {
-                  const propId = this.getAttribute('data-prop-id');
-                  const form = document.getElementById(`displayImageForm${propId}`);
-                  form.action = `/display/${this.value}`; 
+                  if (this.checked) {
+                      let propId = this.dataset.propId;
+                      let imageId = this.value;
+                      // let form = document.getElementById('displayImageForm' + propId);
+                      // form.action = `/display/${imageId}`; 
+                  }
               });
           });
       });
       </script>
-
+      
 
 
 
@@ -502,34 +508,32 @@
       });
     </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-      const establishmentElements = document.querySelectorAll('.establishment');
+    {{-- establishment passer and selected establishment id pass to route --}}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const establishmentElements = document.querySelectorAll('.establishment');
 
-      establishmentElements.forEach(function (element) {
-          element.addEventListener('click', function () {
-              const establishmentId = this.getAttribute('data-id');
-              const establishmentName = this.textContent;
+          establishmentElements.forEach(function (element) {
+              element.addEventListener('click', function () {
+                  const establishmentId = this.getAttribute('data-id');
+                  const establishmentName = this.textContent;
 
-              // Find the nearest parent form to ensure we are updating the correct input fields
-              let parentForm = this.closest('form');
+                  let parentForm = this.closest('form');
 
-              if (parentForm) {
-                  // Use querySelector within the found parent form to update the correct fields
-                  parentForm.querySelector("[id^='nameSmall']").value = establishmentName;
-                  parentForm.querySelector("[id^='nameSmall']").id = establishmentName;
-                  // Update the establishment_id input field within the same form
-                  parentForm.querySelector("[id^='establishment_id']").value = establishmentId;
-                  parentForm.querySelector("[id^='establishment_id']").id = establishmentId;
-                  const formId = parentForm.id;
-                    const route = "{{ route('editnearby', ['id' => 'default']) }}";
-                    parentForm.action = route.replace('default','' + establishmentId);
-              }
+                  if (parentForm) {
+                      parentForm.querySelector("[id^='nameSmall']").value = establishmentName;
+                      parentForm.querySelector("[id^='nameSmall']").id = establishmentName;
+                      parentForm.querySelector("[id^='establishment_id']").value = establishmentId;
+                      parentForm.querySelector("[id^='establishment_id']").id = establishmentId;
+                      const formId = parentForm.id;
+                        const route = "{{ route('editnearby', ['id' => 'default']) }}";
+                        parentForm.action = route.replace('default','' + establishmentId);
+                  }
+              });
           });
       });
-  });
 
-</script>
+    </script>
 
 
 

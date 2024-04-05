@@ -135,8 +135,14 @@ class AdminController extends Controller
         // nearby table
         $nearby = new NearbyModel();
 
+        $property = $request->input('property');
+
+        NearbyModel::where('property', $property)
+                    ->whereNull('establishment')
+                    ->delete();
+
         $nearby->property = $request->input('property') ?? '';
-        $nearby->establishment = $request->input('establishment') ?? '';
+        $nearby->establishment = $request->input('addestablishment') ?? '';
         $nearby->type = $request->input('type') ?? '';
 
         // dd($nearby->type);
@@ -145,21 +151,18 @@ class AdminController extends Controller
         
         return redirect()->back()->with('success', 'Data created successfully');
     }
-    public function editnearby($id = null, Request $request) {
-        if ($id == null) {
-            return redirect()->back();
-        }
-        else {
-            $nearbyId = $request->input($id);
-        
-            $nearby = NearbyModel::find($nearbyId);
-        
+    public function editnearby($id, Request $request) {
+        // dd($id);
+        //     
+            // dd($nearbyId);
+            $nearby = NearbyModel::find($id);
+        // dd($nearby);
             $nearby->establishment = $request->input('establishment');
         
             $nearby->save();
 
             return redirect()->back()->with('success', 'Data updated successfully');
-        }
+        
         
     }
 
@@ -194,30 +197,40 @@ class AdminController extends Controller
     
         $gallery = new GalleryModel();
         $gallery->img_property = $property;
-        $gallery->url = $this->uploadAndSave($request->file('url'), 'ayala', $gallery->url);
+        $gallery->url = $this->uploadAndSave($request->file('addurl'), 'ayala', $gallery->url);
         $gallery->save();
     
         return redirect()->back()->with('success', 'Data created successfully');
     }
     
     public function display($id, Request $request) {
-        $gallery = GalleryModel::find($id);
-        $gallery->img_property = $request->input('name');
+        // $gallery = GalleryModel::all();
+        $prop = PropertiesModel::find($id);
+        // $gallery->img_property = $request->input('name');
+        // dd($prop);
         
-        $prop = PropertiesModel::where('name', $gallery->img_property)->first();
+        $prop->display_img = $request->input('display_img');
+        // dd($prop->display_img);
+        // $img = PropertiesModel::where('name', $gallery->img_property)->first();
     
-        if ($prop) {
-            $newDisplayImg = $request->input('url');
-            // dd($newDisplayImg);
-            if (!is_null($prop->display_img)) {
-                $prop->display_img = $newDisplayImg;
-            } else {
-                $prop->display_img = $newDisplayImg;
-            }
+            // $newDisplayImg = $request->input('url');
+            // // dd($newDisplayImg);
+            // if (!is_null($img->display_img)) {
+            //     $img->display_img = $newDisplayImg;
+            // } else {
+            //     $img->display_img = $newDisplayImg;
+            // }
     
             $prop->save();
             return redirect()->back()->with('success', 'Data updated successfully');
-        }
+        
+    }
+    public function deleteimg($id, Request $request) {
+        $gallery = GalleryModel::find($id);
+        dd($gallery);
+        // $gallery->delete();
+        
+        // return redirect()->back()->with('success', 'Row deleted successfully.');
     }
     
     
