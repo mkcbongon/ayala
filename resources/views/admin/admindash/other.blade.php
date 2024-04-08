@@ -361,7 +361,7 @@
                                         <div class="modal-body">
                                           <div class="row">
                                             <div class="input-group">
-                                              <input type="file" class="form-control" id="inputGroupFile02" name="addurl"/>
+                                              <input type="file" class="form-control" id="inputGroupFile02" name="addurl[]" multiple/>
                                             </div>
                                           </div>
                                         </div>

@@ -19,6 +19,12 @@ class AdminController extends Controller
     }
 
     
+    public function requests() {
+        return view('admin/admindash/requests');
+
+    }
+
+    
     public function premierproperties() {
         $data = PropertiesModel::all();
         return view('admin/admindash/premierproperties', ['data' => $data]);
@@ -195,10 +201,15 @@ class AdminController extends Controller
                     ->whereNull('url')
                     ->delete();
     
-        $gallery = new GalleryModel();
-        $gallery->img_property = $property;
-        $gallery->url = $this->uploadAndSave($request->file('addurl'), 'ayala', $gallery->url);
-        $gallery->save();
+        $files = $request->file('addurl');
+        if($files) {
+            foreach ($files as $file) {
+                $gallery = new GalleryModel();
+                $gallery->img_property = $property;
+                $gallery->url = $this->upload($file, 'ayala', $gallery->url);
+                $gallery->save();
+            }
+        }
     
         return redirect()->back()->with('success', 'Data created successfully');
     }

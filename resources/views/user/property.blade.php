@@ -351,10 +351,12 @@
                         @if ($imgProperty == $data->name)
                         <div class="carousel-slides">
                             @foreach ($images as $image)
+                            {{-- <h1>{{ $image->url }}</h1> --}}
                             {{-- gallery table --}}
-                            <div class="carousel-slide" style="background-image: url({{asset('ayala/office-workers-employee-career-e1584927297195.jpg')}});"></div>
+                            <div class="carousel-slide" style="background-image: url('/{{ $image->url }}');"></div>
+                            {{-- <div class="carousel-slide" style="background-image: url({{asset('/ayala/office-workers-employee-career-e1584927297195.jpg')}});"></div>
                             <div class="carousel-slide" style="background-image: url({{asset('ayala/DSC2549-e1581518825446.jpg')}});"></div>
-                            <div class="carousel-slide" style="background-image: url({{asset('ayala/DSC2759.jpg')}});"></div>
+                            <div class="carousel-slide" style="background-image: url({{asset('ayala/DSC2759.jpg')}});"></div> --}}
                             @endforeach
                         </div>
                         @endif

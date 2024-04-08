@@ -25,10 +25,29 @@
 
     <ul class="menu-inner py-1">
       <!-- Dashboards -->
+      @if(request()->routeIs(['dashboard']))
       <li class="menu-item active open">
-        <a href="javascript:void(0);" class="menu-link">
+        @else 
+        <li class="menu-item">
+      @endif
+        <a href="{{ route('dashboard') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Dashboards">Dashboards</div>
+          {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}
+        </a>
+      </li>
+
+      {{-- REQUESTS --}}
+      @if(request()->routeIs(['requests']))
+      <li class="menu-item active open">
+        @else 
+        <li class="menu-item">
+      @endif
+        <a href="{{ route('requests') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-envelope"></i>
+          <div data-i18n="Requests">Requests</div>
+
+          {{-- COUNT REQUEST  --}}
           {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}
         </a>
       </li>
@@ -92,10 +111,8 @@
         
         <ul class="menu-sub">
           <li class="menu-item">
-            <a
-              href="{{ route('adminresidences') }}"
-              target="_self"
-              class="menu-link">
+            <a href="{{ route('adminresidences') }}"
+              target="_self" class="menu-link">
               <div data-i18n="Residences">Residences</div>
             </a>
           </li>
@@ -113,21 +130,25 @@
         <span class="menu-header-text">Properties</span>
       </li>
 
-      <li class="menu-item">
-        <a
-          href="{{ route('premierproperties') }}"
-          target="_self"
-          class="menu-link">
+      @if(request()->routeIs(['premierproperties']))
+      <li class="menu-item active open">
+        @else 
+        <li class="menu-item">
+      @endif
+        <a href="{{ route('premierproperties') }}"
+          target="_self" class="menu-link">
           <i class="menu-icon tf-icons bx"></i>
           <div data-i18n="Ayala Land Premier">Ayala Land Premier</div>
         </a>
       </li>
 
-      <li class="menu-item">
-        <a
-          href="{{ route('other') }}"
-          target="_self"
-          class="menu-link">
+      @if(request()->routeIs(['other']))
+      <li class="menu-item active open">
+        @else 
+        <li class="menu-item">
+      @endif
+        <a href="{{ route('other') }}"
+          target="_self" class="menu-link">
           <i class="menu-icon tf-icons bx"></i>
           <div data-i18n="Ayala Land Premier">Other Details</div>
         </a>

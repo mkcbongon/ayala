@@ -32,14 +32,195 @@
                 </div>
             </div>
 
+            {{-- C O N T A C T --}}
             <div class="c-header__ctas dt">
                 {{-- <a href="{{ route('contact') }}" --}}
-                <a href="tel:09298597655"
-                    class="o-button--bordered"><span></span><span></span><span class="text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                <a href="tel:09298597655">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
                         <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
                       </svg></span></a>
-
             </div>
+
+            {{-- A D V E R T I S E  M O D A L --}}
+            <div class="c-header__ctas dt">
+                <a href="{{ route('contact') }}" class="o-button--bordered"  
+                data-bs-toggle="modal"  data-bs-target="#adv"><span></span><span></span><span class="text">
+                        Advertise with us!</span></a>
+            </div>
+
+            <div class="modal fade" id="adv" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel3">Submit your Property</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col mb-0">
+                                <label for="fname" class="form-label">First Name</label>
+                                <input type="text" id="fname" class="form-control" placeholder="Fist Name" />
+                            </div>
+                            <div class="col mb-0">
+                                <label for="mname" class="form-label">Middle Name</label>
+                                <input type="text" id="mname" class="form-control" placeholder="Last Name" />
+                            </div>
+                            <div class="col mb-0">
+                                <label for="lname" class="form-label">Last Name</label>
+                                <input type="text" id="lname" class="form-control" placeholder="Last Name" />
+                            </div>
+                        </div>
+                      <div class="row g-2">
+                        <div class="col mb-0">
+                          <label for="emailLarge" class="form-label">Email</label>
+                          <input type="email" id="emailLarge" class="form-control" placeholder="xxxx@xxx.xx" />
+                        </div>
+                        <div class="col mb-0">
+                          <label for="dobLarge" class="form-label">DOB</label>
+                          <input type="date" id="dobLarge" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col mb-3">
+                            <label for="identification" class="form-label">Identification</label>
+                            <input type="file" class="form-control" id="inputGroupFile02" name="identification"/>
+                        </div>
+                      </div>
+                      <hr class="m-0" />
+                        <div class="row">
+                            <div class="col mb-3">
+                              <label for="name" class="form-label">Property</label>
+                              <input type="text" id="property" class="form-control" name="name" placeholder="Property Name" />
+                            </div>
+                          </div>
+                          {{-- !! --}}
+
+                          {{-- category --}}
+                          <input type="hidden" id="categoryInput" name="category"/>
+                          <div class="row">
+                            <div class="col mb-3">
+                              <button id="categoryButton" type="button" class="btn btn-outline-danger dropdown-toggle"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                  Category
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('Pre-Selling', 'categoryButton')">Pre-Selling</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('RFO', 'categoryButton')">RFO</a></li>
+                            </ul>
+                            </div>
+                          </div>
+                          {{-- !! --}}
+
+                          {{-- type --}}
+                          <input type="hidden" id="typeInput" name="type"/>
+                          <div class="row">
+                            <div class="col mb-3">
+                              <button id="typeButton" type="button" class="btn btn-outline-danger dropdown-toggle"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                  Type
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectType('Residential', 'typeButton')">Residential</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectType('Commercial', 'typeButton')">Commercial</a></li>
+                            </ul>
+                            </div>
+                          </div>
+                          {{-- !! --}}
+                        
+                          {{-- location --}}
+                          <div class="row">
+                            <div class="col mb-3">
+                              <label for="location" class="form-label">Location</label>
+                              <input type="text" id="location" class="form-control" name="location" placeholder="Location" />
+                            </div>
+                          </div>
+                          {{-- !! --}}
+
+                          {{-- price --}}
+                          <div class="input-group input-group-merge">
+                            <span class="input-group-text">₱</span>
+                            <input type="number" class="form-control" name="price"
+                              placeholder="100" aria-label="Amount (to the nearest dollar)" />
+                            <span class="input-group-text">.00</span>
+                          </div>
+                          {{--  --}}
+
+                          {{-- size --}}
+                          <input type="hidden" id="selectedSizesInput" name="selected_sizes" />
+                          <div class="card-body">
+                            <div class="row gy-3">
+                              <div class="col-md">
+                                <small class="text-light fw-medium d-block">Size</small>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="studioCheckbox" name="size[]" value="Studio" />
+                                  <label class="form-check-label" for="studioCheckbox">Studio</label>
+                                </div>
+                                <div class="form-check form-check-inline mt-3">
+                                  <input class="form-check-input" type="checkbox" id="1brCheckbox" name="size[]" value="1BR"/>
+                                  <label class="form-check-label" for="1brCheckbox">1BR</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="2brCheckbox" name="size[]" value="2BR"/>
+                                  <label class="form-check-label" for="2brCheckbox">2BR</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="3brCheckbox" name="size[]" value="3BR"/>
+                                  <label class="form-check-label" for="3brCheckbox">3BR</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="3brdeluxeCheckbox" name="size[]" value="3BR Deluxe"/>
+                                  <label class="form-check-label" for="3brdeluxeCheckbox">3BR Deluxe</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="3brpremierCheckbox" name="size[]" value="3BR Premier"/>
+                                  <label class="form-check-label" for="3brpremierCheckbox">3BR Premier</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="executive1brCheckbox" name="size[]" value="Executive"/>
+                                  <label class="form-check-label" for="executive1brCheckbox">Executive 1BR</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="houseandlotCheckbox" name="size[]" value="House and Lot"/>
+                                  <label class="form-check-label" for="houseandlotCheckbox">House and Lot</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="lotonlyCheckbox" name="size[]" value="Lot Only"/>
+                                  <label class="form-check-label" for="lotonlyCheckbox">Lot Only</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" id="penthouseCheckbox" name="size[]" value="Pent House"/>
+                                  <label class="form-check-label" for="penthouseCheckbox">Pent House</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {{-- size --}}
+
+                          {{-- description --}}
+                          <div class="row">
+                            <div class="col mb-3">
+                              <label for="description" class="form-label">Description</label>
+                              <textarea id="description" class="form-control" name="description" rows="3"></textarea>
+                            </div>
+                          </div>
+                          {{--  --}}
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="button" class="btn" style="background-color: #30704c; color: #fff;">Submit</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        
         </div>
 
 
