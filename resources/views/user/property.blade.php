@@ -457,23 +457,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    {{-- <div class="tab-pane fade" id="list-messages">
-                                      Ice cream dessert candy sugar plum croissant cupcake tart pie apple pie. Pastry
-                                      chocolate chupa chups tiramisu. Tiramisu cookie oat cake. Pudding brownie bonbon. Pie
-                                      carrot cake chocolate macaroon. Halvah jelly jelly beans cake macaroon jelly-o. Danish
-                                      pastry dessert gingerbread powder halvah. Muffin bonbon fruitcake dragée sweet sesame
-                                      snaps oat cake marshmallow cheesecake. Cupcake donut sweet bonbon cheesecake soufflé
-                                      chocolate bar.
-                                    </div>
-                                    <div class="tab-pane fade" id="list-settings">
-                                      Marzipan cake oat cake. Marshmallow pie chocolate. Liquorice oat cake donut halvah
-                                      jelly-o. Jelly-o muffin macaroon cake gingerbread candy cupcake. Cake lollipop lollipop
-                                      jelly brownie cake topping chocolate. Pie oat cake jelly. Lemon drops halvah jelly
-                                      cookie bonbon cake cupcake ice cream. Donut tart bonbon sweet roll soufflé gummies
-                                      biscuit. Wafer toffee topping jelly beans icing pie apple pie toffee pudding. Tiramisu
-                                      powder macaroon tiramisu cake halvah.
-                                    </div> --}}
                                   </div>
                                 </div>
                               </div>
@@ -485,6 +468,7 @@
                 
 
                 {{-- VIDEOOOOOOOOO --}}
+                @if(!$data->video == null)
                 <section class="o-sketch--house-left">
                     <div class="o-container--full laxWrap" id="">
                         <div class="c-article o-heading-eyebrow">
@@ -497,78 +481,8 @@
                         </div>
                     </div>
                 </section>
+                @endif
 
-                {{-- <section class="o-container--full">
-                    <div
-                        class="c-featured c-featured--overlay c-featured--shadowed"
-                    >
-                        <div class="js-video c-featured__video [ u-df-dt u-df-dt-jc-sb ]">
-                            <iframe width="100%" height="478" frameborder="0"
-                                src="https://www.youtube.com/embed/0iYsBnj2BUk"> 
-                            </iframe>
-                        </div>
-                    </div>
-                </section> --}}
-
-                {{-- <div class="o-container--full" id="">
-                    <div class="c-image-text--ta">
-                        <figure>
-                            <img src="{{ asset($career->img4) }}" alt=""/>
-                        </figure>
-
-                        <div class="  " style="transition: transform 15s cubic-bezier(0, 1, 0.5, 1);">
-                            <h2></h2>
-                            <p></p>
-                        </div>
-                    </div>
-                </div> --}}
-
-                {{-- <section class="o-sketch--house-left">
-                    <div class="o-container--full laxWrap" id="">
-                        <div class="c-article o-heading-eyebrow">
-                            <span>Our Values</span>
-                            <h1>
-                                {{ $career->title2 }}
-                            </h1>
-                            <p>
-                                {{ $career->stmt2 }}
-                            </p>
-                        </div>
-                    </div>
-                </section> --}}
-
-                {{-- <div class="o-container--full" id="">
-                    <div class="c-image-text--edge-la">
-                        <figure>
-                            <img
-                                src="{{ asset($career->img5) }}"
-                                alt=""
-                            />
-                        </figure>
-
-                        <div
-                            class="  "
-                            style="
-                                transition: transform 15s
-                                    cubic-bezier(0, 1, 0.5, 1);
-                            "
-                        >
-                            <h2></h2>
-                            <p></p>
-                            <h3>{{ $career->h1 }}</h3>
-                            <p>{{ $career->h1_stmt }}</p>
-                            <h3>{{ $career->h2 }}</h3>
-                            <p>{{ $career->h2_stmt }}</p>
-                            <h3>{{ $career->h3 }}</h3>
-                            <p>{{ $career->h3_stmt }}</p>
-                            <h3>{{ $career->h4 }}</h3>
-                            <p>{{ $career->h4_stmt }}</p>
-                            <h3>{{ $career->h5 }}</h3>
-                            <p>{{ $career->h5_stmt }}</p>
-                            <p></p>
-                        </div>
-                    </div>
-                </div> --}}
 
                 <section id="app" class="o-container--full">
                     <div id="" class="o-heading-eyebrow">

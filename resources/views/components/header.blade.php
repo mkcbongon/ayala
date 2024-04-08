@@ -41,6 +41,7 @@
                       </svg></span></a>
             </div>
 
+            @if(request()->routeIs(['properties', 'property']))
             {{-- A D V E R T I S E  M O D A L --}}
             <div class="c-header__ctas dt">
                 <a href="{{ route('contact') }}" class="o-button--bordered"  
@@ -220,6 +221,7 @@
                   </div>
                 </div>
             </div>
+            @endif
         
         </div>
 
