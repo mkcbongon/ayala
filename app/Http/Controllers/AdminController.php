@@ -215,22 +215,9 @@ class AdminController extends Controller
     }
     
     public function display($id, Request $request) {
-        // $gallery = GalleryModel::all();
         $prop = PropertiesModel::find($id);
-        // $gallery->img_property = $request->input('name');
-        // dd($prop);
         
         $prop->display_img = $request->input('display_img');
-        // dd($prop->display_img);
-        // $img = PropertiesModel::where('name', $gallery->img_property)->first();
-    
-            // $newDisplayImg = $request->input('url');
-            // // dd($newDisplayImg);
-            // if (!is_null($img->display_img)) {
-            //     $img->display_img = $newDisplayImg;
-            // } else {
-            //     $img->display_img = $newDisplayImg;
-            // }
     
             $prop->save();
             return redirect()->back()->with('success', 'Data updated successfully');
