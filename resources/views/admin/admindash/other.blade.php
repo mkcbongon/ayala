@@ -296,7 +296,11 @@
                           </td>
 
                           <td>
-                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#video{{ $prop->id }}">{{ $prop->video }}</button>
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#video{{ $prop->id }}">
+                              @if ($prop->video == null)
+                                add video
+                              @endif
+                              {{ $prop->video }}</button>
 
                             <form action="{{ route('editvideo', ['id' => $prop->id])}}" method="POST"> @csrf @method('PUT')
                               <div class="modal fade" id="video{{ $prop->id }}" tabindex="-1" aria-hidden="true">

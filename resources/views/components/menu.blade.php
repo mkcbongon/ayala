@@ -43,9 +43,28 @@
         @else 
         <li class="menu-item">
       @endif
-        <a href="{{ route('requests') }}" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-envelope"></i>
-          <div data-i18n="Requests">Requests</div>
+        <a href="{{ route('requests') }}" 
+          target="_self" class="menu-link"> 
+            <i class="menu-icon tf-icons bx bx-envelope"></i> 
+            <div data-i18n="Ayala Land Premier">Requests</div> 
+        </a>
+
+          {{-- COUNT REQUEST  --}}
+          {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}
+        </a>
+      </li>
+
+      
+      @if(request()->routeIs(['upload.index']))
+      <li class="menu-item active open">
+        @else 
+        <li class="menu-item">
+      @endif
+        <a href="{{ route('upload.index') }}" 
+          target="_self" class="menu-link"> 
+            <i class="menu-icon tf-icons bx"></i> 
+            <div data-i18n="Ayala Land Premier">Uploaded Properties</div> 
+        </a>
 
           {{-- COUNT REQUEST  --}}
           {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}

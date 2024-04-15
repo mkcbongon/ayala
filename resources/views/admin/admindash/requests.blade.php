@@ -64,7 +64,7 @@
               <hr class="my-5" />
               <div class="card">
                 <div class="card-header flex-column flex-md-row">
-                  <h5 class="card-header">REQUESTS FOR ADVESTISEMENT</h5>
+                  <h5 class="card-header">REQUESTS FOR ADVERTISEMENT</h5>
                   
                 </div>
 
@@ -75,33 +75,129 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
+                          <th>#</th>
+                          <th>Name</th>
                           <th>Email</th>
-                          <th>Contact</th>
-                          <th></th>
-                          <th>Location</th>
-                          <th>Price</th>
-                          <th>Size</th>
-                          <th>Description</th>
-                          <th>Actions</th>
+                          <th>Property</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr> 
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td>
-                            <button type="button" class="btn btn-xs btn-warning" data-bs-toggle="modal">Accept</button>
-                            
-                            
-                            
-                                
-                          </td>
-                        </tr>
+                          @foreach ($req as $request)
+                        <tr>
+                            <td>{{ $request->id }}</td>
+                            <td>{{ $request->lname }}, {{ $request->fname }} {{ $request->mname }}</td>
+                            <td>{{ $request->email }}</td>
+                            <td>
+                              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#req{{ $request->id }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                                  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                                </svg>&nbsp;
+                                {{ $request->property }}
+                                </button>
+                              
+                              
+          
+                                  <!-- Modal 1-->
+                                  <div class="modal fade" id="req{{ $request->id }}" aria-labelledby="modalToggleLabel"
+                                    tabindex="-1" style="display: none" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="modalToggleLabel">{{ $request->property }} by {{ $request->fname }} {{ $request->lname }}</h5>
+                                          <button type="button" class="btn-close"
+                                            data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        {{--  --}}
+                                        <div class="modal-body" >
+                                          <div>
+                                            <img src="{{ $request->idcard }}" alt="Photo" style="width: 450px; height: 250px; object-fit: cover;">
+                                          </div>
+                                          Ticket #: {{ $request->id }} <br>
+                                          First Name: {{ $request->fname }} <br>
+                                          Middle Name: {{ $request->mname }} <br>
+                                          Last Name: {{ $request->lname }} <br>
+                                          Email: {{ $request->email }} <br>
+                                          DOB: {{ $request->id }} <br>
+                                          <hr class="m-0" /><br>
+                                          Property: {{ $request->property }} <br>
+                                          Category: {{ $request->category }} <br>
+                                          Type: {{ $request->type }} <br>
+                                          Location: {{ $request->location }} <br>
+                                          Price: {{ $request->price }} <br>
+                                          <div style="white-space: pre-line;">
+                                            Description: {{ $request->description }} 
+                                        </div>
+                                        </div>
+                                        {{--  --}}
+                                        <div class="modal-footer">
+                                          <button class="btn btn-primary" data-bs-target="#upload{{ $request->id }}"
+                                            data-bs-toggle="modal" data-bs-dismiss="#upload">
+                                            View Images
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- Uploads -->
+                                  <div
+                                    class="modal fade"
+                                    id="upload{{ $request->id }}"
+                                    aria-hidden="true"
+                                    aria-labelledby="modalToggleLabel2"
+                                    tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="modalToggleLabel2">{{ $request->property }} Images</h5>
+                                          <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <div class="row">
+                                            @php $images = explode(', ', $request->image); @endphp
+                                                @foreach ($images as $image)
+                                              <div class="col-md-4 text-center">
+                                                <img src="{{ $image }}" alt="Image" class="img-fluid custom-img">
+                                                
+                                              </div>
+                                              @endforeach
+                                          </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button
+                                            class="btn btn-primary"
+                                            data-bs-target="#req{{ $request->id }}"
+                                            data-bs-toggle="modal"
+                                            data-bs-dismiss="modal">
+                                            Back
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </td>
+                            <td>
+                              @if ($request->status == "PENDING")
+                                <form action="{{ route('accept', $request->id) }}" method="post"> @csrf
+                                  <button type="submit" class="btn btn-xs btn-warning" data-bs-toggle="modal">Accept</button>
+                                </form>
+                                <form action="{{ route('decline', $request->id) }}" method="post"> @csrf
+                                  <button type="submit" class="btn btn-xs btn-danger" data-bs-toggle="modal">Decline</button>
+                                </form>
+
+                                @elseif ($request->status == "ACCEPTED")
+                                <i>ACCEPTED</i>
+                                @elseif ($request->status == "DECLINED")
+                                <i>DECLINED</i>
+                              @endif
+                            </td>
+                          </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

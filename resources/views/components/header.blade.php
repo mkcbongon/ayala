@@ -14,12 +14,11 @@
                 {{-- NAVBAR --}}
                 <div class="c-header__content">
                     <nav id="js-nav-dt" class="nav is-active">
-                        {{-- @if(request()->routeIs(['home', 'adminhome'])) --}}
                         <div class="js-nav__link c-nav__link" data-megamenu="0">
                             <a href="{{ route('about') }}" class=""
                             rel="noopener noreferrer">ABOUT US</a>
                         </div>
-                        <div class="js-nav__link c-nav__link" >
+                        <div class="js-nav__link c-nav__link" data-megamenu="1">
                             <a href="{{ route('premier') }}" class=""
                                 rel="noopener noreferrer">AYALA LAND PREMIER</a>
                         </div>
@@ -27,7 +26,6 @@
                             <a href="{{ route('properties') }}" class=""
                                 rel="noopener noreferrer">PROPERTIES</a>
                         </div>
-                        {{-- @endif --}}
                     </nav>
                 </div>
             </div>
@@ -43,187 +41,168 @@
 
             @if(request()->routeIs(['properties', 'property']))
             {{-- A D V E R T I S E  M O D A L --}}
-            <div class="c-header__ctas dt">
-                <a href="{{ route('contact') }}" class="o-button--bordered"  
-                data-bs-toggle="modal"  data-bs-target="#adv"><span></span><span></span><span class="text">
-                        Advertise with us!</span></a>
-            </div>
-
-            <div class="modal fade" id="adv" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel3">Submit your Property</h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col mb-0">
-                                <label for="fname" class="form-label">First Name</label>
-                                <input type="text" id="fname" class="form-control" placeholder="Fist Name" />
-                            </div>
-                            <div class="col mb-0">
-                                <label for="mname" class="form-label">Middle Name</label>
-                                <input type="text" id="mname" class="form-control" placeholder="Last Name" />
-                            </div>
-                            <div class="col mb-0">
-                                <label for="lname" class="form-label">Last Name</label>
-                                <input type="text" id="lname" class="form-control" placeholder="Last Name" />
-                            </div>
-                        </div>
-                      <div class="row g-2">
-                        <div class="col mb-0">
-                          <label for="emailLarge" class="form-label">Email</label>
-                          <input type="email" id="emailLarge" class="form-control" placeholder="xxxx@xxx.xx" />
-                        </div>
-                        <div class="col mb-0">
-                          <label for="dobLarge" class="form-label">DOB</label>
-                          <input type="date" id="dobLarge" class="form-control" />
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col mb-3">
-                            <label for="identification" class="form-label">Identification</label>
-                            <input type="file" class="form-control" id="inputGroupFile02" name="identification"/>
-                        </div>
-                      </div>
-                      <hr class="m-0" />
-                        <div class="row">
-                            <div class="col mb-3">
-                              <label for="name" class="form-label">Property</label>
-                              <input type="text" id="property" class="form-control" name="name" placeholder="Property Name" />
-                            </div>
-                          </div>
-                          {{-- !! --}}
-
-                          {{-- category --}}
-                          <input type="hidden" id="categoryInput" name="category"/>
-                          <div class="row">
-                            <div class="col mb-3">
-                              <button id="categoryButton" type="button" class="btn btn-outline-danger dropdown-toggle"
-                                      data-bs-toggle="dropdown" aria-expanded="false">
-                                  Category
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('Pre-Selling', 'categoryButton')">Pre-Selling</a></li>
-                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('RFO', 'categoryButton')">RFO</a></li>
-                            </ul>
-                            </div>
-                          </div>
-                          {{-- !! --}}
-
-                          {{-- type --}}
-                          <input type="hidden" id="typeInput" name="type"/>
-                          <div class="row">
-                            <div class="col mb-3">
-                              <button id="typeButton" type="button" class="btn btn-outline-danger dropdown-toggle"
-                                      data-bs-toggle="dropdown" aria-expanded="false">
-                                  Type
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectType('Residential', 'typeButton')">Residential</a></li>
-                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectType('Commercial', 'typeButton')">Commercial</a></li>
-                            </ul>
-                            </div>
-                          </div>
-                          {{-- !! --}}
-                        
-                          {{-- location --}}
-                          <div class="row">
-                            <div class="col mb-3">
-                              <label for="location" class="form-label">Location</label>
-                              <input type="text" id="location" class="form-control" name="location" placeholder="Location" />
-                            </div>
-                          </div>
-                          {{-- !! --}}
-
-                          {{-- price --}}
-                          <div class="input-group input-group-merge">
-                            <span class="input-group-text">₱</span>
-                            <input type="number" class="form-control" name="price"
-                              placeholder="100" aria-label="Amount (to the nearest dollar)" />
-                            <span class="input-group-text">.00</span>
-                          </div>
-                          {{--  --}}
-
-                          {{-- size --}}
-                          <input type="hidden" id="selectedSizesInput" name="selected_sizes" />
-                          <div class="card-body">
-                            <div class="row gy-3">
-                              <div class="col-md">
-                                <small class="text-light fw-medium d-block">Size</small>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="studioCheckbox" name="size[]" value="Studio" />
-                                  <label class="form-check-label" for="studioCheckbox">Studio</label>
-                                </div>
-                                <div class="form-check form-check-inline mt-3">
-                                  <input class="form-check-input" type="checkbox" id="1brCheckbox" name="size[]" value="1BR"/>
-                                  <label class="form-check-label" for="1brCheckbox">1BR</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="2brCheckbox" name="size[]" value="2BR"/>
-                                  <label class="form-check-label" for="2brCheckbox">2BR</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="3brCheckbox" name="size[]" value="3BR"/>
-                                  <label class="form-check-label" for="3brCheckbox">3BR</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="3brdeluxeCheckbox" name="size[]" value="3BR Deluxe"/>
-                                  <label class="form-check-label" for="3brdeluxeCheckbox">3BR Deluxe</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="3brpremierCheckbox" name="size[]" value="3BR Premier"/>
-                                  <label class="form-check-label" for="3brpremierCheckbox">3BR Premier</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="executive1brCheckbox" name="size[]" value="Executive"/>
-                                  <label class="form-check-label" for="executive1brCheckbox">Executive 1BR</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="houseandlotCheckbox" name="size[]" value="House and Lot"/>
-                                  <label class="form-check-label" for="houseandlotCheckbox">House and Lot</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="lotonlyCheckbox" name="size[]" value="Lot Only"/>
-                                  <label class="form-check-label" for="lotonlyCheckbox">Lot Only</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="penthouseCheckbox" name="size[]" value="Pent House"/>
-                                  <label class="form-check-label" for="penthouseCheckbox">Pent House</label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          {{-- size --}}
-
-                          {{-- description --}}
-                          <div class="row">
-                            <div class="col mb-3">
-                              <label for="description" class="form-label">Description</label>
-                              <textarea id="description" class="form-control" name="description" rows="3"></textarea>
-                            </div>
-                          </div>
-                          {{--  --}}
-
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                        Close
-                      </button>
-                      <button type="button" class="btn" style="background-color: #30704c; color: #fff;">Submit</button>
-                    </div>
-                  </div>
+                <div class="c-header__ctas dt">
+                    <a href="javascript:void(0);" class="o-button--bordered"  
+                    data-bs-toggle="modal"  data-bs-target="#adv"><span></span><span></span><span class="text">
+                            Submit your Property!</span></a>
                 </div>
-            </div>
+
+                <div class="modal fade" id="adv" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel3">Submit your Property</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <form id="uploadform" action="{{ route('submitreq') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <!-- Display validation errors -->
+                                        <input type="hidden" name="unique_id" value="{{ random_int(1000, 9999) }}">
+
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        <!-- Input fields for first, middle, and last name -->
+                                        <div class="col mb-0">
+                                            <label for="firstname" class="form-label">First Name</label>
+                                            <input type="text" id="firstname" name="fname" class="form-control" placeholder="First Name" required/>
+                                        </div>
+                                        <div class="col mb-0">
+                                            <label for="midlename" class="form-label">Middle Name</label>
+                                            <input type="text" id="midlename" name="mname" class="form-control" placeholder="Middle Name" required/>
+                                        </div>
+                                        <div class="col mb-0">
+                                            <label for="lastname" class="form-label">Last Name</label>
+                                            <input type="text" id="lastname" name="lname" class="form-control" placeholder="Last Name" required/>
+                                        </div>
+                                        </div>
+                                        <!-- Input fields for email and date of birth -->
+                                        <div class="row g-2">
+                                            <div class="col mb-0">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" id="email" name="email" class="form-control" placeholder="xxxx@xxx.xx" required />
+                                            </div>
+                                            <div class="col mb-0">
+                                                <label for="birth" class="form-label">Date of Birth</label>
+                                                <input type="date" id="birth" name="dob" class="form-control" required />
+                                            </div>
+                                        </div>
+                                        <!-- Input field for identification file -->
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="image" class="form-label">Government ID</label>
+                                                <input type="file" class="form-control" id="image" name="idcard" required/>
+                                            </div>
+                                        </div>
+                                        <hr class="m-0" />
+                                        <div class="row">
+                                            <!-- Input field for property name -->
+                                            <div class="col mb-3">
+                                                <label for="property" class="form-label">Property</label>
+                                                <input type="text" id="property" class="form-control" name="property" placeholder="Property Name" required/>
+                                            </div>
+                                        </div>
+                                        <!-- Category dropdown menu -->
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="category" class="form-label">Category</label>
+                                                <select id="category" name="category" class="form-select" required>
+                                                    <option value="">Select Category</option>
+                                                    <option value="Pre-Selling">Pre-Selling</option>
+                                                    <option value="RFO">RFO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- Type dropdown menu -->
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="type" class="form-label">Type</label>
+                                                <select id="type" name="type" class="form-select" required>
+                                                    <option value="">Select Type</option>
+                                                    <option value="Residential">Residential</option>
+                                                    <option value="Commercial">Commercial</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- Input field for location -->
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="location" class="form-label">Location</label>
+                                                <input type="text" id="location" class="form-control" name="location" placeholder="Location" required />
+                                            </div>
+                                        </div>
+                                        <!-- Input field for price -->
+                                        <div class="input-group input-group-merge">
+                                            <span class="input-group-text">₱</span>
+                                            <input type="number" class="form-control" id="price" name="price" placeholder="100" aria-label="Amount (to the nearest dollar)" />
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="description" class="form-label">Description</label>
+                                                <textarea id="description" class="form-control" name="description" required rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="image" class="form-label">Property Images</label>
+                                                <input type="file" class="form-control" id="image" name="uploads[]" multiple/>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn" style="background-color: #30704c; color: #fff;" 
+                                                >Submit</button>
+                                    
+
+                                            {{-- modal
+                                            <form action="{{ route('uploadreq') }}"  method="POST" enctype="multipart/form-data"> @csrf 
+                                                
+                                                <input type="hidden" name="req_no" value="{{ random_int(1000, 9999) }}">
+                                                <div class="modal fade" id="upload" aria-hidden="true"
+                                                    aria-labelledby="modalToggleLabel2" tabindex="-1">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                        <h5 class="modal-title" id="modalToggleLabel2"> Images</h5>
+                                                        <button type="button" class="btn-close"
+                                                            data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="col mb-3">
+                                                                    <label for="image" class="form-label">Upload Images</label>
+                                                                    <input type="file" class="form-control" id="img" name="img[]" multiple/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="submit" class="btn" 
+                                                        style="background-color: #30704c; color: #fff;">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </form> --}}
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             @endif
-        
-        </div>
+        @if(!request()->routeIs(['properties','property']))
+            </div>
+        @endif
 
 
 
@@ -249,134 +228,16 @@
             </div>
 
 
-            
-            {{-- <div class="c-mega-menu" data-megamenuid="1" style="opacity: 0;">
-                <div class="[ u-df-dt  u-df-dt-fw-w ] ">
-                    <div class="c-mega-menu__group-link">
-                        <h4>BROWSE<br> BY RESIDENTIAL <br>BRAND</h4>
-                        <ul>
-                        </ul>
-                    </div>
-                    <div class="c-mega-menu__group-link">
-                        <h4>AYALA LAND RESIDENCES</h4>
-                        <ul>
-                            <li>
-                                <a href="{{ route('premier') }}"><span>Ayala
-                                        Land Premier</span></a>
-                            </li>
-                            <li>
-                                <a href="{{ route('alveo') }}"><span>Alveo</span></a>
-                            </li>
-                            <li>
-                                <a href="{{ route('avida') }}"><span>Avida</span></a>
-                            </li>
-                            <li>
-                                <a href="{{ route('amaia') }}"><span>Amaia</span></a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ route('bellavita') }}"><span>BellaVita</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c-mega-menu__group-link">
-                        <h4>BROWSE<br>BY LOCATION</h4>
-                        <ul>
-                        </ul>
-                    </div>
-                    <div class="c-mega-menu__group-link">
-                        <h4>METRO MANILA</h4>
-                        <ul>
-                            <li>
-                                <a href="{{ route('makati') }}"><span>Makati
-                                        City</span></a>
-                            </li>
-                            <li>
-                                <a href="https://www.ayalaland.com.ph/residences/manila-city/"><span>Manila
-                                        City</span></a>
-                            </li>
-                            <li>
-                                <a href="https://www.ayalaland.com.ph/residences/mandaluyong-city/"><span>Mandaluyong
-                                        City</span></a>
-                            </li>
-                            <li>
-                                <a href="https://www.ayalaland.com.ph/residences/muntinlupa-city/"><span>Muntinlupa
-                                        City</span></a>
-                            </li>
-                            <li>
-                                <a href="https://www.ayalaland.com.ph/residences/paranaque-city/"><span>Parañaque
-                                        City</span></a>
-                            </li>
-                            <li>
-                                <a href="https://www.ayalaland.com.ph/residences/pasig-city/"><span>Pasig
-                                        City</span></a>
-                            </li>
-                            <li>
-                                <a href="https://www.ayalaland.com.ph/residences/quezon-city/"><span>Quezon
-                                        City</span></a>
-                            </li>
-                            <li>
-                                <a href="https://www.ayalaland.com.ph/residences/taguig-city/"><span>Taguig
-                                        City</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c-mega-menu__group-link">
-                        <h4>Luzon</h4>
-                        <ul>
-                            <li>
-                                <a
-                                    href="https://www.ayalaland.com.ph/residences/residences-in-laguna/"><span>Laguna</span></a>
-                            </li>
-                            <li>
-                                <a href="https://www.ayalaland.com.ph/estates/evo-city/"><span>Evo
-                                        City</span></a>
-                            </li>
-                            <li>
-                                <a
-                                    href="{{ route('batangas') }}"><span>Batangas</span></a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.ayalaland.com.ph/residences/pampanga/"><span>Pampanga</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c-mega-menu__group-link">
-                        <h4>Visayas</h4>
-                        <ul>
-                            <li>
-                                <a
-                                    href="https://www.ayalaland.com.ph/residences/residences-in-bacolod-city/"><span>Bacolod</span></a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.ayalaland.com.ph/residences/residences-in-cebu-city/"><span>Cebu</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c-mega-menu__group-link">
-                        <h4>Mindanao</h4>
-                        <ul>
-                            <li>
-                                <a
-                                    href="https://www.ayalaland.com.ph/residences/residences-in-cagayan-de-oro-city/"><span>Cagayan
-                                        De Oro</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> --}}
 
 
 
             <div class="c-mega-menu" data-megamenuid="2" style="opacity: 0;">
                 <div class="[ u-df-dt  u-df-dt-fw-w ] ">
-                    <a href="{{ route('properties', 'RFO') }}" class="c-mega-menu__link " style="margin-left: 300px">
+                    <a href="{{ route('properties', 'Pre-Selling') }}" class="c-mega-menu__link " style="margin-left: 300px">
                         <h4>FOR SALE</h4>
                         <p>Discover Your Dream Home: Elegant and sophisticated, this property offers unmatched luxury and a prime location for discerning buyers. A true dream home.</p>
                     </a>
-                    <a href="{{ route('properties', 'Pre-Selling') }}"
+                    <a href="{{ route('properties', 'RFO') }}"
                         class="c-mega-menu__link ">
                         <h4>FOR LEASE</h4>
                         <p>Elevate Your Lifestyle: Modern, convenient, and stylish, this leased property provides a luxurious living space with top-notch amenities in a prime location.</p>
@@ -386,281 +247,7 @@
 
 
 
-            {{-- <div class="box c-mega-menu__links" data-megaid="03">
-                <div class="box">
-                    <div class="c-mega-menu__tabs is-active">
-                        <a href="javascript:void(0);" class="js-back back-0">Businesses</a>
-                        <div class="js-tab mb c-mega-menu__tab" data-tabcontent="00">
-                            <h4>RESIDENCES</h4>
-                            <p>Condominiums and homes in strategic locations.</p>
-                        </div>
-                        <div class="js-tab mb c-mega-menu__tab" data-tabcontent="01">
-                            <h4>OFFICES</h4>
-                            <p>Corporate centers and co-working facilities for a diverse clientele.</p>
-                        </div>
-                        <div class="js-tab mb c-mega-menu__tab" data-tabcontent="02">
-                            <h4>MALLS</h4>
-                            <p>Shopping districts with innovative retail and entertainment options</p>
-                        </div>
-                        <div class="js-tab mb c-mega-menu__tab" data-tabcontent="03">
-                            <h4>HOTELS &amp; RESORTS</h4>
-                            <p>Accommodations for business and leisure</p>
-                        </div>
-                        <div class="js-tab mb c-mega-menu__tab" data-tabcontent="04">
-                            <h4>SERVICE BUSINESSES</h4>
-                            <p>Key support organizations of Ayala Land </p>
-                        </div>
-                    </div>
-
-                    <div class="c-mega-menu__tabs">
-                        <div class="js-tab-content c-mega-menu__tab-content " data-tabid="00">
-                            <a href="javascript:void(0);" class="js-back back-1">
-                                RESIDENCES </a>
-                            <a href="https://www.ayalaland.com.ph/residences-overview/" class="goto_link">
-                                Go To RESIDENCES Page
-                            </a>
-                            <div class="c-mega-menu__row">
-                                <h4>BROWSE BY <br> RESIDENTIAL BRAND</h4>
-                                <div class="c-mega-menu__inner-col">
-                                    <div class="">
-                                        <h4></h4>
-                                        <ul>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/ayala-land-premier/">Ayala
-                                                    Land Premier</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/alveo/">Alveo</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/avida/">Avida</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/amaia/">Amaia</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/bella-vita/">BellaVita</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="c-mega-menu__row">
-                                <h4>BROWSE BY LOCATION</h4>
-                                <div class="c-mega-menu__inner-col">
-                                    <div class="">
-                                        <h4>METRO MANILA</h4>
-                                        <ul>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/makati-city/">Makati
-                                                    City</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/manila-city/">Manila
-                                                    City</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/mandaluyong-city/">Mandaluyong
-                                                    City</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/muntinlupa-city/">Muntinlupa
-                                                    City</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/paranaque-city/">Parañaque
-                                                    City</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/pasig-city/">Pasig
-                                                    City</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/quezon-city/">Quezon
-                                                    City</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/taguig-city/">Taguig
-                                                    City</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="">
-                                        <h4>REGIONAL</h4>
-                                        <ul>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/luzon/">Luzon</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/visayas/">Visayas</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/residences/mindanao/">Mindanao</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="js-tab-content c-mega-menu__tab-content " data-tabid="01">
-                            <a href="javascript:void(0);" class="js-back back-1">
-                                OFFICES </a>
-                            <a href="https://www.ayalaland.com.ph/offices/" class="goto_link">
-                                Go To OFFICES Page
-                            </a>
-                            <div class="c-mega-menu__row">
-                                <h4>BROWSE BY LOCATION</h4>
-                                <div class="c-mega-menu__inner-col">
-                                    <div class="">
-                                        <h4></h4>
-                                        <ul>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/offices/#metro-manila">Metro
-                                                    Manila</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/offices/#luzon">Luzon</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/offices/#visayas-and-mindanao">Visayas
-                                                    &amp; Mindanao</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="js-tab-content c-mega-menu__tab-content " data-tabid="02">
-                            <a href="javascript:void(0);" class="js-back back-1">
-                                MALLS </a>
-                            <a href="https://www.ayalaland.com.ph/malls/" class="goto_link">
-                                Go To MALLS Page
-                            </a>
-                            <div class="c-mega-menu__row">
-                                <h4>BROWSE BY LOCATION</h4>
-                                <div class="c-mega-menu__inner-col">
-                                    <div class="">
-                                        <h4></h4>
-                                        <ul>
-                                            <li>
-                                                <a href="https://www.ayalaland.com.ph/malls/#metro-manila">Metro
-                                                    Manila</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/malls/#luzon">Luzon</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/malls/#visayas-and-mindanao">Visayas
-                                                    &amp; Mindanao</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="js-tab-content c-mega-menu__tab-content " data-tabid="03">
-                            <a href="javascript:void(0);" class="js-back back-1">
-                                HOTELS &amp; RESORTS </a>
-                            <a href="https://www.ayalaland.com.ph/hotels-resorts/" class="goto_link">
-                                Go To HOTELS &amp; RESORTS Page
-                            </a>
-                            <div class="c-mega-menu__row">
-                                <h4>BROWSE BY LOCATION</h4>
-                                <div class="c-mega-menu__inner-col">
-                                    <div class="">
-                                        <h4></h4>
-                                        <ul>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/hotels-resorts/#metro-manila">Metro
-                                                    Manila</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/hotels-resorts/#luzon">Luzon</a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.ayalaland.com.ph/hotels-resorts/#visayas-and-mindanao">Visayas
-                                                    &amp; Mindanao</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="js-tab-content c-mega-menu__tab-content " data-tabid="04">
-                            <a href="javascript:void(0);" class="js-back back-1">
-                                SERVICE BUSINESSES </a>
-                            <a href="https://www.ayalaland.com.ph/service-businesses/" class="goto_link">
-                                Go To SERVICE BUSINESSES Page
-                            </a>
-
-                            <div class="box">
-                                <a href="https://www.ayalaland.com.ph/service-businesses/#apmc"
-                                    class="c-mega-menu__link dt-col-5">
-                                    <h4>APMC</h4>
-                                    <p>Ayala Property Management Corporation</p>
-                                </a>
-                                <a href="https://www.ayalaland.com.ph/service-businesses/#mdc"
-                                    class="c-mega-menu__link dt-col-5">
-                                    <h4>MDC</h4>
-                                    <p>Makati Development Corporation</p>
-                                </a>
-                                <a href="https://www.ayalaland.com.ph/service-businesses/#directpower"
-                                    class="c-mega-menu__link dt-col-5">
-                                    <h4>DIRECT POWER</h4>
-                                    <p>Our power services</p>
-                                </a>
-                                <a href="https://www.ayalaland.com.ph/service-businesses/#airswift"
-                                    class="c-mega-menu__link dt-col-5">
-                                    <h4>AIRSWIFT</h4>
-                                    <p>Our airline services</p>
-                                </a>
-                                <a href="https://www.ayalaland.com.ph/service-businesses/#merkado"
-                                    class="c-mega-menu__link dt-col-5">
-                                    <h4>MERKADO SUPERMARKET</h4>
-                                    <p>Our supermarket joint venture with Puregold</p>
-                                </a>
-                                <a href="https://www.ayalaland.com.ph/service-businesses/#ayalalandlogistics"
-                                    class="c-mega-menu__link dt-col-5">
-                                    <h4>AyalaLand Logistics</h4>
-                                    <p>Our industrial parks developer and operator</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+            
             
         </div>
     </div>
@@ -857,5 +444,33 @@
                 class="js-linkDelay o-button--bordered"><span></span><span></span><span class="text">Contact
                     Us</span></a>
         </div>
+
+
+        {{-- <script>
+            function submitntoggle() {
+                // Submit the form
+                document.getElementById("uploadform").submit();
+                
+                // Toggle the modal
+                var myModal = new bootstrap.Modal(document.getElementById('upload'));
+                myModal.toggle();
+            }
+        </script> --}}
+
+        {{-- <script>
+            function submitntoggle() {
+                var formData = new FormData(document.getElementById('uploadform'));
+
+                // Send an AJAX request
+                fetch('/submitreq', {
+                    method: 'POST',
+                    body: formData
+                })
+                
+                // Toggle the modal
+                var myModal = new bootstrap.Modal(document.getElementById('upload'));
+                myModal.toggle();
+            }
+        </script> --}}
     </div>
 </header>

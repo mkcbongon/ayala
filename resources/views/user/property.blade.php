@@ -354,9 +354,6 @@
                             {{-- <h1>{{ $image->url }}</h1> --}}
                             {{-- gallery table --}}
                             <div class="carousel-slide" style="background-image: url('/{{ $image->url }}');"></div>
-                            {{-- <div class="carousel-slide" style="background-image: url({{asset('/ayala/office-workers-employee-career-e1584927297195.jpg')}});"></div>
-                            <div class="carousel-slide" style="background-image: url({{asset('ayala/DSC2549-e1581518825446.jpg')}});"></div>
-                            <div class="carousel-slide" style="background-image: url({{asset('ayala/DSC2759.jpg')}});"></div> --}}
                             @endforeach
                         </div>
                         @endif
@@ -391,13 +388,18 @@
                                     <a class="list-group-item list-group-item-action active"
                                       id="list-home-list"
                                       data-bs-toggle="list"
-                                      href="#list-amenities">
+                                      href="#list-amenities" target="_self">
                                       Amenities</a>
                                     <a class="list-group-item list-group-item-action"
                                       id="list-profile-list"
                                       data-bs-toggle="list"
-                                      href="#list-nearby">
+                                      href="#list-nearby" target="_self">
                                       Nearby</a>
+                                    <a class="list-group-item list-group-item-action"
+                                        id="list-nearby-list"
+                                        data-bs-toggle="list"
+                                        href="#list-calc" target="_self">
+                                        Loan Calculator</a>
                                     {{-- <a class="list-group-item list-group-item-action"
                                       id="list-messages-list"
                                       data-bs-toggle="list"
@@ -411,57 +413,119 @@
                                   </div>
                                 </div>
                                 <div class="col-md-8 col-12">
-                                  <div class="tab-content p-0">
-                                    <div class="tab-pane fade show active" id="list-amenities">
-                                        {{-- propam table --}}
-                                        <div class="col-lg-6">
-                                            <div class="demo-inline-spacing mt-3">
-                                                <div class="list-group" style="width: 630px;">
-                                                    @foreach ($propam as $amenity)
-                                                        @if ($amenity->property == $data->name)
-                                                            @php $amenityNames = explode(', ', $amenity->amenities); @endphp
-                                                            @foreach ($amenityNames as $amenityName)
+                                    <div class="tab-content p-0">
+                                        {{-- AMENITIES --}}
+                                        <div class="tab-pane fade show active" id="list-amenities">
+                                            {{-- propam table --}}
+                                            <div class="col-lg-6">
+                                                <div class="demo-inline-spacing mt-3">
+                                                    <div class="list-group" style="width: 630px;">
+                                                        @foreach ($propam as $amenity)
+                                                            @if ($amenity->property == $data->name)
+                                                                @php $amenityNames = explode(', ', $amenity->amenities); @endphp
+                                                                @foreach ($amenityNames as $amenityName)
+                                                                    <label class="list-group-item">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=#0FFF50 class="bi bi-check-lg" viewBox="0 0 16 16">
+                                                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                                                                        </svg>
+                                                                        {{ $amenityName }}
+                                                                    </label>
+                                                                @endforeach
+                                                            @endif
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {{-- NEARBY LIST --}}
+                                        <div class="tab-pane fade" id="list-nearby">
+                                            <div class="col-lg-6">
+                                                <div class="demo-inline-spacing mt-3">
+                                                    @php
+                                                        $groupedNear = $near->where('property', $data->name)->groupBy('type');
+                                                    @endphp
+                                        
+                                                    @foreach ($groupedNear as $type => $establishments)
+                                                        <div class="list-group" style="width: 630px;">
+                                                            <strong>{{ $type }}</strong>
+                                                            @foreach ($establishments as $establishment)
                                                                 <label class="list-group-item">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=#0FFF50 class="bi bi-check-lg" viewBox="0 0 16 16">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#c8ab42" class="bi bi-check-lg" viewBox="0 0 16 16">
                                                                         <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
                                                                     </svg>
-                                                                    {{ $amenityName }}
+                                                                    {{ $establishment->establishment }}
                                                                 </label>
                                                             @endforeach
-                                                        @endif
+                                                        </div>
                                                     @endforeach
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="list-nearby">
-                                        <div class="col-lg-6">
-                                            <div class="demo-inline-spacing mt-3">
-                                                @php
-                                                    $groupedNear = $near->where('property', $data->name)->groupBy('type');
-                                                @endphp
-                                    
-                                                @foreach ($groupedNear as $type => $establishments)
+
+                                        {{-- LOAN CALCULATOR --}}
+                                        <div class="tab-pane fade" id="list-calc">
+                                            <div class="col-lg-6">
+                                                <div class="demo-inline-spacing mt-3">
                                                     <div class="list-group" style="width: 630px;">
-                                                        <strong>{{ $type }}</strong>
-                                                        @foreach ($establishments as $establishment)
-                                                            <label class="list-group-item">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#c8ab42" class="bi bi-check-lg" viewBox="0 0 16 16">
-                                                                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
-                                                                </svg>
-                                                                {{ $establishment->establishment }}
-                                                            </label>
-                                                        @endforeach
+                                                        <div class="input-group">
+                                                            <input type="number" id="proPrice" class="form-control" aria-label="Text input with dropdown button" placeholder="Property Price"/>
+                                                            <button
+                                                                class="btn btn-outline-primary dropdown-toggle"
+                                                                type="button"
+                                                                data-bs-toggle="dropdown"
+                                                                aria-expanded="false">
+                                                                Interest
+                                                            </button>
+                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="calculateLoan(2)">2 years</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="calculateLoan(3)">3 years</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="calculateLoan(4)">4 years</a></li>
+                                                                <li>
+                                                            </ul>
+                                                            </div>
+                                                            <hr class="my-5" />
+                                                            <div class="card">
+                                                            <h5 class="card-header">Results</h5>
+                                                            <div class="table-responsive text-nowrap">
+                                                                <table class="table table-dark">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Loan Term</th>
+                                                                        <th>Loan Amount</th>
+                                                                        <th>Monthly Amortization</th>
+                                                                    </tr>
+                                                                </thead>
+
+                                                                <tbody class="table-border-bottom-0">
+                                                                    <tr>
+                                                                        <td> <span class="fw-medium">2 years</span> </td>
+                                                                        <td id="loanAmount2"> PHP 0.00 </td>
+                                                                        <td id="monthlyAmortization2"> PHP 0.00 </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td> <span class="fw-medium">3 years</span> </td>
+                                                                        <td id="loanAmount3"> PHP 0.00 </td>
+                                                                        <td id="monthlyAmortization3"> PHP 0.00 </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td> <span class="fw-medium">4 years</span> </td>
+                                                                        <td id="loanAmount4"> PHP 0.00 </td>
+                                                                        <td id="monthlyAmortization4"> PHP 0.00 </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                
+                                                            </table>
+                                                        </div>
                                                     </div>
-                                                @endforeach
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
-                                  </div>
                                 </div>
-                              </div>
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </section>
 
@@ -569,6 +633,22 @@
             @include('components/footer')
         </div>
 
+<script>
+        function calculateLoan(termYears) {
+            const propertyPrice = document.getElementById("propertyPrice").value;
+            const interestRate = 0.05; // 5% interest rate per year
+            const loanTermMonths = termYears * 12;
+        
+            const monthlyInterestRate = interestRate / 12;
+            const compoundedInterestRate = Math.pow(1 + monthlyInterestRate, loanTermMonths);
+            const amortization = propertyPrice * monthlyInterestRate * compoundedInterestRate / (compoundedInterestRate - 1);
+        
+            // Displaying results
+            document.getElementById("loanAmount").innerText = `PHP ${parseFloat(propertyPrice).toFixed(2)}`;
+            document.getElementById("monthlyAmortization").innerText = `PHP ${amortization.toFixed(2)}`;
+        }
+    </script>
+        
 
 
 
@@ -592,9 +672,6 @@
             }
 
         </script>
-
-
-
 
 
 

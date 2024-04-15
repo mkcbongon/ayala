@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\EstatesController;
 use App\Http\Controllers\ResidencesController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // ADMIN
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('admin');
 Route::get('/requests', [AdminController::class, 'requests'])->name('requests')->middleware('admin');
+Route::post('/submitreq', [AdminController::class, 'submitreq'])->name('submitreq');
+Route::post('accept/{id}', [AdminController::class, 'accept'])->name('accept');
+Route::post('decline/{id}', [AdminController::class, 'decline'])->name('decline');
+Route::post('/uploadreq', [AdminController::class, 'uploadreq'])->name('uploadreq');
 
 Route::get('/premier-properties', [AdminController::class, 'premierproperties'])->name('premierproperties')->middleware('admin');
 Route::post('/addproperty', [AdminController::class, 'addproperty'])->name('addproperty');
@@ -108,6 +113,25 @@ Route::post('/editpremiersection/{id}', [ResidencesController::class, 'editpremi
 Route::delete('/deletepremier/{id}', [ResidencesController::class, 'deletepremier'])->name('deletepremier');
 
 
+
+
+
+Route::get('/properties/{category?}', [HomeController::class, 'properties'])->name('properties');
+Route::get('/property/{id}', [HomeController::class, 'property'])->name('property');
+Route::post('/submit-form', [HomeController::class, 'submitForm'])->name('submit.form');
+
+Route::post('/upload/property', [UploadController::class, 'propertyUpload'])->name('upload.property');
+Route::get('/uploads', [UploadController::class, 'index'])->name('upload.index');
+
+Route::post('/upload/accept/{id}', [UploadController::class, 'accept'])->name('upload.accept');
+Route::post('/upload/decline/{id}', [UploadController::class, 'decline'])->name('upload.decline');
+
+
+
+
+
+
+// N O T NEEDED
 Route::get('/alveo', [ResidencesController::class, 'alveo'])->name('alveo');
 Route::get('/avida', [ResidencesController::class, 'avida'])->name('avida');
 Route::get('/amaia', [ResidencesController::class, 'amaia'])->name('amaia');
@@ -119,6 +143,4 @@ Route::get('/makati', [ResidencesController::class, 'makati'])->name('makati');
 Route::get('/batangas', [ResidencesController::class, 'batangas'])->name('batangas');
 
 
-Route::get('/properties/{category?}', [HomeController::class, 'properties'])->name('properties');
-Route::get('/property/{id}', [HomeController::class, 'property'])->name('property');
-Route::post('/submit-form', [HomeController::class, 'submitForm'])->name('submit.form');
+

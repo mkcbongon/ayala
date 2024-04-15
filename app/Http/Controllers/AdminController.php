@@ -8,8 +8,15 @@ use App\Models\PropamModel;
 use App\Models\NearbyModel;
 use App\Models\GalleryModel;
 use App\Models\AmenitiesModel;
+use App\Models\RequestsModel;
+use App\Models\UploadModel;
 use App\Models\UserAuth;
 use App\Models\Model;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UploadAcceptedNotification;
+use App\Mail\UploadDeclinedNotification;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -20,9 +27,67 @@ class AdminController extends Controller
 
     
     public function requests() {
-        return view('admin/admindash/requests');
-
+        $requests = RequestsModel::all();
+        // $upload = UploadModel::all();
+        return view('admin/admindash/requests', ['req' => $requests]);
     }
+    public function submitreq(Request $request) {
+        $requests = new RequestsModel;
+    
+        // Set other fields
+        $requests->id = $request->input('unique_id');
+        $requests->idcard = $this->upload($request->file('idcard'), 'ayala', $requests->idcard);
+        $requests->fname = $request->input('fname'); 
+        $requests->mname = $request->input('mname'); 
+        $requests->lname = $request->input('lname'); 
+        $requests->email = $request->input('email'); 
+        $requests->dob = $request->input('dob'); 
+        $requests->property = $request->input('property'); 
+        $requests->category = $request->input('category'); 
+        $requests->type = $request->input('type'); 
+        $requests->location = $request->input('location'); 
+        $requests->price = $request->input('price'); 
+        $requests->description = $request->input('description'); 
+        $requests->status = "PENDING"; 
+    
+        $imgArray = [];
+        if ($request->hasFile('uploads')) {
+            foreach ($request->file('uploads') as $file) {
+                $imgArray[] = $this->upload($file, 'upload', '');
+            }
+        }
+        $requests->image = implode(", ", $imgArray);
+    
+        $requests->save();
+
+        
+        return redirect()->back()->with('success', 'Upload accepted successfully.');
+    }
+    
+    public function accept($id) {
+        $requests = RequestsModel::findOrFail($id);
+        $requests->status = 'ACCEPTED';
+        $requests->save();
+
+
+        $message = 'Ticket number: ' . $requests->id . '. Your upload has been accepted.';
+        Mail::to($requests->email)->send(new UploadAcceptedNotification($requests, $message));
+
+        return redirect()->back()->with('success', 'Upload accepted successfully.');
+    }
+
+    public function decline($id) {
+        $requests = RequestsModel::findOrFail($id);
+        $requests->status = 'DECLINED';
+        $requests->save();
+
+
+        $message = 'Ticket number: ' . $requests->id . '. Sorry, we regret to inform you that your upload has been declined.';
+        Mail::to($requests->email)->send(new UploadDeclinedNotification($requests, $message));
+
+        return redirect()->back()->with('success', 'Upload declined successfully.');
+    }
+
 
     
     public function premierproperties() {
