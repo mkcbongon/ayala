@@ -469,26 +469,16 @@
                                                 <div class="demo-inline-spacing mt-3">
                                                     <div class="list-group" style="width: 630px;">
                                                         <div class="input-group">
-                                                            <input type="number" id="proPrice" class="form-control" aria-label="Text input with dropdown button" placeholder="Property Price"/>
-                                                            <button
-                                                                class="btn btn-outline-primary dropdown-toggle"
-                                                                type="button"
-                                                                data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                Interest
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="calculateLoan(2)">2 years</a></li>
-                                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="calculateLoan(3)">3 years</a></li>
-                                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="calculateLoan(4)">4 years</a></li>
-                                                                <li>
-                                                            </ul>
-                                                            </div>
-                                                            <hr class="my-5" />
-                                                            <div class="card">
-                                                            <h5 class="card-header">Results</h5>
-                                                            <div class="table-responsive text-nowrap">
-                                                                <table class="table table-dark">
+                                                            <input type="number" id="proPrice" class="form-control" placeholder="Property Price"/>
+                                                        </div>
+                                                        <div>
+                                                            <label for="interest" class="form-label">Interest</label>
+                                                            <input type="range" class="form-range" min="0" max="8" step="1" id="interest" oninput="updateCalculations()">
+                                                            <span id="interestLabel">6%</span>
+                                                        </div>
+                                                        <hr class="my-5" />
+                                                        <div class="table-responsive text-nowrap">
+                                                            <table class="table table-dark">
                                                                 <thead>
                                                                     <tr>
                                                                         <th>Loan Term</th>
@@ -496,31 +486,30 @@
                                                                         <th>Monthly Amortization</th>
                                                                     </tr>
                                                                 </thead>
-
                                                                 <tbody class="table-border-bottom-0">
                                                                     <tr>
-                                                                        <td> <span class="fw-medium">2 years</span> </td>
-                                                                        <td id="loanAmount2"> PHP 0.00 </td>
-                                                                        <td id="monthlyAmortization2"> PHP 0.00 </td>
+                                                                        <td><span class="fw-medium">2 years</span></td>
+                                                                        <td id="loanAmount2">PHP    0.00</td>
+                                                                        <td id="monthlyAmortization2">PHP    0.00</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td> <span class="fw-medium">3 years</span> </td>
-                                                                        <td id="loanAmount3"> PHP 0.00 </td>
-                                                                        <td id="monthlyAmortization3"> PHP 0.00 </td>
+                                                                        <td><span class="fw-medium">3 years</span></td>
+                                                                        <td id="loanAmount3">PHP    0.00</td>
+                                                                        <td id="monthlyAmortization3">PHP    0.00</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td> <span class="fw-medium">4 years</span> </td>
-                                                                        <td id="loanAmount4"> PHP 0.00 </td>
-                                                                        <td id="monthlyAmortization4"> PHP 0.00 </td>
+                                                                        <td><span class="fw-medium">4 years</span></td>
+                                                                        <td id="loanAmount4">PHP    0.00</td>
+                                                                        <td id="monthlyAmortization4">PHP    0.00</td>
                                                                     </tr>
                                                                 </tbody>
-                                                                
                                                             </table>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        
 
                                     </div>
                                 </div>
@@ -554,38 +543,21 @@
                         <h1>Ask an Agent about {{ $data->name }}</h1>
                     </div>
                     <div data-v-cbf53d54="" class="o-sketch--grid-right">
-                        <div
-                            data-v-cbf53d54=""
-                            class="c-form--2col c-form--2col-application"
-                        >
-                        <form
-                        data-v-cbf53d54=""
-                        action="{{ route('submit.form') }}"
-                        method="post"
-                        >
+                        <div data-v-cbf53d54="" class="c-form--2col c-form--2col-application">
+                        <form data-v-cbf53d54="" action="{{ route('submit.form') }}" method="post">
                         @csrf
                                 <div data-v-cbf53d54="">
-                                    <label data-v-cbf53d54="" for=""
-                                        >Full Name*</label
-                                    >
-                                    <input
-                                        data-v-cbf53d54=""
-                                        type="text"
-                                        name="full_name"
-                                        placeholder="John Doe"
-                                    />
+                                    <label data-v-cbf53d54="" for="">
+                                        Full Name*</label>
+                                    <input data-v-cbf53d54="" type="text"
+                                        name="full_name" placeholder="John Doe"/>
                                     <!---->
                                 </div>
                                 <div data-v-cbf53d54="">
-                                    <label data-v-cbf53d54="" for=""
-                                        >Contact Number</label
-                                    >
-                                    <input
-                                        data-v-cbf53d54=""
-                                        type="number"
-                                        name="contactNumber"
-                                        placeholder="Please type your contact number"
-                                    />
+                                    <label data-v-cbf53d54="" for="">
+                                        Contact Number</label>
+                                    <input data-v-cbf53d54="" type="number"
+                                        name="contactNumber" placeholder="Please type your contact number"/>
                                 </div>
                                 <div data-v-cbf53d54="">
                                     <label data-v-cbf53d54="" for="">
@@ -633,21 +605,44 @@
             @include('components/footer')
         </div>
 
-<script>
-        function calculateLoan(termYears) {
-            const propertyPrice = document.getElementById("propertyPrice").value;
-            const interestRate = 0.05; // 5% interest rate per year
-            const loanTermMonths = termYears * 12;
         
-            const monthlyInterestRate = interestRate / 12;
-            const compoundedInterestRate = Math.pow(1 + monthlyInterestRate, loanTermMonths);
-            const amortization = propertyPrice * monthlyInterestRate * compoundedInterestRate / (compoundedInterestRate - 1);
-        
-            // Displaying results
-            document.getElementById("loanAmount").innerText = `PHP ${parseFloat(propertyPrice).toFixed(2)}`;
-            document.getElementById("monthlyAmortization").innerText = `PHP ${amortization.toFixed(2)}`;
-        }
-    </script>
+        <script>
+            function updateCalculations() {
+                const proPrice = document.getElementById("proPrice").value;
+                if (!proPrice) return;  // If no property price input, do nothing
+            
+                const sliderValue = document.getElementById("interest").value;
+                const baseRate = 6;
+                const rateStep = 1;
+                const interestRate = baseRate + rateStep * sliderValue;
+                document.getElementById("interestLabel").innerText = `${interestRate}%`;
+            
+                calculateAndDisplay(2, interestRate, proPrice);
+                calculateAndDisplay(3, interestRate, proPrice);
+                calculateAndDisplay(4, interestRate, proPrice);
+            }
+            
+            function calculateAndDisplay(termYears, interestRate, proPrice) {
+                const monthlyInterestRate = interestRate / 100 / 12;
+                const loanTermMonths = termYears * 12;
+                const compoundedInterestRate = Math.pow(1 + monthlyInterestRate, loanTermMonths);
+                const amortization = proPrice * monthlyInterestRate * compoundedInterestRate / (compoundedInterestRate - 1);
+            
+                document.getElementById(`loanAmount${termYears}`).innerText = `PHP ${parseFloat(proPrice).toFixed(2)}`;
+                document.getElementById(`monthlyAmortization${termYears}`).innerText = `PHP ${amortization.toFixed(2)}`;
+            }
+            </script>
+            
+
+        <script>
+            function updateInterestLabel(value) {
+                const baseRate = 6;  // Starting interest rate
+                const rateStep = 1;  // Each step increases the rate by 1%
+                const interestRate = baseRate + rateStep * value;
+                document.getElementById("interestLabel").innerText = `${interestRate}%`;
+            }
+        </script>
+    
         
 
 

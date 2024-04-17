@@ -64,13 +64,53 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Upload accepted successfully.');
     }
     
-    public function accept($id) {
+    public function accept($id, Request $request) {
         $requests = RequestsModel::findOrFail($id);
+        $prop = new PropertiesModel();
+        $amenities = new PropamModel;
+        $nearby = new NearbyModel;
+        $gallery = new GalleryModel;
+
         $requests->status = 'ACCEPTED';
+
+        $prop->name = $request->input('property') ?? '';
+        $amenities->property = $request->input('property') ?? '';
+        $nearby->property = $request->input('property') ?? '';
+        $gallery->img_property = $request->input('property') ?? '';
+        $prop->category = $request->input('category') ?? '';
+        $prop->type = $request->input('type') ?? '';
+        $prop->location = $request->input('location') ?? '';
+        $prop->price = $request->input('price') ?? 0.0;
+        $sizeArray = $request->input('size') ?? [];
+        $prop->size = implode(", ", $sizeArray);
+        $prop->description = $request->input('description') ?? '';
+        $prop->video = $request->input('video') ?? '';
+
+
         $requests->save();
+        $prop->save();
+        $amenities->save();
+        $nearby->save();
+        $gallery->save();
+
+        GalleryModel::where('img_property', $prop->name)
+                    ->whereNull('url')
+                    ->delete();
+    
+                    $upload = $request->input('image') ?? [];
+                    $uploads = explode(", ", $upload);
+        // $files = $gallery->image;
+        if($uploads) {
+            foreach ($uploads as $file) {
+                $gallery = new GalleryModel();
+                $gallery->img_property = $prop->name;
+                $gallery->url = $file;
+                $gallery->save();
+            }
+        }
 
 
-        $message = 'Ticket number: ' . $requests->id . '. Your upload has been accepted.';
+        $message = 'Ticket number: ' . $requests->id . '. Your upload has been accepted. You may check our website to see your posting!';
         Mail::to($requests->email)->send(new UploadAcceptedNotification($requests, $message));
 
         return redirect()->back()->with('success', 'Upload accepted successfully.');

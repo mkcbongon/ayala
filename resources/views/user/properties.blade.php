@@ -370,6 +370,49 @@
 
 
     </style>
+
+    <style>
+        .header-with-search {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .search-bar-form {
+            display: flex;
+            align-items: center;
+            margin-left: 150px; 
+            margin-right: -300px;
+        }
+
+        .search-bar-form input[type="text"] {
+            padding: 8px;
+            margin-right: 10px; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar-form button {
+            padding: 8px 12px;
+            background-color: #30704c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .header-with-search {
+                flex-direction: column;
+                align-items: flex-start; 
+            }
+
+            .search-bar-form {
+                width: 100%;
+                margin-top: 10px; 
+            }
+        }
+
+    </style>
 </head>
 
 <body class="home page-template page-template-front-page page-template-front-page-php page page-id-282 page-parent">
@@ -386,17 +429,36 @@
                                 data-rellax-speed="0.2" data-rellax-percentage="0.3"
                                 style="transform: translate3d(0px, -4px, 0px)">
                                 <span>PROPERTIES</span>
-                                <h1>Ayala Land Premier Properties</h1>
+                                <div class="header-with-filter">
+                                    <h1 style="margin-left: 50px;">Ayala Land Premier Properties</h1>
+                                    <div class="filter-bar-form">
+                                        <select id="location-filter" name="location">
+                                            <option value="">Select Location</option>
+                                            <option value="Pioneer, Mandaluyong">Pioneer, Mandaluyong</option>
+                                            <!-- Add other location options -->
+                                        </select>
+                                        <select id="price-filter" name="price">
+                                            <option value="">Select Price Range</option>
+                                            <option value="0-10000">Below ₱10,000</option>
+                                            <option value="10000-20000">₱10,000 - ₱20,000</option>
+                                            <!-- Add other price range options -->
+                                        </select>
+                                        <button id="apply-filter">Apply Filter</button>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                     </section>
+                    
     
+                    
                     <section class="o-container--full laxWrap" style="max-width: 100%; position: relative">
                         <div class="c-grid-articles--3" style="max-width: 1280px; margin: 0 auto; position: static;">
                             <div class="container" style="max-width: 1280px; margin: 0 auto;">
                                 <div class="row">
                                     @foreach ($data as $prop)
-                                        <div class="col-md-4 d-flex align-items-stretch" style="margin-top: 30px">
+                                        <div class="col-md-4 d-flex align-items-stretch property-card" style="margin-top: 30px">
                                             <div class="card mb-4"> 
                                                 <img src="{{asset($prop->display_img )}}" class="card-img-top" alt="...">
                                                 <div class="card-body">
@@ -444,6 +506,9 @@
         {{-- FOOTER --}}
         @include('components/footer')
     </div>
+
+
+    
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 

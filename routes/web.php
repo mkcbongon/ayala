@@ -119,6 +119,7 @@ Route::delete('/deletepremier/{id}', [ResidencesController::class, 'deletepremie
 Route::get('/properties/{category?}', [HomeController::class, 'properties'])->name('properties');
 Route::get('/property/{id}', [HomeController::class, 'property'])->name('property');
 Route::post('/submit-form', [HomeController::class, 'submitForm'])->name('submit.form');
+Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 Route::post('/upload/property', [UploadController::class, 'propertyUpload'])->name('upload.property');
 Route::get('/uploads', [UploadController::class, 'index'])->name('upload.index');

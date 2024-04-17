@@ -185,6 +185,13 @@
                               @if ($request->status == "PENDING")
                                 <form action="{{ route('accept', $request->id) }}" method="post"> @csrf
                                   <button type="submit" class="btn btn-xs btn-warning" data-bs-toggle="modal">Accept</button>
+                                  <input type="hidden" name="property" value="{{ $request->property }}">
+                                  <input type="hidden" name="category" value="{{ $request->category }}">
+                                  <input type="hidden" name="type" value="{{ $request->type }}">
+                                  <input type="hidden" name="location" value="{{ $request->location }}">
+                                  <input type="hidden" name="price" value="{{ $request->price }}">
+                                  <input type="hidden" name="description" value="{{ $request->description }}">
+                                  <input type="hidden" name="image" value="{{ $request->image }}">
                                 </form>
                                 <form action="{{ route('decline', $request->id) }}" method="post"> @csrf
                                   <button type="submit" class="btn btn-xs btn-danger" data-bs-toggle="modal">Decline</button>

@@ -4,27 +4,35 @@
         <div class="c-header__container">
 
             {{-- LOGO --}}
-            <div class="c-header__container">
+            <div class="c-header__container" style="margin-right: -150px; margin-left: -50px">
                 <a href="{{ route('home') }}" class="o-logo" id="logo-link">
                     <img src="{{ asset('ayala/ALI-high-res-logo-PNG-retina-01.png') }}"
                         alt="" id="logo-image"/>
                 </a>
                 <input type="file" id="logo-input" style="display: none;">
+            </div>
+
+
 
                 {{-- NAVBAR --}}
+            <div class="c-header__container">
                 <div class="c-header__content">
                     <nav id="js-nav-dt" class="nav is-active">
                         <div class="js-nav__link c-nav__link" data-megamenu="0">
-                            <a href="{{ route('about') }}" class=""
+                            <a href="{{ route('about') }}" class="" style="margin-left: 20px"
                             rel="noopener noreferrer">ABOUT US</a>
-                        </div>
-                        <div class="js-nav__link c-nav__link" data-megamenu="1">
-                            <a href="{{ route('premier') }}" class=""
+                        {{-- </div> --}}
+                        {{-- <div class="js-nav__link c-nav__link"> --}}
+                            <a href="{{ route('premier') }}" class="" style="margin-left: 20px"
                                 rel="noopener noreferrer">AYALA LAND PREMIER</a>
-                        </div>
-                        <div class="js-nav__link c-nav__link" data-megamenu="2">
-                            <a href="{{ route('properties') }}" class=""
-                                rel="noopener noreferrer">PROPERTIES</a>
+                        {{-- </div> --}}
+                        {{-- <div class="js-nav__link c-nav__link"> --}}
+                            <a href="{{ route('properties', 'Pre-Selling') }}" class="" style="margin-left: 20px"
+                                rel="noopener noreferrer">FOR SALE</a>
+                        {{-- </div> --}}
+                        {{-- <div class="js-nav__link c-nav__link"> --}}
+                            <a href="{{ route('properties', 'RFO') }}" class="" style="margin-left: 20px"
+                                rel="noopener noreferrer">FOR LEASE</a>
                         </div>
                     </nav>
                 </div>
@@ -33,10 +41,41 @@
             {{-- C O N T A C T --}}
             <div class="c-header__ctas dt">
                 {{-- <a href="{{ route('contact') }}" --}}
-                <a href="tel:09298597655">
+                <a href="tel:09298597655" style="margin-right: 10px">
                     <span class="text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
                         <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
                       </svg></span></a>
+                <a target="_blank" href="https://www.facebook.com/officialayalaland/"
+                    class="o-sm-icon" style="margin-right: 10px">
+                    <figure>
+                        <img loading="lazy"
+                            src="{{ asset('ayala/icon_fb.svg') }}"
+                            alt="">
+                    </figure>
+                </a>
+                <a target="_blank" href="https://twitter.com/AyalaLand" class="o-sm-icon" style="margin-right: 10px">
+                    <figure>
+                        <img loading="lazy"
+                            src="{{ asset('ayala/icon_tw.svg') }}"
+                            alt="">
+                    </figure>
+                </a>
+                <a target="_blank" href="https://ph.linkedin.com/company/ayala-land-inc-"
+                    class="o-sm-icon" style="margin-right: 10px">
+                    <figure>
+                        <img loading="lazy"
+                            src="{{ asset('ayala/icon_li.svg') }}"
+                            alt="">
+                    </figure>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/ayalaland/"
+                    class="o-sm-icon" style="margin-right: 5px">
+                    <figure>
+                        <img loading="lazy"
+                            src="{{ asset('ayala/icon_ig.svg') }}"
+                            alt="">
+                    </figure>
+                </a>
             </div>
 
             @if(request()->routeIs(['properties', 'property']))
