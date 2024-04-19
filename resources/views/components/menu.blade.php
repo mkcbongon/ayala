@@ -71,8 +71,25 @@
         </a>
       </li>
 
+      {{-- CHAT --}}
+      {{-- @if(request()->routeIs(['requests'])) --}}
+      {{-- <li class="menu-item active open">
+        @else  --}}
+        <li class="menu-item">
+      {{-- @endif --}}
+        <a href="#" 
+          target="_self" class="menu-link"> 
+            <i class="menu-icon tf-icons bx bx-chat"></i> 
+            <div data-i18n="Ayala Land Premier">Chat Bot</div> 
+        </a>
+
+          {{-- COUNT REQUEST  --}}
+          {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}
+        </a>
+      </li>
+
       
-      @if(request()->routeIs(['upload.index']))
+      {{-- @if(request()->routeIs(['upload.index']))
       <li class="menu-item active open">
         @else 
         <li class="menu-item">
@@ -83,10 +100,10 @@
             <div data-i18n="Ayala Land Premier">Uploaded Properties</div> 
         </a>
 
-          {{-- COUNT REQUEST  --}}
-          {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}
+          COUNT REQUEST 
+          <div class="badge bg-danger rounded-pill ms-auto">5</div>
         </a>
-      </li>
+      </li> --}}
 
       <li class="menu-header small text-uppercase">
         <span class="menu-header-text">WYSIWYG</span>

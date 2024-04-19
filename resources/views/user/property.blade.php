@@ -440,7 +440,8 @@
                     <div class="c-featured c-featured--overlay c-featured--shadowed">
                         <div class="c-featured__heading [ u-df-tb u-df-tb-jc-sb u-df-tb-ai-c ]">
                             <h3 style="color: #30704c; margin-right: 60px;">₱{{ number_format($data->price, 2) }}+++</h3>
-                            <button type="button" class="btn" style="background-color: #c8ab42; color: #fff" data-bs-toggle="modal" data-bs-target="#appoint">Set an Appointment</button>
+                            <button type="button" class="btn o-button--bordered" style=" color: #fff" 
+                            data-bs-toggle="modal" data-bs-target="#appoint"><span></span><span></span><span class="text">Request Viewing</span></button>
                         </div>
                         <p style="margin-bottom: 10px;">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="12" height="12">
@@ -461,21 +462,21 @@
                               <div class="row">
                                 <div class="col-md-4 col-12 mb-3 mb-md-0">
                                   <div class="list-group">
-                                    <a class="list-group-item list-group-item-action o-button--bordered"
+                                    <a class="list-group-item list-group-item-action active"
                                       id="list-home-list"
-                                      data-bs-toggle="list" style="border: none;"
-                                      href="#list-amenities" ><span></span><span></span><span class="text">
-                                      Amenities</span></a>
-                                    <a class="list-group-item list-group-item-action o-button--bordered"
+                                      data-bs-toggle="list"
+                                      href="#list-amenities" >
+                                      Amenities</a>
+                                    <a class="list-group-item list-group-item-action"
                                       id="list-profile-list"
-                                      data-bs-toggle="list" style="border: none;"
-                                      href="#list-nearby" ><span></span><span></span><span class="text">
-                                      Nearby</span></a>
-                                    <a class="list-group-item list-group-item-action o-button--bordered"
+                                      data-bs-toggle="list"
+                                      href="#list-nearby" >
+                                      Nearby</a>
+                                    <a class="list-group-item list-group-item-action"
                                         id="list-nearby-list"
-                                        data-bs-toggle="list" style="border: none;"
-                                        href="#list-calc"><span></span><span></span><span class="text" style="font-size: 60%">
-                                        Loan Calculator</span></a>
+                                        data-bs-toggle="list"
+                                        href="#list-calc">
+                                        Loan Calculator</a>
                                     {{-- <a class="list-group-item list-group-item-action"
                                       id="list-messages-list"
                                       data-bs-toggle="list"
