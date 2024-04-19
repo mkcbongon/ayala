@@ -182,20 +182,18 @@ class HomeController extends Controller
         return view('user/property', ['data' => $data, 'near' => $near, 'propam' => $propam, 'gallery' => $gallery]);
     }
 
-    public function search(Request $request)
-{
-    $query = $request->input('query');
+    public function search(Request $request) {
+        $query = $request->input('query');
 
-    // Perform the search query
-    $properties = PropertiesModel::where('name', 'like', "%$query%")
-                                ->orWhere('category', 'like', "%$query%")
-                                ->orWhere('type', 'like', "%$query%")
-                                ->orWhere('location', 'like', "%$query%")
-                                ->orWhere('price', 'like', "%$query%")
-                                ->get();
+        $filteredProperties = PropertiesModel::where(function($queryBuilder) use ($query) {
+            $queryBuilder->whereRaw('LOWER(location) LIKE ?', ["%".strtolower($query)."%"])
+                         ->orWhere('price', 'LIKE', "$query%");
+        })
+        ->get();
 
-    return response()->json($properties);
-}
+        return response()->json($filteredProperties);
+    }
+
 
     
 }

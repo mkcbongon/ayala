@@ -113,6 +113,7 @@
                                   <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('Pre-Selling', 'categoryButton')">Pre-Selling</a></li>
                                     <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('RFO', 'categoryButton')">RFO</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('For Sale', 'categoryButton')">For Sale</a></li>
                                 </ul>
                                 </div>
                               </div>
@@ -449,6 +450,8 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
+
+    
 
 
     {{-- category name getter --}}

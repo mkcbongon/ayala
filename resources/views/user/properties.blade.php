@@ -429,27 +429,17 @@
                                 data-rellax-speed="0.2" data-rellax-percentage="0.3"
                                 style="transform: translate3d(0px, -4px, 0px)">
                                 <span>PROPERTIES</span>
-                                <div class="header-with-filter">
+                                <div class="header-with-search">
                                     <h1 style="margin-left: 50px;">Ayala Land Premier Properties</h1>
-                                    <div class="filter-bar-form">
-                                        <select id="location-filter" name="location">
-                                            <option value="">Select Location</option>
-                                            <option value="Pioneer, Mandaluyong">Pioneer, Mandaluyong</option>
-                                            <!-- Add other location options -->
-                                        </select>
-                                        <select id="price-filter" name="price">
-                                            <option value="">Select Price Range</option>
-                                            <option value="0-10000">Below ₱10,000</option>
-                                            <option value="10000-20000">₱10,000 - ₱20,000</option>
-                                            <!-- Add other price range options -->
-                                        </select>
-                                        <button id="apply-filter">Apply Filter</button>
-                                    </div>
+                                    <div class="search-bar-form">
+                                        <input type="text" id="search-input" name="query" placeholder="Search for price/location..." aria-label="Search">
+                                        <button type="submit">Search</button>
+                                    </div>                                                                       
                                 </div>
-                                
                             </div>
                         </div>
                     </section>
+
                     
     
                     
@@ -463,7 +453,10 @@
                                                 <img src="{{asset($prop->display_img )}}" class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $prop->name }}</h5>
-                                                    <div><span class="badge bg-label-danger">{{ $prop->category }}</span></div>
+                                                    <div><span class="badge bg-label-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                                                        class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                                      </svg>{{ $prop->location }}</span></div>
                                                     <p class="card-text">
                                                         {{ substr($prop->description, 0, 115) }}{{ strlen($prop->description) > 115 ? '...' : '' }}
                                                     </p>
@@ -485,6 +478,7 @@
                                             </div>
                                         </div>
                                     @endforeach
+                                    {{-- @endif --}}
                                 </div>
                             </div>
                             
@@ -506,6 +500,59 @@
         {{-- FOOTER --}}
         @include('components/footer')
     </div>
+
+    {{-- @if(request()->routeIs(['property' => 'Pre-Selling'])) --}}
+    <script>
+        document.getElementById('search-input').addEventListener('input', function() {
+            var query = this.value.trim();
+            
+            fetch('{{ route("search") }}?query=' + query)
+                .then(response => response.json())
+                .then(data => {
+                    var propertiesContainer = document.querySelector('.c-grid-articles--3 .row');
+                    propertiesContainer.innerHTML = ''; 
+    
+                    data.forEach(property => {
+                        
+                    var truncatedDescription = property.description.length > 115 ? `${property.description.substr(0, 115)}...` : property.description;
+                        var propertyCard = `
+                        <div class="col-md-4 d-flex align-items-stretch property-card" style="margin-top: 30px">
+                            <div class="card mb-4"> 
+                                <img src="{{ asset('${property.display_img}') }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">${property.name}</h5>
+                                    <div><span class="badge bg-label-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                                        class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                    </svg>${property.location}</span></div>
+                                    <p class="card-text">${truncatedDescription}</p>
+                                    <div style="display: flex; align-items: center;">
+                                        <h3 style="color: #30704c; margin-right: 60px;">₱${property.price}+++</h3>
+                                        <p style="font-size: smaller;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="12" height="12">
+                                                <path d="M176 256c44.1 0 80-35.9 80-80s-35.9-80-80-80-80 35.9-80 80 35.9 80 80 80zm352-128H304c-8.8 0-16 7.2-16 16v144H64V80c0-8.8-7.2-16-16-16H16C7.2 64 0 71.2 0 80v352c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-48h512v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-61.9-50.1-112-112-112z"/>
+                                            </svg>
+                                            ${property.size}
+                                        </p>
+                                    </div>
+                                    <a href="{{ route('property', ['id' => $prop->id]) }}">
+                                        <button type="button" class="o-button--icon" data-bs-toggle="modal" data-bs-target="#details">
+                                            VIEW PROPERTY
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>`;
+                        propertiesContainer.innerHTML += propertyCard;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+    {{-- @endif --}}
+    
 
 
     

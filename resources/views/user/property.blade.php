@@ -273,6 +273,12 @@
             }
         </style>
         <style>
+            .c-featured__heading {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
             .carousel {
                 position: relative;
                 max-width: 100%;
@@ -339,6 +345,62 @@
     <body
         class="page-template page-template-page-careers page-template-page-careers-php page page-id-5598">
         <div class="site">
+            <div class="modal fade" id="appoint" tabindex="1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form action="{{ route('appoint') }}" method="POST"> @csrf @method('PUT')
+                            <input type="hidden" name="property" value="{{ $data->name }}">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel1">Viewing of {{ $data->name }}</h5>
+                                <button type="button" class="btn-close"
+                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col mb-3">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name" />
+                                    </div>
+                                </div>
+                                <div class="col mb-3">
+                                    <label for="emailBasic" class="form-label">Email</label>
+                                    <input type="email" id="emailBasic" name="email"
+                                    class="form-control" placeholder="xxxx@xxx.xx" />
+                                </div>
+                                <div class="col mb-3">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="number" id="phone" name="phone"
+                                    class="form-control"/>
+                                </div>
+                                <div class="row">
+                                    <div class="col mb-3">
+                                        <label for="image" class="form-label">Government ID</label>
+                                        <input type="file" class="form-control" id="image" name="idcard" required/>
+                                    </div>
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col mb-0">
+                                        <label for="date" class="form-label">Target Date</label>
+                                        <input type="date" id="date" name="date" class="form-control" />
+                                    </div>
+                                    <div class="col mb-0">
+                                        <label for="time" class="form-label">Time</label>
+                                        <input type="time" id="time" name="time"
+                                        class="form-control" placeholder="00:00:00" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
             @include('components/header')
 
             {{-- @foreach ($data as $property) --}}
@@ -364,7 +426,7 @@
                     </div>
                     <div class="o-container--full">
                         <div class="c-hero-banner__content">
-                            <h1 style="color: #fff">{{ $data->name }}</h1>
+                            <h1 style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,1);">{{ $data->name }}</h1>
                         </div>
                     </div>
                 </section>
@@ -374,7 +436,17 @@
                     <div class="c-featured c-featured--overlay c-featured--shadowed">
                         <div class="c-featured__heading [ u-df-tb u-df-tb-jc-sb u-df-tb-ai-c ]">
                             <h3 style="color: #30704c; margin-right: 60px;">₱{{ number_format($data->price, 2) }}+++</h3>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appoint">Set an Appointment</button>
                         </div>
+                        <p style="margin-bottom: 10px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="12" height="12">
+                                <path d="M176 256c44.1 0 80-35.9 80-80s-35.9-80-80-80-80 35.9-80 80 35.9 80 80 80zm352-128H304c-8.8 0-16 7.2-16 16v144H64V80c0-8.8-7.2-16-16-16H16C7.2 64 0 71.2 0 80v352c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-48h512v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-61.9-50.1-112-112-112z"/>
+                            </svg>
+                            {{ $data->size }}
+                        </p>
+                        
+                        
+
                         <div class="c-quicklinks" style="margin-bottom: 40px">
                             <p><span class="badge bg-label-danger">{{ $data->category }}</span>
                                 <br><br> {{ $data->description }}</p>
@@ -388,17 +460,17 @@
                                     <a class="list-group-item list-group-item-action active"
                                       id="list-home-list"
                                       data-bs-toggle="list"
-                                      href="#list-amenities" target="_self">
+                                      href="#list-amenities" >
                                       Amenities</a>
                                     <a class="list-group-item list-group-item-action"
                                       id="list-profile-list"
                                       data-bs-toggle="list"
-                                      href="#list-nearby" target="_self">
+                                      href="#list-nearby" >
                                       Nearby</a>
                                     <a class="list-group-item list-group-item-action"
                                         id="list-nearby-list"
                                         data-bs-toggle="list"
-                                        href="#list-calc" target="_self">
+                                        href="#list-calc" >
                                         Loan Calculator</a>
                                     {{-- <a class="list-group-item list-group-item-action"
                                       id="list-messages-list"
@@ -540,7 +612,7 @@
                 <section id="app" class="o-container--full">
                     <div id="" class="o-heading-eyebrow">
                         <span>INQUIRE NOW</span>
-                        <h1>Ask an Agent about {{ $data->name }}</h1>
+                        <h1>Inquire about {{ $data->name }}</h1>
                     </div>
                     <div data-v-cbf53d54="" class="o-sketch--grid-right">
                         <div data-v-cbf53d54="" class="c-form--2col c-form--2col-application">
@@ -643,7 +715,12 @@
             }
         </script>
     
-        
+        <script>
+            var today = new Date().toISOString().split('T')[0];
+
+            document.getElementById("date").setAttribute("min", today);
+
+        </script>
 
 
 
@@ -667,6 +744,7 @@
             }
 
         </script>
+        
 
 
 

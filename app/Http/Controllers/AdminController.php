@@ -10,6 +10,7 @@ use App\Models\GalleryModel;
 use App\Models\AmenitiesModel;
 use App\Models\RequestsModel;
 use App\Models\UploadModel;
+use App\Models\SchedModel;
 use App\Models\UserAuth;
 use App\Models\Model;
 use Illuminate\Support\Facades\Log;
@@ -23,6 +24,41 @@ class AdminController extends Controller
     public function dashboard() {
         return view('admin/admindash/dashboard');
 
+    }
+
+    public function schedule()
+    {
+        $events = SchedModel::all();
+        $formattedEvents = [];
+
+        foreach ($events as $event) {
+            $formattedEvents[] = [
+                'title' => $event->property,
+                'date' => $event->date,
+                'time' => $event->time
+            ];
+        }
+
+        return view('admin.admindash.schedule', ['events' => json_encode($formattedEvents)]);
+    }
+
+    
+    public function appoint(Request $request) {
+        $appoint = new SchedModel();
+
+        $appoint->property = $request->input('property');
+        $appoint->name = $request->input('name');
+        $appoint->email = $request->input('email');
+        $appoint->phone = $request->input('phone');
+        $appoint->idcard = $this->upload($request->file('idcard'), 'ayala', $appoint->idcard);
+        $appoint->date = $request->input('date');
+        $appoint->time = $request->input('time');
+        $appoint->status = 'SCHEDULED';
+
+        $appoint->save();
+
+        
+        return redirect()->back()->with('success', 'Appointment received successfully.');
     }
 
     

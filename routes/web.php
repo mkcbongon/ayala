@@ -33,6 +33,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // ADMIN
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('admin');
+Route::get('/schedule', [AdminController::class, 'schedule'])->name('schedule')->middleware('admin');
 Route::get('/requests', [AdminController::class, 'requests'])->name('requests')->middleware('admin');
 Route::post('/submitreq', [AdminController::class, 'submitreq'])->name('submitreq');
 Route::post('accept/{id}', [AdminController::class, 'accept'])->name('accept');
@@ -126,6 +127,8 @@ Route::get('/uploads', [UploadController::class, 'index'])->name('upload.index')
 
 Route::post('/upload/accept/{id}', [UploadController::class, 'accept'])->name('upload.accept');
 Route::post('/upload/decline/{id}', [UploadController::class, 'decline'])->name('upload.decline');
+
+Route::put('/appoint', [AdminController::class, 'appoint'])->name('appoint');
 
 
 

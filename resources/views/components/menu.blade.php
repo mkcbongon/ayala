@@ -37,6 +37,23 @@
         </a>
       </li>
 
+      {{-- CALENDAR --}}
+      @if(request()->routeIs(['schedule']))
+      <li class="menu-item active open">
+        @else 
+        <li class="menu-item">
+      @endif
+        <a href="{{ route('schedule') }}" 
+          target="_self" class="menu-link"> 
+            <i class="menu-icon tf-icons bx bx-calendar"></i> 
+            <div data-i18n="Ayala Land Premier">Calendar</div> 
+        </a>
+
+          {{-- COUNT REQUEST  --}}
+          {{-- <div class="badge bg-danger rounded-pill ms-auto">5</div> --}}
+        </a>
+      </li>
+
       {{-- REQUESTS --}}
       @if(request()->routeIs(['requests']))
       <li class="menu-item active open">
