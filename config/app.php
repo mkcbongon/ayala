@@ -159,6 +159,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        BotMan\BotMan\BotManServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -194,6 +195,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        // WeStacks\TeleBot\Laravel\Providers\TeleBotServiceProvider::class,
 
     ],
 
@@ -210,6 +212,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'BotMan' => BotMan\BotMan\Facades\BotMan::class,
+
+        // 'TeleBot' => WeStacks\TeleBot\Laravel\TeleBot::class,
     ])->toArray(),
 
 ];

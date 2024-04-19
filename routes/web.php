@@ -9,6 +9,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\EstatesController;
 use App\Http\Controllers\ResidencesController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\BotManController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ use App\Http\Controllers\UploadController;
 // Route::get('/', function () {
 //     return view('home');
 // });
+Route::match(['get', 'post'], '/botman', 'App\Http\Controllers\BotManController@handle');
 
 // AUTH
 Route::post('/login', [AuthController::class, 'login']);

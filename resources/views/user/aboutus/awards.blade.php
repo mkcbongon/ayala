@@ -254,6 +254,11 @@
                 z-index: 1;
             }
         </style>
+
+
+@include('components/botman')
+
+<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
     </head>
     <body
         class="page-template page-template-page-template-1 page-template-page-template-1-php page page-id-4680"

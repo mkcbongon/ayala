@@ -256,6 +256,10 @@
                 z-index: 1;
             }
         </style>
+
+@include('components/botman')
+
+<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
     </head>
     <body
         class="page-template page-template-page-template-1 page-template-page-template-1-php page page-id-878"
@@ -269,12 +273,6 @@
             ></iframe
         ></noscript>
 
-        <div class="c-message__icon">
-            <img
-                src="{{ asset('ayala/icon_message.svg') }}"
-                alt=""
-            />
-        </div>
         <div class="site">
             @include('components/header')
             <div id="content" class="site-content is-activeHeader">
@@ -577,36 +575,7 @@
             id="main-js-js"
         ></script>
         <script src="{{ asset('ayala/mainvue.js.download') }}"></script>
-        <div id="js-cookie" class="c-cookies">
-            <div class="">
-                <p>
-                    By using our site, you agree to Ayala Land’s use of cookies
-                    to improve your browsing experience. Learn more about our
-                    <a href="https://www.ayalaland.com.ph/privacy-policy/"
-                        >Privacy Policy</a
-                    >.
-                </p>
-                <div id="js-close-cookie" class="o-button--close">
-                    <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M16 1.61143L14.3886 0L8 6.38857L1.61143 0L0 1.61143L6.38857 8L0 14.3886L1.61143 16L8 9.61143L14.3886 16L16 14.3886L9.61143 8L16 1.61143Z"
-                            fill="#C7C7C7"
-                        ></path>
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <style>
-            #cookie-law-info-bar {
-                z-index: 9999;
-            }
-        </style>
+        
         <div class="css-finder-body-tooltip"></div>
     </body>
 </html>

@@ -413,6 +413,10 @@
         }
 
     </style>
+
+@include('components/botman')
+
+<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </head>
 
 <body class="home page-template page-template-front-page page-template-front-page-php page page-id-282 page-parent">

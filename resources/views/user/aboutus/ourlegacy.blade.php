@@ -249,6 +249,15 @@
                 z-index: 1;
             }
         </style>
+
+<script>
+    var botmanWidget = {
+        aboutText: 'Start the conversation with Hi',
+        introMessage: "WELCOME TO ALL ABOUT LARAVEL"
+    };
+</script>
+
+<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
     </head>
     <body
         class="page-template page-template-page-template-1 page-template-page-template-1-php page page-id-4678"

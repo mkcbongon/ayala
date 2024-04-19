@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UploadAcceptedNotification;
 use App\Mail\UploadDeclinedNotification;
+use App\Mail\AppointmentConfirmation;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -29,15 +31,24 @@ class AdminController extends Controller
     public function schedule()
     {
         $events = SchedModel::all();
+        // foreach ($events as $event) {
+        //     $time = $event->time;
+        //     dd($time);
+        // }
         $formattedEvents = [];
 
         foreach ($events as $event) {
+            
+        $dateTime = Carbon::parse($event->date . ' ' . $event->time);
             $formattedEvents[] = [
                 'title' => $event->property,
-                'date' => $event->date,
-                'time' => $event->time
+                'name' => $event->name,
+                'phone' => $event->phone,
+                'date' => $dateTime->format('Y-m-d H:i:s')
             ];
         }
+
+        // dd($event->time);
 
         return view('admin.admindash.schedule', ['events' => json_encode($formattedEvents)]);
     }
@@ -57,7 +68,8 @@ class AdminController extends Controller
 
         $appoint->save();
 
-        
+        $message = 'Your appointment has been received successfully.';
+        Mail::to($request->input('email'))->send(new AppointmentConfirmation($message));
         return redirect()->back()->with('success', 'Appointment received successfully.');
     }
 

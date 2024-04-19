@@ -8,7 +8,7 @@
   data-assets-path="../assets/"
   data-template="vertical-menu-template-free">
   <head>
-    <title>Requests - Ayala Land Premier</title>
+    <title>Appointment - Ayala Land Premier</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="description" content="" />
@@ -91,7 +91,28 @@
                 {{--  --}}
                 <div class="content" style="margin-top: -50px">
                     <div id='calendar'></div>
+                </div>
+
+                <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="eventModalLabel">Appointment Details</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                              <p id="eventTitle"></p>
+                              <p id="eventStart"></p>
+                              {{-- <p id="eventEnd"></p> --}}
+                              <p><strong>Name:</strong> <span id="eventName"></span></p>
+                              <p><strong>Phone:</strong> <span id="eventPhone"></span></p>
+                          </div>
+                      </div>
                   </div>
+                </div>
                 {{--  --}}
                 
 
@@ -140,20 +161,29 @@
     <script src='calendar/fullcalendar/packages/daygrid/main.js'></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-    
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: [ 'interaction', 'dayGrid' ],
-                defaultDate: '2024-04-19', // Change this as needed
-                editable: true,
-                eventLimit: true,
-                events: {!! $events !!}
-            });
-    
-            calendar.render();
-        });
-    </script>
+      document.addEventListener('DOMContentLoaded', function () {
+          var calendarEl = document.getElementById('calendar');
+
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+              plugins: ['interaction', 'dayGrid'],
+              defaultDate: '2024-04-19',
+              editable: true,
+              eventLimit: true,
+              events: {!! $events !!},
+              eventClick: function (info) {
+                  var event = info.event;
+                  $('#eventModal #eventTitle').text(event.title);
+                  $('#eventModal #eventStart').text(event.start.toLocaleString());
+                  // $('#eventModal #eventEnd').text(event.end ? event.end.toLocaleString() : '');
+                  $('#eventModal #eventName').text(event.extendedProps.name || '');
+                  $('#eventModal #eventPhone').text(event.extendedProps.phone || '');
+                  $('#eventModal').modal('show');
+              }
+          });
+
+          calendar.render();
+      });
+  </script>
     
 
     <script src="calendar/js/main.js"></script>

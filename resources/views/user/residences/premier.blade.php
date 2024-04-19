@@ -251,6 +251,10 @@
         }
     </style>
 
+
+@include('components/botman')
+
+<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </head>
 
     <body class="residences-template-default single single-residences postid-6835">
