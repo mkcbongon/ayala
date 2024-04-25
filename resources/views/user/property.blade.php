@@ -377,12 +377,6 @@
                                     <input type="number" id="phone" name="phone"
                                     class="form-control"/>
                                 </div>
-                                <div class="row">
-                                    <div class="col mb-3">
-                                        <label for="image" class="form-label">Government ID</label>
-                                        <input type="file" class="form-control" id="image" name="idcard" required/>
-                                    </div>
-                                </div>
                                 <div class="row g-2">
                                     <div class="col mb-0">
                                         <label for="date" class="form-label">Target Date</label>
@@ -546,12 +540,12 @@
                                                 <div class="demo-inline-spacing mt-3">
                                                     <div class="list-group" style="width: 630px;">
                                                         <div class="input-group">
-                                                            <input type="number" id="proPrice" class="form-control" placeholder="Property Price"/>
+                                                            <input type="number" id="proPrice" class="form-control" placeholder="Property Price" oninput="updateCalculations()"/>
                                                         </div>
                                                         <div>
                                                             <label for="interest" class="form-label">Interest</label>
                                                             <input type="range" class="form-range" min="0" max="8" step="1" id="interest" oninput="updateCalculations()">
-                                                            <span id="interestLabel">6%</span>
+                                                            <span id="interestLabel"></span>
                                                         </div>
                                                         <hr class="my-5" />
                                                         <div class="table-responsive text-nowrap">
@@ -780,6 +774,7 @@
         <script src="{{ asset('ayala/mainvue.js.download') }}"></script>
 
 
+        <script src="toast.js"></script>
 
         <script src="../assets/vendor/libs/jquery/jquery.js"></script>
         <script src="../assets/vendor/libs/popper/popper.js"></script>

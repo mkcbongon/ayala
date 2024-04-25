@@ -11,11 +11,11 @@ Thanks,<br>
 {{ config('app.name') }}
 </x-mail::message> --}}
 
-@component('mail::message')
+{{-- @component('mail::message') --}}
 # Appointment Confirmation
 
 {{ $message }}
 
 Thank you,<br>
 {{ config('app.name') }}
-@endcomponent
+{{-- @endcomponent --}}

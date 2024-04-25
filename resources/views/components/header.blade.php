@@ -302,8 +302,43 @@
                     alt="">
             </a>
             <div class="c-header__ctas [ u-df-mb u-df-mb-ai-c ]">
-                <button id="js-search__button"
-                    class="js-search__button o-button--icon_text c-search__button c-search__button--mobile"></button>
+                {{-- <button id="js-search__button"
+                    class="js-search__button o-button--icon_text c-search__button c-search__button--mobile"></button> --}}
+                    <a href="tel:09298597655" style="margin-right: 10px">
+                        <span class="text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                          </svg></span></a>
+                    <a target="_blank" href="https://www.facebook.com/officialayalaland/"
+                        class="o-sm-icon" style="margin-right: 10px">
+                        <figure>
+                            <img loading="lazy"
+                                src="{{ asset('ayala/icon_fb.svg') }}"
+                                alt="">
+                        </figure>
+                    </a>
+                    <a target="_blank" href="https://twitter.com/AyalaLand" class="o-sm-icon" style="margin-right: 10px">
+                        <figure>
+                            <img loading="lazy"
+                                src="{{ asset('ayala/icon_tw.svg') }}"
+                                alt="">
+                        </figure>
+                    </a>
+                    <a target="_blank" href="https://ph.linkedin.com/company/ayala-land-inc-"
+                        class="o-sm-icon" style="margin-right: 10px">
+                        <figure>
+                            <img loading="lazy"
+                                src="{{ asset('ayala/icon_li.svg') }}"
+                                alt="">
+                        </figure>
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/ayalaland/"
+                        class="o-sm-icon" style="margin-right: 5px">
+                        <figure>
+                            <img loading="lazy"
+                                src="{{ asset('ayala/icon_ig.svg') }}"
+                                alt="">
+                        </figure>
+                    </a>
                 <button id="js-menu__button" class="js-menu__button o-button--burger">
                     <span></span>
                     <span></span>
@@ -319,15 +354,23 @@
                         data-megamenu="00">ABOUT US</a>
                 </div>
                 <div class="c-nav__link">
-                    <a href="javascript:void(0);" rel="noopener noreferrer" class="js-meganav"
-                        data-megamenu="01">RESIDENCES</a>
+                    <a href="{{ route('premier') }}" rel="noopener noreferrer" class="js-meganav"
+                        >RESIDENCES</a>
+                </div>
+                <div class="c-nav__link">
+                    <a href="{{ route('properties', 'Pre-Selling') }}" rel="noopener noreferrer" class="js-meganav"
+                        >FOR SALE</a>
+                </div>
+                <div class="c-nav__link">
+                    <a href="{{ route('properties', 'RFO') }}" rel="noopener noreferrer" class="js-meganav"
+                        >FOR LEASE</a>
                 </div>
             </nav>
 
             <div id="js-menu__megamenu" class="c-mega-menu--mobile ">
                 <div class="box c-mega-menu__links" data-megaid="00">
 
-                    <a href="javascript:void(0);" class="js-back back-0">ABOUT US</a>
+                    <a href="{{ route('about') }}" class="js-back back-0">ABOUT US</a>
                     <a href="https://www.ayalaland.com.ph/about-us/" class="goto_link">
                         Go To About Us Page
                     </a>
@@ -335,181 +378,20 @@
                         <h4>OUR LEGACY</h4>
                         <p>Know about Ayala Land's history as an industry pioneer.</p>
                     </a>
-                    <a href="https://www.ayalaland.com.ph/careers/" class="c-mega-menu__link dt-col-3">
-                        <h4>CAREERS</h4>
-                        <p>Join our team of talented individuals; <br>grow your career and participate in the
-                            business of enhancing land and enriching lives.</p>
-                    </a>
                     <a href="https://www.ayalaland.com.ph/our-awards-and-milestones/"
                         class="c-mega-menu__link dt-col-3">
                         <h4>OUR AWARDS AND CITATIONS</h4>
                         <p>See the list of our distinctions—a proof of our commitment to excellence.</p>
                     </a>
-                    <a href="https://www.ayalaland.com.ph/investor-relations/"
-                        class="c-mega-menu__link dt-col-3">
-                        <h4>INVESTOR RELATIONS</h4>
-                        <p>View our latest annual report.</p>
-                    </a>
                 </div>
 
 
-                
-
-                
-                <div class="box c-mega-menu__links" data-megaid="01">
-                    <a href="javascript:void(0);" class="js-back back-0">RESIDENCES</a>
-                    <div class="[ u-df-dt u-df-dt-jc-sb u-df-dt-fw-w ] ">
-                        <div class="c-mega-menu__group-link">
-                            <h4>BROWSE<br> BY RESIDENTIAL <br>BRAND</h4>
-                            <ul>
-                            </ul>
-                        </div>
-                        <div class="c-mega-menu__group-link">
-                            <h4>AYALA LAND RESIDENCES</h4>
-                            <ul>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/residences/ayala-land-premier/"><span>Ayala
-                                            Land Premier</span></a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/alveo/"><span>Alveo</span></a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/avida/"><span>Avida</span></a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/amaia/"><span>Amaia</span></a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/bella-vita/"><span>BellaVita</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="c-mega-menu__group-link">
-                            <h4>BROWSE<br>BY LOCATION</h4>
-                            <ul>
-                            </ul>
-                        </div>
-                        <div class="c-mega-menu__group-link">
-                            <h4>METRO MANILA</h4>
-                            <ul>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/residences/makati-city/"><span>Makati
-                                            City</span></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/residences/manila-city/"><span>Manila
-                                            City</span></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/residences/mandaluyong-city/"><span>Mandaluyong
-                                            City</span></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/residences/muntinlupa-city/"><span>Muntinlupa
-                                            City</span></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/residences/paranaque-city/"><span>Parañaque
-                                            City</span></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/residences/pasig-city/"><span>Pasig
-                                            City</span></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/residences/quezon-city/"><span>Quezon
-                                            City</span></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/residences/taguig-city/"><span>Taguig
-                                            City</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="c-mega-menu__group-link">
-                            <h4>Luzon</h4>
-                            <ul>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/residences-in-laguna/"><span>Laguna</span></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.ayalaland.com.ph/estates/evo-city/"><span>Evo
-                                            City</span></a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/residences-in-batangas-city/"><span>Batangas</span></a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/pampanga/"><span>Pampanga</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="c-mega-menu__group-link">
-                            <h4>Visayas</h4>
-                            <ul>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/residences-in-bacolod-city/"><span>Bacolod</span></a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/residences-in-cebu-city/"><span>Cebu</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="c-mega-menu__group-link">
-                            <h4>Mindanao</h4>
-                            <ul>
-                                <li>
-                                    <a
-                                        href="https://www.ayalaland.com.ph/residences/residences-in-cagayan-de-oro-city/"><span>Cagayan
-                                            De Oro</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-               
+                <a
+                href="https://www.ayalaland.com.ph/contact-us/"
+                class="js-linkDelay o-button--bordered"
+                ><span></span><span></span
+                ><span class="text">Contact Us</span></a>
             </div>
-            <a href="{{ route('contact') }}"
-                class="js-linkDelay o-button--bordered"><span></span><span></span><span class="text">Contact
-                    Us</span></a>
         </div>
-
-
-        {{-- <script>
-            function submitntoggle() {
-                // Submit the form
-                document.getElementById("uploadform").submit();
-                
-                // Toggle the modal
-                var myModal = new bootstrap.Modal(document.getElementById('upload'));
-                myModal.toggle();
-            }
-        </script> --}}
-
-        {{-- <script>
-            function submitntoggle() {
-                var formData = new FormData(document.getElementById('uploadform'));
-
-                // Send an AJAX request
-                fetch('/submitreq', {
-                    method: 'POST',
-                    body: formData
-                })
-                
-                // Toggle the modal
-                var myModal = new bootstrap.Modal(document.getElementById('upload'));
-                myModal.toggle();
-            }
-        </script> --}}
     </div>
 </header>

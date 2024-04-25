@@ -17,12 +17,12 @@ class BotManController extends Controller
         $botman = app('botman');
 
         $botman->hears('{message}', function($botman, $message) {
-            $response = $this->searchInDatabase($message);
+            $response = $this->searchInDatabase(strtolower($message));
 
             if ($response) {
                 $botman->reply($response);
             } else {
-                $botman->reply("I'm sorry, I don't have the information you're looking for at the moment. However, I can help you with other inquiries or connect you with a real estate agent who may be able to assist you further. What else can I assist you with");
+                $botman->reply("I'm sorry, I don't have the information you're looking for at the moment. However, I can help you with other inquiries. What else can I assist you with?");
             }
         });
 
@@ -55,7 +55,7 @@ class BotManController extends Controller
         // Check for exact matches first
         foreach ($responses as $response) {
             // Convert database entry to lowercase
-            $lowerResponseMatch = strtolower(trim($response->match));
+            $lowerResponseMatch = strtolower(trim($response->matchs));
             if ($lowerResponseMatch === $lowerMessage) {
                 return $response->response;
             }
@@ -63,7 +63,7 @@ class BotManController extends Controller
 
         // Check for high matches (at least 98% of words matching)
         foreach ($responses as $response) {
-            $responseWords = explode(' ', $response->match);
+            $responseWords = explode(' ', $response->matchs);
             $commonWords = array_intersect($words, $responseWords);
             $matchPercentage = count($commonWords) / count($words);
 
@@ -74,7 +74,7 @@ class BotManController extends Controller
 
         // Check for high matches (all words matching)
         foreach ($responses as $response) {
-            $responseWords = explode(' ', $response->match);
+            $responseWords = explode(' ', $response->matchs);
             $commonWords = array_intersect($words, $responseWords);
 
             // Check if all words from the user input are found in the response

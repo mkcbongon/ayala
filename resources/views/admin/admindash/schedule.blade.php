@@ -85,7 +85,7 @@
               <hr class="my-5" />
               <div class="card">
                 <div class="card-header flex-column flex-md-row">
-                  <h5 class="card-header">SCHEDULE OF APPOINTMENTS</h5>
+                  <h5 class="card-header">SCHEDULE OF VIEWINGS</h5>
                 </div>
 
                 {{--  --}}

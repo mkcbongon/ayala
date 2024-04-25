@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('chat', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('match');
+            $table->text('matchs');
             $table->text('response');
         });
     }

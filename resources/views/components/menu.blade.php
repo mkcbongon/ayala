@@ -72,12 +72,12 @@
       </li>
 
       {{-- CHAT --}}
-      {{-- @if(request()->routeIs(['requests'])) --}}
-      {{-- <li class="menu-item active open">
-        @else  --}}
+      @if(request()->routeIs(['chat']))
+      <li class="menu-item active open">
+        @else 
         <li class="menu-item">
-      {{-- @endif --}}
-        <a href="#" 
+      @endif
+        <a href="{{ route('chat') }}" 
           target="_self" class="menu-link"> 
             <i class="menu-icon tf-icons bx bx-chat"></i> 
             <div data-i18n="Ayala Land Premier">Chat Bot</div> 

@@ -41,6 +41,9 @@ Route::post('/submitreq', [AdminController::class, 'submitreq'])->name('submitre
 Route::post('accept/{id}', [AdminController::class, 'accept'])->name('accept');
 Route::post('decline/{id}', [AdminController::class, 'decline'])->name('decline');
 Route::post('/uploadreq', [AdminController::class, 'uploadreq'])->name('uploadreq');
+Route::get('/chat', [AdminController::class, 'chat'])->name('chat')->middleware('admin');
+Route::put('/addchat', [AdminController::class, 'addchat'])->name('addchat');
+Route::delete('/deletechat/{id}', [AdminController::class, 'deletechat'])->name('deletechat');
 
 Route::get('/premier-properties', [AdminController::class, 'premierproperties'])->name('premierproperties')->middleware('admin');
 Route::post('/addproperty', [AdminController::class, 'addproperty'])->name('addproperty');

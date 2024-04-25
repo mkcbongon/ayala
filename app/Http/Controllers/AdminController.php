@@ -11,6 +11,7 @@ use App\Models\AmenitiesModel;
 use App\Models\RequestsModel;
 use App\Models\UploadModel;
 use App\Models\SchedModel;
+use App\Models\ChatModel;
 use App\Models\UserAuth;
 use App\Models\Model;
 use Illuminate\Support\Facades\Log;
@@ -55,23 +56,27 @@ class AdminController extends Controller
 
     
     public function appoint(Request $request) {
-        $appoint = new SchedModel();
-
-        $appoint->property = $request->input('property');
-        $appoint->name = $request->input('name');
-        $appoint->email = $request->input('email');
-        $appoint->phone = $request->input('phone');
-        $appoint->idcard = $this->upload($request->file('idcard'), 'ayala', $appoint->idcard);
-        $appoint->date = $request->input('date');
-        $appoint->time = $request->input('time');
-        $appoint->status = 'SCHEDULED';
-
-        $appoint->save();
-
-        $message = 'Your appointment has been received successfully.';
-        Mail::to($request->input('email'))->send(new AppointmentConfirmation($message));
-        return redirect()->back()->with('success', 'Appointment received successfully.');
+        try {
+            $appoint = new SchedModel();
+    
+            $appoint->property = $request->input('property');
+            $appoint->name = $request->input('name');
+            $appoint->email = $request->input('email');
+            $appoint->phone = $request->input('phone');
+            $appoint->date = $request->input('date');
+            $appoint->time = $request->input('time');
+            $appoint->status = 'SCHEDULED';
+    
+            $appoint->save();
+    
+            $message = 'Your appointment has been received successfully.';
+            Mail::to($request->input('email'))->send(new AppointmentConfirmation($message));
+            return redirect()->back()->with('success', 'Appointment received successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to schedule the appointment.');
+        }
     }
+    
 
     
     public function requests() {
@@ -174,6 +179,31 @@ class AdminController extends Controller
         Mail::to($requests->email)->send(new UploadDeclinedNotification($requests, $message));
 
         return redirect()->back()->with('success', 'Upload declined successfully.');
+    }
+
+    public function chat() {
+        $chat = ChatModel::all();
+        return view('admin/admindash/chat', ['data' => $chat]);
+    }
+
+    public function addchat(Request $request) {
+        $chat = new ChatModel();
+
+        $chat->matchs = $request->input('matchs');
+        $chat->response = $request->input('response');
+
+        $chat->save();
+
+
+        return redirect()->back()->with('success', 'Data created successfully');        
+    }
+
+    public function deletechat($id) {
+        $chat = ChatModel::find($id);
+
+        $chat->delete();
+
+        return redirect()->back()->with('success', 'Row deleted successfully.');
     }
 
 
