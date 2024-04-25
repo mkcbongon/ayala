@@ -505,7 +505,7 @@
         @include('components/footer')
     </div>
 
-    {{-- @if(request()->routeIs(['property' => 'Pre-Selling'])) --}}
+    {{-- @if(request()->routeIs('properties/Pre-Selling')) --}}
     <script>
         document.getElementById('search-input').addEventListener('input', function() {
             var query = this.value.trim();
@@ -518,6 +518,7 @@
     
                     data.forEach(property => {
                         
+                    if(property.category == "{{ $prop->category }}") {
                     var truncatedDescription = property.description.length > 115 ? `${property.description.substr(0, 115)}...` : property.description;
                         var propertyCard = `
                         <div class="col-md-4 d-flex align-items-stretch property-card" style="margin-top: 30px">
@@ -549,6 +550,7 @@
                         </div>`;
                         propertiesContainer.innerHTML += propertyCard;
                     });
+                    }
                 })
                 .catch(error => {
                     console.error('Error:', error);

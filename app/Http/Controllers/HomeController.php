@@ -157,7 +157,13 @@ class HomeController extends Controller
 
     public function properties($category = null) {
         if ($category) {
-            $data = PropertiesModel::where('category', $category)->get();
+            $categoriesArray = explode(',', $category);
+            if($category == 'Pre-Selling') {
+                $data = PropertiesModel::where('category', $categoriesArray)->get();
+            }
+            else {
+                $data = PropertiesModel::whereNotIn('category', ['Pre-Selling'])->get();
+            }
         } else {
             $data = PropertiesModel::all();
         }
@@ -166,8 +172,6 @@ class HomeController extends Controller
     }
     
     
-
-
     public function property($id) {
         $data = PropertiesModel::find($id);
 

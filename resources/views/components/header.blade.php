@@ -31,7 +31,7 @@
                                 rel="noopener noreferrer">FOR SALE</a>
                         {{-- </div> --}}
                         {{-- <div class="js-nav__link c-nav__link"> --}}
-                            <a href="{{ route('properties', 'RFO') }}" class="" style="margin-left: 20px"
+                            <a href="{{ route('properties', ['RFO', 'Rent']) }}" class="" style="margin-left: 20px"
                                 rel="noopener noreferrer">FOR LEASE</a>
                         </div>
                     </nav>
@@ -157,6 +157,7 @@
                                                     <option value="">Select Category</option>
                                                     <option value="Pre-Selling">Pre-Selling</option>
                                                     <option value="RFO">RFO</option>
+                                                    <option value="Rent">Rent</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -276,7 +277,7 @@
                         <h4>FOR SALE</h4>
                         <p>Discover Your Dream Home: Elegant and sophisticated, this property offers unmatched luxury and a prime location for discerning buyers. A true dream home.</p>
                     </a>
-                    <a href="{{ route('properties', 'RFO') }}"
+                    <a href="{{ route('properties', ['RFO', 'Rent']) }}">
                         class="c-mega-menu__link ">
                         <h4>FOR LEASE</h4>
                         <p>Elevate Your Lifestyle: Modern, convenient, and stylish, this leased property provides a luxurious living space with top-notch amenities in a prime location.</p>
@@ -362,7 +363,7 @@
                         >FOR SALE</a>
                 </div>
                 <div class="c-nav__link">
-                    <a href="{{ route('properties', 'RFO') }}" rel="noopener noreferrer" class="js-meganav"
+                    <a href="{{ route('properties', ['RFO', 'Rent']) }}" rel="noopener noreferrer" class="js-meganav"
                         >FOR LEASE</a>
                 </div>
             </nav>

@@ -113,7 +113,7 @@
                                   <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('Pre-Selling', 'categoryButton')">Pre-Selling</a></li>
                                     <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('RFO', 'categoryButton')">RFO</a></li>
-                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('For Sale', 'categoryButton')">For Sale</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="selectCategory('Rent', 'categoryButton')">Rent</a></li>
                                 </ul>
                                 </div>
                               </div>
